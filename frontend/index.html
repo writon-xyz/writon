@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=5, minimum-scale=1, viewport-fit=cover">
+    <title>Writon - Free AI Text Processor for Grammar, Translation & Summaries</title>
+    <meta name="description"
+        content="Writon is a free, privacy-first AI text processor. Correct grammar, translate languages, and summarize text instantly using your own API keys from providers like Groq, OpenAI, and Google. No signup required.">
+    <meta name="keywords"
+        content="AI text processor, grammar checker, translation tool, summarizer, Groq, OpenAI, Google Gemini, free AI tool, privacy-first AI, bring your own key">
+    <meta name="author" content="Writon AI">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://writon.ai/">
+    <meta property="og:title" content="Writon - Free AI Text Processor">
+    <meta property="og:description"
+        content="Correct grammar, translate languages, and summarize text instantly with your own API keys.">
+    <meta property="og:image" content="https://writon.ai/frontend/assets/logo.PNG">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://writon.ai/">
+    <meta property="twitter:title" content="Writon - Free AI Text Processor">
+    <meta property="twitter:description"
+        content="Correct grammar, translate languages, and summarize text instantly with your own API keys.">
+    <meta property="twitter:image" content="https://writon.ai/frontend/assets/logo.PNG">
+
+    <link rel="icon" href="/frontend/assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Writon AI">
+    <link rel="apple-touch-icon" href="/frontend/assets/logo.PNG">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#000000">
+    <meta name="format-detection" content="telephone=no">
+</head>
+
+<body>
+    <div class="cosmic-background">
+        <div class="nebula-layer"></div>
+        <div class="stars-layer far"></div>
+        <div class="stars-layer mid"></div>
+        <div class="stars-layer near"></div>
+        <div class="twinkling-stars">
+            <div class="twinkle"></div>
+            <div class="twinkle"></div>
+            <div class="twinkle"></div>
+            <div class="twinkle"></div>
+            <div class="twinkle"></div>
+            <div class="twinkle"></div>
+            <div class="twinkle"></div>
+            <div class="twinkle"></div>
+        </div>
+        <div class="galaxies-layer">
+            <div class="galaxy"></div>
+            <div class="galaxy"></div>
+            <div class="galaxy"></div>
+        </div>
+        <div class="shooting-stars">
+            <div class="shooting-star"></div>
+            <div class="shooting-star"></div>
+            <div class="shooting-star"></div>
+        </div>
+        <div class="constellation">
+            <div class="constellation-line"></div>
+            <div class="constellation-line"></div>
+        </div>
+    </div>
+    <div id="app-container">
+        <div id="statusMessage" class="hidden"></div>
+        <div id="loadingOverlay" class="loading-overlay hidden">
+            <div class="loading-spinner">
+                <div class="spinner-ring"></div>
+                <div class="loading-text">Processing your text...</div>
+                <div class="loading-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <header class="header">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <div class="logo-icon">
+                        <img src="/frontend/assets/logo.PNG" alt="Writon" class="logo-image">
+                    </div>
+                    <span class="logo-text">Writon</span>
+                </a>
+                <nav class="nav-desktop">
+                    <a href="api-docs.html" class="nav-link">
+                        <i class="fas fa-book"></i>
+                        API Docs
+                    </a>
+                    <a href="https://github.com/writon-ai" target="_blank" class="mobile-nav-link">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="#processing-section" class="btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        Try it now
+                    </a>
+                </nav>
+                <button class="nav-mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </header>
+        <div class="mobile-nav-overlay hidden" id="mobileNavOverlay">
+            <div class="mobile-nav-content">
+                <div class="mobile-nav-header">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <img src="/frontend/assets/logo.PNG" alt="Writon" class="logo-image">
+                        </div>
+                        <span class="logo-text">Writon</span>
+                    </div>
+                    <button class="mobile-nav-close" id="mobileNavClose">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <nav class="mobile-nav-links">
+                    <a href="#processing-section" class="mobile-nav-link">
+                        <i class="fas fa-rocket"></i>
+                        <span>Try it now</span>
+                    </a>
+                    <a href="/frontend/api-docs.html" class="mobile-nav-link">
+                        <i class="fas fa-book"></i>
+                        <span>API Docs</span>
+                    </a>
+                    <a href="#" class="mobile-nav-link">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                </nav>
+                <div class="mobile-nav-footer">
+                    <div class="mobile-nav-stats">
+                        <div class="mobile-nav-stat">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Privacy-first</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <main>
+            <section class="hero">
+                <div class="hero-background">
+                    <div class="hero-gradient"></div>
+                    <div class="floating-elements">
+                        <div class="floating-element"></div>
+                        <div class="floating-element"></div>
+                        <div class="floating-element"></div>
+                    </div>
+                </div>
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-sparkles"></i>
+                        <span>Now with 4+ AI Providers</span>
+                    </div>
+                    <h1 class="hero-title">
+                        <span class="highlight">Free AI</span>
+                        <span>Text Processor</span>
+                    </h1>
+                    <p class="hero-description">
+                        Writon transforms your text with AI while maintaining your intent and consistent case formatting
+                        within seconds. Just paste your text and press the button to get perfect writing with your own
+                        <strong>API keys</strong>.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#processing-section" class="btn-primary btn-large">
+                            <i class="fas fa-play"></i>
+                            Try it now, it's free
+                        </a>
+                        <button class="btn-secondary btn-large" id="learnMoreBtn">
+                            <i class="fas fa-info-circle"></i>
+                            Learn more
+                        </button>
+                    </div>
+                    <div class="hero-features">
+                        <div class="feature-item">
+                            <i class="fas fa-user-times"></i>
+                            <span>No signup needed</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fab fa-github"></i>
+                            <span>Open-source</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-key"></i>
+                            <span>Bring your own API keys</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Privacy-first</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="features">
+                <div class="container">
+                    <h2 class="section-title"> Choose a Feature to Get Started </h2>
+                    <div class="features-grid">
+                        <div class="feature-card" data-feature="grammar">
+                            <div class="feature-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h3 class="feature-title">Grammar checker</h3>
+                            <p class="feature-description"> Fixes grammar, spelling, and punctuation errors. It refines
+                                your text to ensure clarity and professionalism while maintaining your original voice.
+                                Perfect for professional communication and academic writing. </p>
+                            <div class="code-example-stacked">
+                                <div class="example-section">
+                                    <span class="example-label">BEFORE</span>
+                                    <div class="code-box before">"This text have grammar mistake"</div>
+                                </div>
+                                <div class="example-section">
+                                    <span class="example-label">AFTER</span>
+                                    <div class="code-box after">"This text has grammar mistakes."</div>
+                                </div>
+                            </div>
+                            <div class="feature-stats">
+                                <div class="stat">
+                                    <i class="fas fa-bolt"></i>
+                                    <span>~3s average</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature-card" data-feature="translate">
+                            <div class="feature-icon">
+                                <i class="fas fa-globe-americas"></i>
+                            </div>
+                            <h3 class="feature-title">Multi-language translation</h3>
+                            <p class="feature-description"> Translates text into over 10 different languages with
+                                accuracy. Preserves original context and meaning to ensure clear communication. Perfect
+                                for multilingual conversations and global collaboration. </p>
+                            <div class="code-example-stacked">
+                                <div class="example-section">
+                                    <span class="example-label">BEFORE</span>
+                                    <div class="code-box before">"Hey, how are you doing?"</div>
+                                </div>
+                                <div class="example-section">
+                                    <span class="example-label">AFTER</span>
+                                    <div class="code-box after">"Lumela, u ntse u ea joang?"
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="feature-stats">
+                                <div class="stat">
+                                    <i class="fas fa-globe"></i>
+                                    <span>10+ languages</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature-card" data-feature="summarize">
+                            <div class="feature-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <h3 class="feature-title">Smart summarizer</h3>
+                            <p class="feature-description"> Efficiently condenses long and complex documents, articles,
+                                or notes into a succinct summary. It extracts the most critical information, allowing
+                                you to grasp the core message quickly and effortlessly. </p>
+                            <div class="code-example-stacked">
+                                <div class="example-section">
+                                    <span class="example-label">BEFORE</span>
+                                    <div class="code-box before">"Long mind-bending information."</div>
+                                </div>
+                                <div class="example-section">
+                                    <span class="example-label">AFTER</span>
+                                    <div class="code-box after">"Short mind-soothing explanation."
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="feature-stats">
+                                <div class="stat">
+                                    <i class="fas fa-chart-bar"></i>
+                                    <span>Up to 80% shorter</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="processing-section" id="processing-section">
+                <div class="container">
+                    <h2 class="section-title"> Put the AI to Work </h2>
+                    <div class="processor-grid">
+                        <div class="settings-panel glass-card">
+                            <div class="status-header">
+                                <div class="api-status" id="apiStatus">
+                                    <div id="statusIndicator" class="status-indicator"></div>
+                                    <div id="statusText" class="status-text">Not connected</div>
+                                </div>
+                                <div class="key-links">
+                                    <a href="https://console.groq.com/keys" target="_blank" class="key-link"
+                                        id="groq-link">Get a Groq key</a>
+                                    <a href="https://platform.openai.com/api-keys" target="_blank" class="key-link"
+                                        id="openai-link">Get an OpenAI key</a>
+                                    <a href="https://makersuite.google.com/app/apikey" target="_blank" class="key-link"
+                                        id="google-link">Get a Google key</a>
+                                    <a href="https://www.anthropic.com/api" target="_blank" class="key-link"
+                                        id="anthropic-link">Get an Anthropic key</a>
+                                </div>
+                            </div>
+                            <div class="settings-group">
+                                <label for="provider" class="setting-label">AI Provider</label>
+                                <div class="custom-select-wrapper">
+                                    <select id="provider" class="setting-select">
+                                        <option value="groq">Groq</option>
+                                        <option value="google">Google</option>
+                                        <option value="openai">OpenAI</option>
+                                        <option value="anthropic">Anthropic</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="settings-group api-key-group">
+                                <label for="apiKey" class="setting-label">API Key</label>
+                                <div class="api-key-input-wrapper">
+                                    <input type="password" id="apiKey" class="setting-input"
+                                        placeholder="Paste your API key here" required>
+                                    <button id="toggleApiKey" class="input-action-btn">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="settings-group">
+                                <label for="model" class="setting-label">Model</label>
+                                <input type="text" id="model" class="setting-input"
+                                    placeholder="llama-3.1-70b-versatile">
+                            </div>
+                            <hr class="settings-divider">
+                            <div class="settings-group">
+                                <label for="mode" class="setting-label">Mode</label>
+                                <div class="custom-select-wrapper">
+                                    <select id="mode" class="setting-select">
+                                        <option value="grammar">Fix Grammar</option>
+                                        <option value="summarize">Summarize</option>
+                                        <option value="translate">Translate</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div id="languageGroup" class="settings-group hidden">
+                                <label for="targetLanguage" class="setting-label">Target Language</label>
+                                <div class="custom-select-wrapper">
+                                    <select id="targetLanguage" class="setting-select">
+                                        <option value="Hindi">Hindi</option>
+                                        <option value="Maori">Maori</option>
+                                        <option value="Arabic">Arabic</option>
+                                        <option value="French">French</option>
+                                        <option value="German">German</option>
+                                        <option value="Swahili">Swahili</option>
+                                        <option value="English">English</option>
+                                        <option value="Spanish">Spanish</option>
+                                        <option value="Tok Pisin">Tok Pisin</option>
+                                        <option value="Portuguese">Portuguese</option>
+                                        <option value="Mandarin Chinese">Mandarin Chinese</option>
+                                        <option value="Custom">Custom...</option>
+                                    </select>
+                                </div>
+                                <input type="text" id="customLanguage" class="setting-input mt-2 hidden"
+                                    placeholder="e.g., Swahili">
+                            </div>
+                            <div class="settings-group">
+                                <label for="caseStyle" class="setting-label">Case Style</label>
+                                <div class="custom-select-wrapper">
+                                    <select id="caseStyle" class="setting-select">
+                                        <option value="lower">lowercase</option>
+                                        <option value="sentence">Sentence case</option>
+                                        <option value="title">Title Case</option>
+                                        <option value="upper">UPPERCASE</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="editor-panel glass-card">
+                            <div class="editor-header">
+                                <h3 class="editor-title">Input Text</h3>
+                                <div class="editor-actions">
+                                    <button id="pasteTextBtn" class="editor-action-btn">
+                                        <i class="fas fa-paste"></i>
+                                        <span>Paste</span>
+                                    </button>
+                                    <button id="clearTextBtn" class="editor-action-btn">
+                                        <i class="fas fa-trash-alt"></i>
+                                        <span>Clear</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <textarea id="inputText" class="editor-textarea"
+                                placeholder="Paste your text here... (Ctrl + Enter to process)"></textarea>
+                            <div class="editor-footer">
+                                <div class="text-stats">
+                                    <span id="charCount" class="stat-item">0 characters</span>
+                                    <span id="wordCount" class="stat-item">0 words</span>
+                                    <span id="sentenceCount" class="stat-item">0 sentences</span>
+                                </div>
+                                <button id="processBtn" class="btn-primary btn-process">
+                                    <i class="fas fa-wand-magic-sparkles"></i>
+                                    Process Text
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="resultsSection" class="results-section hidden">
+                        <div class="original-text-panel glass-card">
+                            <div class="result-header">
+                                <h3 class="result-title">Original Text</h3>
+                                <div class="result-stats">
+                                    <span id="originalStats" class="stat-item"></span>
+                                </div>
+                            </div>
+                            <div id="originalText" class="result-text-box"></div>
+                        </div>
+                        <div class="processed-text-panel glass-card">
+                            <div class="result-header">
+                                <h3 class="result-title">Processed Text</h3>
+                                <div class="result-stats">
+                                    <span id="usedMode" class="stat-item"></span>
+                                    <span id="usedProvider" class="stat-item"></span>
+                                    <span id="usedCase" class="stat-item"></span>
+                                    <span id="usedLanguage" class="stat-item hidden"></span>
+                                    <span id="usedLanguageMeta" class="stat-item hidden"></span>
+                                    <span id="processingTime" class="stat-item">Time: <span
+                                            id="timeValue"></span></span>
+                                    <span id="wordDiffStat" class="stat-item"></span>
+                                    <span id="charDiffStat" class="stat-item"></span>
+                                </div>
+                            </div>
+                            <div id="processedText" class="result-text-box"></div>
+                            <div class="result-actions">
+                                <button id="copyBtn" class="btn-secondary">
+                                    <i class="fas fa-copy"></i>
+                                    Copy
+                                </button>
+                                <button id="downloadBtn" class="btn-secondary">
+                                    <i class="fas fa-download"></i>
+                                    Download
+                                </button>
+                                <button id="shareBtn" class="btn-secondary">
+                                    <i class="fas fa-share-alt"></i>
+                                    Share
+                                </button>
+                                <button id="processAgainBtn" class="btn-secondary">
+                                    <i class="fas fa-redo-alt"></i>
+                                    Process Again
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-left">
+                        <p>Built with care 🧡 Writon 2025. Free & Open-source.</p>
+                    </div>
+                    <div class="footer-right">
+                        <div class="footer-stats">
+                            <span>✨ Powered by AI</span>
+                            <span>🔒 Privacy-first</span>
+                            <span>⚡ Lightning-fast</span>
+                        </div>
+                        <div class="footer-settings">
+                            <label class="animation-toggle-label" for="animationToggle">
+                                <i class="fas fa-meteor"></i>
+                                <span>Animations</span>
+                            </label>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="animationToggle">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <div class="mobile-fab hidden" id="mobileFab">
+        <button class="fab-main" id="fabMain">
+            <i class="fas fa-magic"></i>
+        </button>
+
+        <div class="fab-menu hidden" id="fabMenu">
+            <button class="fab-action" data-action="scroll-to-top">
+                <i class="fas fa-arrow-up"></i>
+                <span>Top</span>
+            </button>
+            <button class="fab-action" data-action="scroll-to-processor">
+                <i class="fas fa-wand-magic-sparkles"></i>
+                <span>Process</span>
+            </button>
+            <button class="fab-action" data-action="clear-all">
+                <i class="fas fa-trash"></i>
+                <span>Clear</span>
+            </button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

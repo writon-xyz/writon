@@ -1,0 +1,379 @@
+# Writon
+
+AI-powered text processor with CLI and API interfaces for grammar correction, translation, and summarization.
+
+Writon transforms your text with AI while maintaining your intent and applying consistent case formatting. Clean, fast, and reliable - available as both a command-line tool and a web API.
+
+## 🚀 Two Ways to Use Writon
+
+### 1. CLI (Command Line Interface)
+Interactive terminal application for direct text processing.
+
+### 2. API (Web API)
+RESTful API for integration with applications, websites, and services.
+
+## ✨ Features
+
+- 🧠 **AI-Powered Processing**: Grammar correction, translation, and summarization
+- 🌍 **Multi-Language Translation**: Built-in presets + custom language support
+- 📝 **Case Formatting**: lowercase, Sentence case, Title Case, UPPERCASE
+- 🔄 **Multi-Provider AI**: Supports OpenAI, Google Gemini, Anthropic Claude, and Groq
+- 🔑 **BYOK Support**: Bring Your Own Key - users can use their own API keys
+- 💾 **Auto File Saving**: Organized output with timestamp naming (CLI)
+- ✅ **Input Validation**: Robust error handling and user guidance
+- 🚪 **Graceful Exit**: Clean Ctrl+C and Ctrl+D handling (CLI)
+- 🌐 **REST API**: JSON endpoints for programmatic access
+- 📚 **Interactive Docs**: Auto-generated API documentation
+- 🔒 **Secure**: No API keys stored on server (when using BYOK mode)
+
+## ⚙️ Quick Start
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/writon.git
+cd writon
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Set up environment
+cp .env.example .env
+# Edit .env with your API keys
+```
+
+### CLI Usage
+
+```bash
+python main.py
+```
+
+### API Usage
+
+```bash
+# Start the API server in one terminal
+uvicorn api:app --reload
+
+# In another terminal, run the test script
+python test_api.py
+
+# Or visit the interactive documentation in your browser
+# http://localhost:8000/docs
+```
+
+## 📝 CLI Example
+
+```
+Writon CLI - AI-powered text processor
+Enter your text: This have a grammar mistake, please fix it.
+
+Select mode:
+1. Fix Grammar
+2. Translate
+3. Summarize
+> 1
+
+Select case:
+1. lowercase
+2. Sentence case
+3. Title Case
+4. UPPERCASE
+> 2
+
+Processing Summary:
+   Mode: Fix Grammar
+   Case: Sentence case
+
+Proceed? (y/n): y
+
+Processing with AI...
+
+Formatted text:
+This has a grammar mistake, please fix it.
+
+Save to file? (y/n): y
+Saved to output/gram_20250809_163000.txt
+```
+
+## 💻 API Example
+
+### Grammar Correction (BYOK Mode)
+This example uses a Groq API key via headers.
+
+```bash
+curl -X POST "http://localhost:8000/grammar" \
+  -H "Content-Type: application/json" \
+  -H "X-Provider: groq" \
+  -H "X-Groq-Key: your_groq_api_key_here" \
+  -d '{
+    "text": "this text have grammar mistake",
+    "case_style": "sentence"
+  }'
+```
+
+### Translation (BYOK Mode)
+This example uses an OpenAI API key via headers.
+
+```bash
+curl -X POST "http://localhost:8000/translate" \
+  -H "Content-Type: application/json" \
+  -H "X-Provider: openai" \
+  -H "X-OpenAI-Key: your_openai_api_key_here" \
+  -d '{
+    "text": "Hello, how are you?",
+    "target_language": "Spanish",
+    "case_style": "sentence"
+  }'
+```
+
+### Python Client Example
+
+```python
+import requests
+
+# Using user's keys (BYOK - Bring Your Own Key)
+headers = {
+    "Content-Type": "application/json",
+    "X-Provider": "groq",
+    "X-Groq-Key": "your_groq_api_key_here"
+}
+
+response = requests.post("http://localhost:8000/grammar",
+    json={"text": "this have bad grammar", "case_style": "sentence"},
+    headers=headers
+)
+
+result = response.json()
+print(result["processed_text"])
+# Output: "This has bad grammar."
+```
+
+## 🌐 API Endpoints
+
+| Endpoint | Method | Description |
+|----------|---------|-------------|
+| `/` | GET | API information |
+| `/health` | GET | Health check and provider status |
+| `/providers` | GET | Available providers and configuration |
+| `/grammar` | POST | Grammar correction |
+| `/translate` | POST | Text translation |
+| `/summarize` | POST | Text summarization |
+| `/process` | POST | Universal endpoint (all modes) |
+
+### Interactive Documentation
+Visit `http://localhost:8000/docs` for full API documentation with:
+
+- Request/response schemas
+- Try-it-out functionality
+- Parameter descriptions
+- Example requests
+
+## API Headers (BYOK Mode)
+
+To use your own API keys, include these headers in requests:
+
+| Header | Description | Example |
+|--------|-------------|---------|
+| `X-Provider` | AI provider to use | `groq`, `openai`, `google`, `anthropic` |
+| `X-OpenAI-Key` | OpenAI API key | `sk-...` |
+| `X-Groq-Key` | Groq API key | `gsk_...` |
+| `X-Google-Key` | Google Gemini API key | `AI...` |
+| `X-Anthropic-Key` | Anthropic API key | `sk-ant-...` |
+| `X-OpenAI-Model` | OpenAI model (optional) | `gpt-4o`, `gpt-3.5-turbo` |
+| `X-Groq-Model` | Groq model (optional) | `llama-3.1-70b-versatile` |
+| `X-Google-Model` | Google model (optional) | `gemini-1.5-flash` |
+| `X-Anthropic-Model` | Anthropic model (optional) | `claude-3-haiku-20240307` |
+
+Example with custom headers:
+
+```bash
+curl -X POST "http://localhost:8000/grammar" \
+  -H "Content-Type: application/json" \
+  -H "X-Provider: groq" \
+  -H "X-Groq-Key: your_groq_key_here" \
+  -H "X-Groq-Model: llama-3.1-70b-versatile" \
+  -d '{"text": "fix this grammar", "case_style": "sentence"}'
+```
+
+## Processing Modes
+
+### 1. Grammar
+Fixes grammar, spelling, and punctuation while preserving your original tone and intent.
+
+### 2. Translation
+Translates text to your target language with perfect grammar in the destination language.
+
+**Supported languages:**
+- Spanish, French, German, Italian, Portuguese
+- Custom language input for any other language
+
+### 3. Summarization
+Creates concise summaries while maintaining grammatical accuracy and key information.
+
+## Configuration
+
+### For CLI and API Server (Optional)
+Create a `.env` file with your API configuration:
+
+```env
+# AI Provider (choose one: openai, google, anthropic, groq)
+API_PROVIDER=groq
+
+# Groq Configuration
+GROQ_API_KEY=your_groq_api_key_here
+GROQ_MODEL=llama-3.1-70b-versatile
+
+# Google Configuration  
+GOOGLE_API_KEY=your_google_api_key_here
+GOOGLE_MODEL=gemini-1.5-flash
+
+# OpenAI Configuration
+OPENAI_API_KEY=your_openai_api_key_here
+OPENAI_MODEL=gpt-4o
+
+# Anthropic Configuration
+ANTHROPIC_API_KEY=your_anthropic_api_key_here
+ANTHROPIC_MODEL=claude-3-haiku-20240307
+
+# Debug mode (optional)
+DEBUG_MODE=false
+```
+
+> **Note:** When using BYOK (Bring Your Own Key) mode with the API, users provide their own keys via request headers, so server configuration is optional for API usage.
+
+## Output Files (CLI)
+
+Processed text is automatically saved to the `output/` folder with descriptive names:
+
+- `gram_20250801_143022.txt` - Grammar correction
+- `trans_spanish_20250801_143045.txt` - Translation to Spanish
+- `summ_20250801_143100.txt` - Summarization
+
+## Error Handling
+
+Writon gracefully handles common issues:
+
+- **No internet connection**: Clear error message with guidance
+- **Invalid API keys**: Helpful error message and .env file guidance
+- **Rate limiting**: Detects and displays rate limit errors
+- **Malformed responses**: Automatic error detection and fallback
+
+## 📁 Architecture
+
+```
+writon-core/
+├── main.py                 # CLI interface and user interaction
+├── api.py                  # FastAPI web server
+├── test_api.py             # API testing script
+├── test_env.py             # Environment configuration tester
+├── formatter/
+│   ├── text_formatter.py   # AI-powered text processing
+│   └── case_converter.py   # Deterministic case transformations
+├── frontend/
+│   ├── assets/
+│   │   ├── favicon.ico     # Browser icon
+│   │   ├── logo.PNG        # Application logo
+│   │   └── logo.jpg        # Application logo (alternative)
+│   ├── api-docs.html       # API documentation website
+│   ├── index.html          # Main web application
+│   ├── script.js           # Frontend logic and API calls
+│   └── style.css           # Frontend styling
+├── ai/
+│   ├── provider.py         # AI provider routing system
+│   ├── anthropic.py        # Anthropic Claude integration
+│   ├── openai.py           # OpenAI GPT integration
+│   ├── groq.py             # Groq API integration
+│   └── google.py           # Google Gemini integration
+├── modes/
+│   ├── grammar.json        # Grammar correction configuration
+│   ├── translate.json      # Translation configuration
+│   └── summarize.json      # Summarization configuration
+├── prompts/
+│   └── prompt_generator.py # Template engine for AI prompts
+├── output/                 # Auto-generated output files (CLI)
+├── .env                    # Your API configuration
+├── .env.example            # Environment configuration template
+├── requirements.txt        # All dependencies
+└── README.md               # This documentation
+```
+
+## 📚 Supporting Files
+
+- **LICENSE**: The project's MIT License
+- **favicon.ico**: The project favicon
+- **logo.PNG**: The project logo
+
+## Requirements
+
+- Python 3.7+
+- See `requirements.txt` for complete dependency list
+- API key for at least one supported provider
+
+### Core Dependencies
+
+- `requests` - HTTP client for AI APIs
+- `python-dotenv` - Environment configuration
+- `fastapi` - Web API framework
+- `uvicorn` - ASGI web server
+- `pydantic` - Data validation
+
+## Supported AI Providers
+
+- **OpenAI**: GPT-4, GPT-3.5, and newer models
+- **Google**: Gemini Pro, Gemini Flash, and Gemini models
+- **Anthropic**: Claude 3 family models
+- **Groq**: Fast inference with Llama and open source models
+
+## Testing
+
+### Test CLI
+```bash
+python main.py
+```
+
+### Test API
+```bash
+# Start API in one terminal
+uvicorn api:app --reload
+
+# Run tests in another terminal
+python test_api.py
+
+# Or visit http://localhost:8000/docs
+```
+
+## Use Cases
+
+### CLI
+- Personal text processing
+- Batch file processing
+- Scripting and automation
+- Development and testing
+
+### API
+- Web applications
+- Mobile app backends
+- Microservices integration
+- Third-party application integration
+- Android keyboard development
+- SaaS applications with BYOK model
+- Multi-tenant applications
+
+## 🤝 Contributing
+
+The modular architecture makes it easy to:
+
+- Add new AI providers
+- Create additional processing modes
+- Extend case formatting options
+- Improve error handling
+- Add new API endpoints
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+**Writon: Transform text with AI - CLI for developers, API for applications** 🚀

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=5, minimum-scale=1, viewport-fit=cover">
+    <title>Writon API Docs - AI Text Processing</title>
+    <meta name="description"
+        content="Official API documentation for Writon. Learn how to use our RESTful endpoints for grammar correction, translation, and summarization with a simple Bring-Your-Own-Key (BYOK) model.">
+    <meta name="keywords"
+        content="Writon API, text processing API, grammar API, translation API, summarization API, REST API, developer documentation, BYOK">
+    <meta name="author" content="Writon AI">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://writon.ai/api-docs.html">
+    <meta property="og:title" content="Writon API Docs - AI Text Processing">
+    <meta property="og:description"
+        content="Learn how to integrate Writon's AI text processing into your applications with our RESTful API.">
+    <meta property="og:image" content="https://writon.ai/frontend/assets/logo.PNG">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://writon.ai/api-docs.html">
+    <meta property="twitter:title" content="Writon API Docs - AI Text Processing">
+    <meta property="twitter:description"
+        content="Learn how to integrate Writon's AI text processing into your applications with our RESTful API.">
+    <meta property="twitter:image" content="https://writon.ai/frontend/assets/logo.PNG">
+
+    <link rel="icon" href="/frontend/assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Writon AI">
+    <link rel="apple-touch-icon" href="/frontend/assets/logo.PNG">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#000000">
+    <meta name="format-detection" content="telephone=no">
+    <style>
+        .api-docs-content {
+            padding: var(--space-16) 0;
+        }
+
+        .api-docs-content h1,
+        .api-docs-content h2,
+        .api-docs-content h3,
+        .api-docs-content h4 {
+            font-weight: 600;
+            margin-bottom: var(--space-4);
+        }
+
+        .api-docs-content h1 {
+            font-size: var(--text-4xl);
+            margin-bottom: var(--space-8);
+            text-align: center;
+        }
+
+        .api-docs-content h2 {
+            font-size: var(--text-2xl);
+            margin-top: var(--space-12);
+        }
+
+        .api-docs-content h3 {
+            font-size: var(--text-xl);
+            margin-top: var(--space-8);
+            color: var(--main-blue);
+        }
+
+        .api-docs-content h4 {
+            font-size: var(--text-lg);
+            margin-top: var(--space-6);
+        }
+
+        .api-docs-content p,
+        .api-docs-content li {
+            font-size: var(--text-base);
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .api-docs-content ul {
+            padding-left: var(--space-6);
+            margin-bottom: var(--space-4);
+        }
+
+        .api-docs-content ul li {
+            list-style-type: disc;
+            margin-bottom: var(--space-2);
+        }
+
+        .api-docs-content code {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            padding: var(--space-0-5) var(--space-1);
+            border-radius: var(--radius-sm);
+            font-family: monospace;
+        }
+
+        .api-docs-content pre {
+            background: var(--glass-background);
+            border: 1px solid var(--glass-border-strong);
+            border-radius: var(--radius-lg);
+            padding: var(--space-4);
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin-bottom: var(--space-6);
+        }
+
+        .api-docs-content pre code {
+            display: block;
+            background: none;
+            padding: 0;
+            color: var(--text-secondary);
+            font-size: var(--text-sm);
+        }
+
+        .api-docs-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: var(--space-6);
+        }
+
+        .api-docs-content th,
+        .api-docs-content td {
+            text-align: left;
+            padding: var(--space-3);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .api-docs-content th {
+            color: var(--text-primary);
+            font-weight: 600;
+            border-bottom: 2px solid var(--main-blue);
+        }
+
+        .api-docs-content tr:hover {
+            background-color: var(--glass-background-hover);
+        }
+
+        .http-method {
+            font-weight: 700;
+            color: var(--main-blue);
+        }
+
+        .header-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 3px solid var(--system-orange);
+            padding: var(--space-4);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-6);
+        }
+
+        .header-section h4 {
+            margin-top: 0;
+            color: var(--system-orange);
+        }
+
+        /* Responsive table wrapper for horizontal scrolling on small screens */
+        @media (max-width: 767px) {
+            .table-responsive {
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cosmic-background">
+        <div class="nebula-layer"></div>
+        <div class="stars-layer far"></div>
+        <div class="stars-layer mid"></div>
+        <div class="stars-layer near"></div>
+        <div class="twinkling-stars">
+            <div class="twinkle"></div>
+            <div class="twinkle"></div>
+            <div class="twinkle"></div>
+            <div class="twinkle"></div>
+            <div class="twinkle"></div>
+            <div class="twinkle"></div>
+            <div class="twinkle"></div>
+            <div class="twinkle"></div>
+        </div>
+        <div class="galaxies-layer">
+            <div class="galaxy"></div>
+            <div class="galaxy"></div>
+            <div class="galaxy"></div>
+        </div>
+        <div class="shooting-stars">
+            <div class="shooting-star"></div>
+            <div class="shooting-star"></div>
+            <div class="shooting-star"></div>
+        </div>
+        <div class="constellation">
+            <div class="constellation-line"></div>
+            <div class="constellation-line"></div>
+        </div>
+    </div>
+    <div id="app-container">
+        <header class="header">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <img src="/frontend/assets/logo.PNG" alt="Writon" class="logo-image">
+                    </div>
+                    <span class="logo-text">Writon</span>
+                </a>
+                <nav class="nav-desktop">
+                    <a href="api-docs.html" class="nav-link">
+                        <i class="fas fa-book"></i>
+                        API Docs
+                    </a>
+                    <a href="https://github.com/writon-ai" target="_blank" class="mobile-nav-link">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="index.html#processing-section" class="btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        Try it now
+                    </a>
+                </nav>
+                <button class="nav-mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </header>
+        <div class="mobile-nav-overlay hidden" id="mobileNavOverlay">
+            <div class="mobile-nav-content">
+                <div class="mobile-nav-header">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <img src="/frontend/assets/logo.PNG" alt="Writon" class="logo-image">
+                        </div>
+                        <span class="logo-text">Writon</span>
+                    </div>
+                    <button class="mobile-nav-close" id="mobileNavClose">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <nav class="mobile-nav-links">
+                    <a href="index.html#processing-section" class="mobile-nav-link">
+                        <i class="fas fa-rocket"></i>
+                        <span>Try it now</span>
+                    </a>
+                    <a href="api-docs.html" class="mobile-nav-link">
+                        <i class="fas fa-book"></i>
+                        <span>API Docs</span>
+                    </a>
+                    <a href="#" class="mobile-nav-link">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                </nav>
+                <div class="mobile-nav-footer">
+                    <div class="mobile-nav-stats">
+                        <div class="mobile-nav-stat">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Privacy-first</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <main>
+            <section class="api-docs-content container">
+                <div class="glass-card" style="padding: var(--space-8);">
+                    <h1 class="hero-title" style="text-align: center;">Writon API Documentation</h1>
+                    <p class="hero-description"
+                        style="max-width: 800px; margin: 0 auto var(--space-10); text-align: center;">
+                        Welcome to the Writon API documentation. This API provides RESTful endpoints for AI-powered text
+                        processing, including grammar correction, translation, and summarization.
+                    </p>
+                </div>
+
+                <div class="glass-card" style="padding: var(--space-6); margin-top: var(--space-12);">
+                    <h2 class="editor-title">Base URL</h2>
+                    <pre><code>https://your-deployed-api-url.com</code></pre>
+                </div>
+
+                <div class="glass-card" style="padding: var(--space-6); margin-top: var(--space-6);">
+                    <h2 class="editor-title">Authentication & BYOK (Bring Your Own Key)</h2>
+                    <p class="feature-description">Writon operates on a BYOK model. To use the API, you must provide
+                        your own API key for one of the supported providers in the request headers.</p>
+
+                    <div class="header-section">
+                        <h4>Required Headers for BYOK</h4>
+                        <div class="table-responsive">
+                            <table class="glass-card">
+                                <thead>
+                                    <tr>
+                                        <th>Header</th>
+                                        <th>Value</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>X-Provider</code></td>
+                                        <td><code>groq</code> | <code>openai</code> | <code>google</code> |
+                                            <code>anthropic</code>
+                                        </td>
+                                        <td>The AI provider to use for processing.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>X-{provider}-Key</code></td>
+                                        <td><code>your_api_key</code></td>
+                                        <td>The API key for the selected provider. Replace <code>{provider}</code> with
+                                            the provider's name (e.g., <code>X-Groq-Key</code>).</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>X-{provider}-Model</code> (Optional)</td>
+                                        <td><code>model_name</code></td>
+                                        <td>A specific model to use for the selected provider.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="section-title" style="margin-top: var(--space-12);">API Endpoints</h2>
+
+                <div class="glass-card" style="padding: var(--space-6); margin-top: var(--space-6);">
+                    <h3 class="editor-title"><span class="http-method">POST</span> /grammar</h3>
+                    <p class="feature-description">Corrects grammar, spelling, and punctuation errors in a given text.
+                    </p>
+                    <h4>Request Body</h4>
+                    <pre><code>{
+  "text": "string (min: 1, max: 10000)",
+  "case_style": "string (one of: lower, sentence, title, upper)"
+}</code></pre>
+                    <h4>Example Request (cURL)</h4>
+                    <pre><code>curl -X POST "https://your-deployed-api-url.com/grammar" \
+  -H "Content-Type: application/json" \
+  -H "X-Provider: groq" \
+  -H "X-Groq-Key: your_groq_api_key_here" \
+  -d '{
+    "text": "this text has grammar mistake",
+    "case_style": "sentence"
+  }'</code></pre>
+                </div>
+
+                <div class="glass-card" style="padding: var(--space-6); margin-top: var(--space-6);">
+                    <h3 class="editor-title"><span class="http-method">POST</span> /translate</h3>
+                    <p class="feature-description">Translates a text to a specified target language.</p>
+                    <h4>Request Body</h4>
+                    <pre><code>{
+  "text": "string (min: 1, max: 10000)",
+  "target_language": "string",
+  "case_style": "string (one of: lower, sentence, title, upper)"
+}</code></pre>
+                    <h4>Example Request (cURL)</h4>
+                    <pre><code>curl -X POST "https://your-deployed-api-url.com/translate" \
+  -H "Content-Type: application/json" \
+  -H "X-Provider: google" \
+  -H "X-Google-Key: your_google_api_key_here" \
+  -d '{
+    "text": "Hello, how are you?",
+    "target_language": "Spanish",
+    "case_style": "sentence"
+  }'</code></pre>
+                </div>
+
+                <div class="glass-card" style="padding: var(--space-6); margin-top: var(--space-6);">
+                    <h3 class="editor-title"><span class="http-method">POST</span> /summarize</h3>
+                    <p class="feature-description">Condenses a long text into a concise summary.</p>
+                    <h4>Request Body</h4>
+                    <pre><code>{
+  "text": "string (min: 1, max: 10000)",
+  "case_style": "string (one of: lower, sentence, title, upper)"
+}</code></pre>
+                    <h4>Example Request (cURL)</h4>
+                    <pre><code>curl -X POST "https://your-deployed-api-url.com/summarize" \
+  -H "Content-Type: application/json" \
+  -H "X-Provider: openai" \
+  -H "X-OpenAI-Key: your_openai_api_key_here" \
+  -d '{
+    "text": "Your long text here...",
+    "case_style": "title"
+  }'</code></pre>
+                </div>
+
+                <div class="glass-card" style="padding: var(--space-6); margin-top: var(--space-6);">
+                    <h3 class="editor-title"><span class="http-method">POST</span> /process</h3>
+                    <p class="feature-description">A single endpoint to handle all processing modes. This is the
+                        endpoint the front-end uses.</p>
+                    <h4>Request Body</h4>
+                    <pre><code>{
+  "text": "string (min: 1, max: 10000)",
+  "mode": "string (one of: grammar, translate, summarize)",
+  "case_style": "string (one of: lower, sentence, title, upper)",
+  "target_language": "string (Required for 'translate' mode)"
+}</code></pre>
+                    <h4>Example Request (cURL)</h4>
+                    <pre><code>curl -X POST "https://your-deployed-api-url.com/process" \
+  -H "Content-Type: application/json" \
+  -H "X-Provider: anthropic" \
+  -H "X-Anthropic-Key: your_anthropic_api_key_here" \
+  -d '{
+    "text": "this text needs grammar fixing",
+    "mode": "grammar",
+    "case_style": "sentence"
+  }'</code></pre>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-left">
+                        <p>Built with care 🧡 Writon 2025. Free & Open-source.</p>
+                    </div>
+                    <div class="footer-right">
+                        <div class="footer-stats">
+                            <span>✨ Powered by AI</span>
+                            <span>🔒 Privacy-first</span>
+                            <span>⚡ Lightning-fast</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <div class="mobile-fab hidden" id="mobileFab">
+        <button class="fab-main" id="fabMain">
+            <i class="fas fa-magic"></i>
+        </button>
+
+        <div class="fab-menu hidden" id="fabMenu">
+            <button class="fab-action" data-action="scroll-to-top">
+                <i class="fas fa-arrow-up"></i>
+                <span>Top</span>
+            </button>
+            <button class="fab-action" data-action="scroll-to-processor">
+                <i class="fas fa-wand-magic-sparkles"></i>
+                <span>Process</span>
+            </button>
+            <button class="fab-action" data-action="clear-all">
+                <i class="fas fa-trash"></i>
+                <span>Clear</span>
+            </button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
