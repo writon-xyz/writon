@@ -10,7 +10,7 @@ pydantic==2.8.0
 python-multipart==0.0.6
 
 # Development and testing
-pytest==7.4.3
+pytest==7.4.4
 pytest-mock==3.15.0
 httpx==0.25.2
 pytest-asyncio==0.21.1
