@@ -4,8 +4,9 @@ Writon CLI - AI-powered text formatter
 
 import os
 from datetime import datetime
-from formatter.text_formatter import format_text, format_text_with_params
-from formatter.case_converter import convert_case
+from core.writon import WritonCore
+import argparse
+import sys
 
 
 def safe_input(prompt):
@@ -28,28 +29,14 @@ def main():
     RED = "\033[91m"
 
     # Display the professional logo and introduction
-    print()
-    print(
-        "░██       ░██          ░██   ░██                               ░██████  ░██         ░██████    ░██████    ░████    ░██████  ░████████ "
-    )
-    print(
-        "░██       ░██                ░██                              ░██   ░██ ░██           ░██     ░██   ░██  ░██ ░██  ░██   ░██ ░██       "
-    )
-    print(
-        "░██  ░██  ░██ ░██░████ ░██░████████  ░███████  ░████████     ░██        ░██           ░██           ░██ ░██ ░████       ░██ ░███████  "
-    )
-    print(
-        "░██ ░████ ░██ ░███     ░██   ░██    ░██    ░██ ░██    ░██    ░██        ░██           ░██       ░█████  ░██░██░██   ░█████        ░██ "
-    )
-    print(
-        "░██░██ ░██░██ ░██      ░██   ░██    ░██    ░██ ░██    ░██    ░██        ░██           ░██      ░██      ░████ ░██  ░██      ░██   ░██ "
-    )
-    print(
-        "░████   ░████ ░██      ░██   ░██    ░██    ░██ ░██    ░██     ░██   ░██ ░██           ░██     ░██        ░██ ░██  ░██       ░██   ░██ "
-    )
-    print(
-        "░███     ░███ ░██      ░██    ░████  ░███████  ░██    ░██      ░██████  ░██████████ ░██████   ░████████   ░████   ░████████  ░██████  "
-    )
+    print("███          █████   ███   █████            ███   █████                             █████████  █████       █████")
+    print("░░░███       ░░███   ░███  ░░███            ░░░   ░░███                             ███░░░░░███░░███       ░░███")
+    print("  ░░░███      ░███   ░███   ░███  ████████  ████  ███████    ██████  ████████      ███     ░░░  ░███        ░███")
+    print("    ░░░███    ░███   ░███   ░███ ░░███░░███░░███ ░░░███░    ███░░███░░███░░███    ░███          ░███        ░███")
+    print("     ███░     ░░███  █████  ███   ░███ ░░░  ░███   ░███    ░███ ░███ ░███ ░███    ░███          ░███        ░███")
+    print("   ███░        ░░░█████░█████░    ░███      ░███   ░███ ███░███ ░███ ░███ ░███    ░░███     ███ ░███      █ ░███")
+    print(" ███░            ░░███ ░░███      █████     █████  ░░█████ ░░██████  ████ █████    ░░█████████  ███████████ █████")
+    print("░░░               ░░░   ░░░      ░░░░░     ░░░░░    ░░░░░   ░░░░░░  ░░░░ ░░░░░      ░░░░░░░░░  ░░░░░░░░░░░ ░░░░░")
 
     print(
         f"\n{BLUE}Writon is a free and open-source AI-powered text processor available as both a command-line tool and a web application, and an api.{ENDC}"
@@ -57,6 +44,15 @@ def main():
     print(
         f"{BLUE}It's a clean, fast, and reliable tool that transforms your text while preserving your intent and applying consistent case formatting.{ENDC}"
     )
+
+    # --- New argument parsing logic ---
+    parser = argparse.ArgumentParser(description="Writon CLI - AI-powered text processor")
+    parser.add_argument(
+        "-v", "--version", action="version", version=f"%(prog)s 0.1.0" # Use the version from pyproject.toml
+    )
+    args = parser.parse_args() # Use parse_args() directly as we want it to exit if version is requested
+
+    # --- End of new argument parsing logic ---
 
     print("\n" + "How to use Writon:")
     print(f"1. {YELLOW}Enter your text when prompted.{ENDC}")
@@ -92,26 +88,38 @@ def main():
     if selected_mode == "translate":
         while True:
             print("\n" + f"{BLUE}Select target language:{ENDC}")
-            print(f"1. {YELLOW}Spanish{ENDC}")
-            print(f"2. {YELLOW}French{ENDC}")
-            print(f"3. {YELLOW}German{ENDC}")
-            print(f"4. {YELLOW}Italian{ENDC}")
-            print(f"5. {YELLOW}Portuguese{ENDC}")
-            print(f"6. {YELLOW}Custom (enter manually){ENDC}")
+            print(f"1. {YELLOW}Hindi{ENDC}")
+            print(f"2. {YELLOW}Maori{ENDC}")
+            print(f"3. {YELLOW}Arabic{ENDC}")
+            print(f"4. {YELLOW}French{ENDC}")
+            print(f"5. {YELLOW}German{ENDC}")
+            print(f"6. {YELLOW}Swahili{ENDC}")
+            print(f"7. {YELLOW}English{ENDC}")
+            print(f"8. {YELLOW}Spanish{ENDC}")
+            print(f"9. {YELLOW}Tok Pisin{ENDC}")
+            print(f"10. {YELLOW}Portuguese{ENDC}")
+            print(f"11. {YELLOW}Mandarin Chinese{ENDC}")
+            print(f"12. {YELLOW}Custom (enter manually){ENDC}")
 
             lang_input = safe_input("> ").strip()
             lang_map = {
-                "1": "Spanish",
-                "2": "French",
-                "3": "German",
-                "4": "Italian",
-                "5": "Portuguese",
+                "1": "Hindi",
+                "2": "Maori",
+                "3": "Arabic",
+                "4": "French",
+                "5": "German",
+                "6": "Swahili",
+                "7": "English",
+                "8": "Spanish",
+                "9": "Tok Pisin",
+                "10": "Portuguese",
+                "11": "Mandarin Chinese",
             }
 
             if lang_input in lang_map:
                 target_language = lang_map[lang_input]
                 break
-            elif lang_input == "6":
+            elif lang_input == "12":
                 while True:
                     custom_lang = safe_input(
                         f"{GREEN}> Enter target language:{ENDC} "
@@ -122,7 +130,7 @@ def main():
                     print(f"{RED}Please enter a language name.{ENDC}")
                 break
             else:
-                print(f"{RED}Please select a valid option (1-6).{ENDC}")
+                print(f"{RED}Please select a valid option (1-12).{ENDC}")
 
     # Case selection
     while True:
@@ -166,40 +174,14 @@ def main():
 
     # Process with AI
     print("\n" + f"{BLUE}Processing with AI...{ENDC}")
+    core = WritonCore()
     try:
-        if selected_mode == "translate" and target_language:
-            formatted = format_text_with_params(
-                raw_text, selected_mode, {"target_language": target_language}
-            )
-        else:
-            formatted = format_text(raw_text, selected_mode)
-
-        if (
-            formatted.startswith("[") and formatted.endswith("]")
-        ) or "error" in formatted.lower():
-            if (
-                "HTTPSConnectionPool" in formatted
-                or "NewConnectionError" in formatted
-                or "Name or service not known" in formatted
-            ):
-                print(
-                    f"{RED}Error: No internet connection. Please check your network and try again.{ENDC}"
-                )
-            elif "API key" in formatted.lower() or "unauthorized" in formatted.lower():
-                print(
-                    f"{RED}Error: Invalid API key. Please check your .env file.{ENDC}"
-                )
-            elif "Rate limit" in formatted or "429" in formatted:
-                print(
-                    f"{RED}Error: API rate limit exceeded. Please wait and try again.{ENDC}"
-                )
-            elif formatted.startswith("[") and formatted.endswith("]"):
-                print(f"{RED}Error: {formatted}{ENDC}")
-            else:
-                print(f"{RED}Error: Unable to process text. Please try again.{ENDC}")
-            return
-
-        final_output = convert_case(formatted, case_style)
+        final_output = core.process_text(
+            text=raw_text,
+            mode=selected_mode,
+            case_style=case_style,
+            target_language=target_language,
+        )
 
         print("\n" + f"{GREEN}Formatted text:{ENDC}")
         print(final_output)
@@ -225,14 +207,19 @@ def main():
 
             try:
                 with open(filepath, "w", encoding="utf-8") as f:
-                    f.write(final_output)
+                    provider = os.getenv("API_PROVIDER", "not_configured")
+                    stats = f"""--- Original Text ---\n{raw_text}\n\n--- Processed Text ---\n{final_output}\n\n--- Stats ---\nMode: {selected_mode}\nCase Style: {case_style}\nAI Provider: {provider}\nOriginal Character Count: {len(raw_text)}
+Processed Character Count: {len(final_output)}
+Original Word Count: {len(raw_text.split())}\nProcessed Word Count: {len(final_output.split())}"""
+                    f.write(stats)
                 print(f"{GREEN}Saved to {filepath}{ENDC}")
             except Exception as e:
                 print(f"{RED}Failed to save file: {e}{ENDC}")
 
+    except ValueError as e:
+        print(f"\n{RED}Error: {e}{ENDC}")
     except Exception as e:
-        print(f"\n{RED}Unexpected error: {e}{ENDC}")
-        print(f"{RED}Please check your API key and internet connection.{ENDC}")
+        print(f"\n{RED}An unexpected error occurred: {e}{ENDC}")
 
 
 if __name__ == "__main__":

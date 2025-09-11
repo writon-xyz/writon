@@ -14,21 +14,25 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://writon.ai/">
+    <meta property="og:url" content="https://writon.xyz/">
     <meta property="og:title" content="Writon - Free AI Text Processor">
     <meta property="og:description"
         content="Correct grammar, translate languages, and summarize text instantly with your own API keys.">
-    <meta property="og:image" content="https://writon.ai/frontend/assets/logo.PNG">
+    <meta property="og:image" content="https://writon.xyz/frontend/assets/logo.PNG">
+    <meta property="og:site_name" content="Writon">
+    <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://writon.ai/">
+    <meta property="twitter:url" content="https://writon.xyz/">
     <meta property="twitter:title" content="Writon - Free AI Text Processor">
     <meta property="twitter:description"
         content="Correct grammar, translate languages, and summarize text instantly with your own API keys.">
-    <meta property="twitter:image" content="https://writon.ai/frontend/assets/logo.PNG">
+    <meta property="twitter:image" content="https://writon.xyz/frontend/assets/logo.PNG">
+    <meta property="twitter:site" content="@writon_xyz">
+    <meta property="twitter:creator" content="@writon_xyz">
 
-    <link rel="icon" href="/frontend/assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -37,43 +41,41 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Writon AI">
-    <link rel="apple-touch-icon" href="/frontend/assets/logo.PNG">
+    <link rel="apple-touch-icon" href="assets/logo.PNG">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#000000">
     <meta name="format-detection" content="telephone=no">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://writon.xyz/">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="style.css" as="style">
+    
+    <link rel="preload" href="assets/logo.PNG" as="image">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Writon",
+        "description": "AI-powered text processor for grammar correction, translation, and summarization",
+        "url": "https://writon.xyz",
+        "applicationCategory": "Text Processing",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
 </head>
 
 <body>
-    <div class="cosmic-background">
-        <div class="nebula-layer"></div>
-        <div class="stars-layer far"></div>
-        <div class="stars-layer mid"></div>
-        <div class="stars-layer near"></div>
-        <div class="twinkling-stars">
-            <div class="twinkle"></div>
-            <div class="twinkle"></div>
-            <div class="twinkle"></div>
-            <div class="twinkle"></div>
-            <div class="twinkle"></div>
-            <div class="twinkle"></div>
-            <div class="twinkle"></div>
-            <div class="twinkle"></div>
-        </div>
-        <div class="galaxies-layer">
-            <div class="galaxy"></div>
-            <div class="galaxy"></div>
-            <div class="galaxy"></div>
-        </div>
-        <div class="shooting-stars">
-            <div class="shooting-star"></div>
-            <div class="shooting-star"></div>
-            <div class="shooting-star"></div>
-        </div>
-        <div class="constellation">
-            <div class="constellation-line"></div>
-            <div class="constellation-line"></div>
-        </div>
-    </div>
+    
     <div id="app-container">
         <div id="statusMessage" class="hidden"></div>
         <div id="loadingOverlay" class="loading-overlay hidden">
@@ -91,7 +93,7 @@
             <div class="header-content">
                 <a href="#" class="logo">
                     <div class="logo-icon">
-                        <img src="/frontend/assets/logo.PNG" alt="Writon" class="logo-image">
+                        <img src="assets/logo.PNG" alt="Writon" class="logo-image">
                     </div>
                     <span class="logo-text">Writon</span>
                 </a>
@@ -100,7 +102,7 @@
                         <i class="fas fa-book"></i>
                         API Docs
                     </a>
-                    <a href="https://github.com/writon-ai" target="_blank" class="mobile-nav-link">
+                    <a href="https://github.com/writon-xyz" target="_blank" class="mobile-nav-link">
                         <i class="fab fa-github"></i>
                         <span>GitHub</span>
                     </a>
@@ -119,7 +121,7 @@
                 <div class="mobile-nav-header">
                     <div class="logo">
                         <div class="logo-icon">
-                            <img src="/frontend/assets/logo.PNG" alt="Writon" class="logo-image">
+                            <img src="assets/logo.PNG" alt="Writon" class="logo-image">
                         </div>
                         <span class="logo-text">Writon</span>
                     </div>
@@ -132,7 +134,7 @@
                         <i class="fas fa-rocket"></i>
                         <span>Try it now</span>
                     </a>
-                    <a href="/frontend/api-docs.html" class="mobile-nav-link">
+                    <a href="api-docs.html" class="mobile-nav-link">
                         <i class="fas fa-book"></i>
                         <span>API Docs</span>
                     </a>
@@ -153,14 +155,7 @@
         </div>
         <main>
             <section class="hero">
-                <div class="hero-background">
-                    <div class="hero-gradient"></div>
-                    <div class="floating-elements">
-                        <div class="floating-element"></div>
-                        <div class="floating-element"></div>
-                        <div class="floating-element"></div>
-                    </div>
-                </div>
+                <div class="hero-background"></div>
                 <div class="hero-content">
                     <div class="hero-badge">
                         <i class="fas fa-sparkles"></i>
@@ -171,24 +166,23 @@
                         <span>Text Processor</span>
                     </h1>
                     <p class="hero-description">
-                        Writon transforms your text with AI while maintaining your intent and consistent case formatting
-                        within seconds. Just paste your text and press the button to get perfect writing with your own
-                        <strong>API keys</strong>.
+                        Fix grammar, translate to 10+ languages, and create clear summaries in seconds.
+                        Writon runs on your own <strong>API key</strong>, so your data stays yours.
                     </p>
                     <div class="hero-actions">
                         <a href="#processing-section" class="btn-primary btn-large">
                             <i class="fas fa-play"></i>
-                            Try it now, it's free
+                            Start now
                         </a>
-                        <button class="btn-secondary btn-large" id="learnMoreBtn">
+                        <a href="#features" class="btn-secondary btn-large">
                             <i class="fas fa-info-circle"></i>
-                            Learn more
-                        </button>
+                            Explore features
+                        </a>
                     </div>
                     <div class="hero-features">
                         <div class="feature-item">
                             <i class="fas fa-user-times"></i>
-                            <span>No signup needed</span>
+                            <span>No signup</span>
                         </div>
                         <div class="feature-item">
                             <i class="fab fa-github"></i>
@@ -196,7 +190,7 @@
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-key"></i>
-                            <span>Bring your own API keys</span>
+                            <span>BYO Keys</span>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-shield-alt"></i>
@@ -205,26 +199,26 @@
                     </div>
                 </div>
             </section>
-            <section class="features">
+            <section class="features" id="features">
                 <div class="container">
-                    <h2 class="section-title"> Choose a Feature to Get Started </h2>
+                    <h2 class="section-title">Choose a feature to get started</h2>
                     <div class="features-grid">
                         <div class="feature-card" data-feature="grammar">
                             <div class="feature-icon">
                                 <i class="fas fa-check-circle"></i>
                             </div>
                             <h3 class="feature-title">Grammar checker</h3>
-                            <p class="feature-description"> Fixes grammar, spelling, and punctuation errors. It refines
-                                your text to ensure clarity and professionalism while maintaining your original voice.
-                                Perfect for professional communication and academic writing. </p>
+                            <p class="feature-description">Corrects grammar, spelling, and syntax issues. Refines writing to
+                                improve clarity and precision while keeping your original tone. Ideal for emails, reports,
+                                and formal content.</p>
                             <div class="code-example-stacked">
                                 <div class="example-section">
                                     <span class="example-label">BEFORE</span>
-                                    <div class="code-box before">"This text have grammar mistake"</div>
+                                    <div class="code-box before">Writon is! fri.</div>
                                 </div>
                                 <div class="example-section">
                                     <span class="example-label">AFTER</span>
-                                    <div class="code-box after">"This text has grammar mistakes."</div>
+                                    <div class="code-box after">Writon is free.</div>
                                 </div>
                             </div>
                             <div class="feature-stats">
@@ -238,18 +232,17 @@
                             <div class="feature-icon">
                                 <i class="fas fa-globe-americas"></i>
                             </div>
-                            <h3 class="feature-title">Multi-language translation</h3>
-                            <p class="feature-description"> Translates text into over 10 different languages with
-                                accuracy. Preserves original context and meaning to ensure clear communication. Perfect
-                                for multilingual conversations and global collaboration. </p>
+                            <h3 class="feature-title">Multi-translation</h3>
+                            <p class="feature-description">Converts writing into several major languages. Maintains meaning
+                                and original sentence tone for clarity and flow. Ideal for business, outreach, travel, and online messages.</p>
                             <div class="code-example-stacked">
                                 <div class="example-section">
                                     <span class="example-label">BEFORE</span>
-                                    <div class="code-box before">"Hey, how are you doing?"</div>
+                                    <div class="code-box before">Hello world.</div>
                                 </div>
                                 <div class="example-section">
                                     <span class="example-label">AFTER</span>
-                                    <div class="code-box after">"Lumela, u ntse u ea joang?"
+                                    <div class="code-box after">Hallo wêreld.
                                     </div>
                                 </div>
                             </div>
@@ -265,17 +258,16 @@
                                 <i class="fas fa-file-alt"></i>
                             </div>
                             <h3 class="feature-title">Smart summarizer</h3>
-                            <p class="feature-description"> Efficiently condenses long and complex documents, articles,
-                                or notes into a succinct summary. It extracts the most critical information, allowing
-                                you to grasp the core message quickly and effortlessly. </p>
+                            <p class="feature-description">Reduces complex content into brief summaries. Highlights points with
+                                focus and accuracy for faster reading. Ideal for reports, notes, and dense materials.</p>
                             <div class="code-example-stacked">
                                 <div class="example-section">
                                     <span class="example-label">BEFORE</span>
-                                    <div class="code-box before">"Long mind-bending information."</div>
+                                    <div class="code-box before">Complex content.</div>
                                 </div>
                                 <div class="example-section">
                                     <span class="example-label">AFTER</span>
-                                    <div class="code-box after">"Short mind-soothing explanation."
+                                    <div class="code-box after">Brief summary.
                                     </div>
                                 </div>
                             </div>
@@ -291,7 +283,7 @@
             </section>
             <section class="processing-section" id="processing-section">
                 <div class="container">
-                    <h2 class="section-title"> Put the AI to Work </h2>
+                    <h2 class="section-title">Put the AI to work</h2>
                     <div class="processor-grid">
                         <div class="settings-panel glass-card">
                             <div class="status-header">
@@ -392,6 +384,11 @@
                                         <i class="fas fa-trash-alt"></i>
                                         <span>Clear</span>
                                     </button>
+                                    <label for="fileUpload" class="editor-action-btn">
+                                        <i class="fas fa-upload"></i>
+                                        <span>Upload</span>
+                                    </label>
+                                    <input type="file" id="fileUpload" accept=".txt,.md,.rtf" class="hidden">
                                 </div>
                             </div>
                             <textarea id="inputText" class="editor-textarea"
@@ -462,7 +459,7 @@
             <div class="container">
                 <div class="footer-content">
                     <div class="footer-left">
-                        <p>Built with care 🧡 Writon 2025. Free & Open-source.</p>
+                        <p>Built with care ❤️ Writon 2025. Free & Open-source.</p>
                     </div>
                     <div class="footer-right">
                         <div class="footer-stats">
@@ -470,42 +467,18 @@
                             <span>🔒 Privacy-first</span>
                             <span>⚡ Lightning-fast</span>
                         </div>
-                        <div class="footer-settings">
-                            <label class="animation-toggle-label" for="animationToggle">
-                                <i class="fas fa-meteor"></i>
-                                <span>Animations</span>
-                            </label>
-                            <label class="toggle-switch">
-                                <input type="checkbox" id="animationToggle">
-                                <span class="slider"></span>
-                            </label>
-                        </div>
                     </div>
                 </div>
             </div>
         </footer>
     </div>
-    <div class="mobile-fab hidden" id="mobileFab">
-        <button class="fab-main" id="fabMain">
-            <i class="fas fa-magic"></i>
+    <div class="mobile-fab">
+        <button class="fab-main" id="fab-settings-toggle">
+            <i class="fas fa-sliders-h"></i>
         </button>
-
-        <div class="fab-menu hidden" id="fabMenu">
-            <button class="fab-action" data-action="scroll-to-top">
-                <i class="fas fa-arrow-up"></i>
-                <span>Top</span>
-            </button>
-            <button class="fab-action" data-action="scroll-to-processor">
-                <i class="fas fa-wand-magic-sparkles"></i>
-                <span>Process</span>
-            </button>
-            <button class="fab-action" data-action="clear-all">
-                <i class="fas fa-trash"></i>
-                <span>Clear</span>
-            </button>
-        </div>
     </div>
-    <script src="script.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 
 </html>
+

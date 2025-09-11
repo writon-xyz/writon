@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: writon-api
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn api:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: API_PROVIDER
+        value: groq
+      - key: DEBUG_MODE
+        value: false
+      - key: ENVIRONMENT
+        value: production
+      - key: ALLOWED_ORIGINS
+        value: https://writon.xyz,https://www.writon.xyz
+      - key: ALLOWED_HOSTS
+        value: writon.xyz,*.writon.xyz
+      - key: MAX_REQUEST_SIZE_MB
+        value: "1"
+      - key: MAX_FILE_SIZE_MB
+        value: "5"
+    healthCheckPath: /health

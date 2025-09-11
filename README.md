@@ -18,6 +18,7 @@ RESTful API for integration with applications, websites, and services.
 - 🌍 **Multi-Language Translation**: Built-in presets + custom language support
 - 📝 **Case Formatting**: lowercase, Sentence case, Title Case, UPPERCASE
 - 🔄 **Multi-Provider AI**: Supports OpenAI, Google Gemini, Anthropic Claude, and Groq
+- ✨ **Backend Zero-Config**: Backend works out-of-the-box with Groq's free tier when `API_PROVIDER` is set in `.env`. Frontend requires API key input.
 - 🔑 **BYOK Support**: Bring Your Own Key - users can use their own API keys
 - 💾 **Auto File Saving**: Organized output with timestamp naming (CLI)
 - ✅ **Input Validation**: Robust error handling and user guidance
@@ -32,11 +33,18 @@ RESTful API for integration with applications, websites, and services.
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/writon.git
+git clone https://github.com/writon-xyz/writon.git
 cd writon
+
+# Create and activate a virtual environment
+python3 -m venv .venv
+source .venv/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
+
+# For development, install in editable mode (after creating pyproject.toml)
+pip install -e .
 
 # Set up environment
 cp .env.example .env
@@ -53,10 +61,9 @@ python main.py
 
 ```bash
 # Start the API server in one terminal
-uvicorn api:app --reload
+uvicorn api:app --host 0.0.0.0 --port 8000 --reload
 
-# In another terminal, run the test script
-python test_api.py
+
 
 # Or visit the interactive documentation in your browser
 # http://localhost:8000/docs
@@ -160,6 +167,7 @@ print(result["processed_text"])
 | `/translate` | POST | Text translation |
 | `/summarize` | POST | Text summarization |
 | `/process` | POST | Universal endpoint (all modes) |
+| `/upload` | POST | Upload a text file |
 
 ### Interactive Documentation
 Visit `http://localhost:8000/docs` for full API documentation with:
@@ -205,7 +213,7 @@ Fixes grammar, spelling, and punctuation while preserving your original tone and
 Translates text to your target language with perfect grammar in the destination language.
 
 **Supported languages:**
-- Spanish, French, German, Italian, Portuguese
+- Hindi, Maori, Arabic, French, German, Swahili, English, Spanish, Tok Pisin, Portuguese, Mandarin Chinese
 - Custom language input for any other language
 
 ### 3. Summarization
@@ -213,16 +221,20 @@ Creates concise summaries while maintaining grammatical accuracy and key informa
 
 ## Configuration
 
-### For CLI and API Server (Optional)
-Create a `.env` file with your API configuration:
+Writon is configured to work out-of-the-box using Groq. For most users, you only need to get a free Groq API key and place it in your `.env` file.
+
+### For CLI and API Server
+Create a `.env` file by copying the `.env.example` (`cp .env.example .env`). Then, add your Groq key.
 
 ```env
-# AI Provider (choose one: openai, google, anthropic, groq)
+# The default provider is Groq. You can optionally switch to openai, google, or anthropic.
 API_PROVIDER=groq
 
-# Groq Configuration
+# Groq Configuration (Recommended for easy setup)
 GROQ_API_KEY=your_groq_api_key_here
 GROQ_MODEL=llama-3.1-70b-versatile
+
+# --- Optional Providers ---
 
 # Google Configuration  
 GOOGLE_API_KEY=your_google_api_key_here
@@ -238,9 +250,24 @@ ANTHROPIC_MODEL=claude-3-haiku-20240307
 
 # Debug mode (optional)
 DEBUG_MODE=false
+
+# CORS Configuration (optional)
+# Comma-separated list of allowed origins for API access
+ALLOWED_ORIGINS=http://localhost:8000,http://127.0.0.1:8000
+
+# Security Configuration (optional)
+# Environment (development/production)
+ENVIRONMENT=development
+
+# Request and file size limits
+MAX_REQUEST_SIZE_MB=1
+MAX_FILE_SIZE_MB=5
+
+# Trusted hosts for production (comma-separated)
+ALLOWED_HOSTS=writon.xyz,*.writon.xyz
 ```
 
-> **Note:** When using BYOK (Bring Your Own Key) mode with the API, users provide their own keys via request headers, so server configuration is optional for API usage.
+> **Note:** For advanced use, you can switch the `API_PROVIDER` and provide the corresponding API key. In API mode, keys can also be provided directly via headers (see BYOK mode).
 
 ## Output Files (CLI)
 
@@ -258,6 +285,22 @@ Writon gracefully handles common issues:
 - **Invalid API keys**: Helpful error message and .env file guidance
 - **Rate limiting**: Detects and displays rate limit errors
 - **Malformed responses**: Automatic error detection and fallback
+- **Frontend errors**: Now displayed with clear messages.
+
+## Security Features
+
+Writon includes comprehensive security measures:
+
+- **Rate Limiting**: 30 requests/minute for processing, 10/minute for uploads
+- **Request Size Limits**: 1MB maximum request size
+- **File Size Limits**: 5MB maximum file upload size
+- **Security Headers**: XSS protection, content type validation, frame options
+- **CORS Protection**: Configurable allowed origins
+- **HTTPS Enforcement**: Automatic redirect in production
+- **Trusted Hosts**: Host validation in production
+- **Input Validation**: Strict validation for all API inputs
+- **File Type Validation**: Only allows safe text file types
+- **BYOK Model**: No API keys stored on server
 
 ## 📁 Architecture
 
@@ -265,26 +308,39 @@ Writon gracefully handles common issues:
 writon-core/
 ├── main.py                 # CLI interface and user interaction
 ├── api.py                  # FastAPI web server
-├── test_api.py             # API testing script
-├── test_env.py             # Environment configuration tester
+├── LICENSE
+├── .gitignore              # Git ignore rules
+├── .env.example            # Environment configuration template
+├── render.yaml             # Render deployment configuration
+├── .github/
+│   └── dependabot.yml      # Automated dependency updates
+├── requirements.txt        # All dependencies
+├── pyproject.toml          # Project configuration and build metadata
+├── README.md               # This documentation
+├── core/
+│   ├── __init__.py
+│   └── writon.py           # Core business logic and AI integration
+├── tests/
+│   ├── test_api_pytest.py  # API testing script
+│   ├── test_core.py        # Core logic testing script
+│   └── check_env.py        # Environment configuration tester
 ├── formatter/
-│   ├── text_formatter.py   # AI-powered text processing
 │   └── case_converter.py   # Deterministic case transformations
 ├── frontend/
 │   ├── assets/
 │   │   ├── favicon.ico     # Browser icon
 │   │   ├── logo.PNG        # Application logo
-│   │   └── logo.jpg        # Application logo (alternative)
+│   │   ├── horizontal.jpg  # Horizontal banner image
+│   │   └── portrait.jpg    # Portrait banner image
+│   ├── js/
+│   │   ├── main.js         # Main web application logic
+│   │   ├── api.js          # API communication
+│   │   ├── config.js       # Configuration management
+│   │   ├── events.js       # Event handling
+│   │   └── ui.js           # UI interactions
 │   ├── api-docs.html       # API documentation website
 │   ├── index.html          # Main web application
-│   ├── script.js           # Frontend logic and API calls
 │   └── style.css           # Frontend styling
-├── ai/
-│   ├── provider.py         # AI provider routing system
-│   ├── anthropic.py        # Anthropic Claude integration
-│   ├── openai.py           # OpenAI GPT integration
-│   ├── groq.py             # Groq API integration
-│   └── google.py           # Google Gemini integration
 ├── modes/
 │   ├── grammar.json        # Grammar correction configuration
 │   ├── translate.json      # Translation configuration
@@ -292,10 +348,8 @@ writon-core/
 ├── prompts/
 │   └── prompt_generator.py # Template engine for AI prompts
 ├── output/                 # Auto-generated output files (CLI)
-├── .env                    # Your API configuration
-├── .env.example            # Environment configuration template
-├── requirements.txt        # All dependencies
-└── README.md               # This documentation
+├── writon.egg-info/        # Package metadata (auto-generated)
+└── __pycache__/            # Python cache files (auto-generated)
 ```
 
 ## 📚 Supporting Files
@@ -337,8 +391,10 @@ python main.py
 # Start API in one terminal
 uvicorn api:app --reload
 
-# Run tests in another terminal
-python test_api.py
+# Run tests in another terminal using pytest
+.venv/bin/pytest tests/
+# Or, if you prefer running pytest as a module:
+.venv/bin/python -m pytest tests/
 
 # Or visit http://localhost:8000/docs
 ```

@@ -14,21 +14,25 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://writon.ai/api-docs.html">
+    <meta property="og:url" content="https://writon.xyz/api-docs.html">
     <meta property="og:title" content="Writon API Docs - AI Text Processing">
     <meta property="og:description"
         content="Learn how to integrate Writon's AI text processing into your applications with our RESTful API.">
-    <meta property="og:image" content="https://writon.ai/frontend/assets/logo.PNG">
+    <meta property="og:image" content="https://writon.xyz/frontend/assets/logo.PNG">
+    <meta property="og:site_name" content="Writon">
+    <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://writon.ai/api-docs.html">
+    <meta property="twitter:url" content="https://writon.xyz/api-docs.html">
     <meta property="twitter:title" content="Writon API Docs - AI Text Processing">
     <meta property="twitter:description"
         content="Learn how to integrate Writon's AI text processing into your applications with our RESTful API.">
-    <meta property="twitter:image" content="https://writon.ai/frontend/assets/logo.PNG">
+    <meta property="twitter:image" content="https://writon.xyz/frontend/assets/logo.PNG">
+    <meta property="twitter:site" content="@writon_xyz">
+    <meta property="twitter:creator" content="@writon_xyz">
 
-    <link rel="icon" href="/frontend/assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -37,10 +41,40 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Writon AI">
-    <link rel="apple-touch-icon" href="/frontend/assets/logo.PNG">
+    <link rel="apple-touch-icon" href="assets/logo.PNG">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#000000">
     <meta name="format-detection" content="telephone=no">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://writon.xyz/api-docs.html">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Writon API Documentation",
+        "description": "Official API documentation for Writon AI text processing service",
+        "url": "https://writon.xyz/api-docs.html",
+        "author": {
+            "@type": "Organization",
+            "name": "Writon AI"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Writon AI",
+            "url": "https://writon.xyz"
+        },
+        "about": {
+            "@type": "SoftwareApplication",
+            "name": "Writon API",
+            "applicationCategory": "DeveloperApplication"
+        }
+    }
+    </script>
+    
     <style>
         .api-docs-content {
             padding: var(--space-16) 0;
@@ -173,42 +207,12 @@
 </head>
 
 <body>
-    <div class="cosmic-background">
-        <div class="nebula-layer"></div>
-        <div class="stars-layer far"></div>
-        <div class="stars-layer mid"></div>
-        <div class="stars-layer near"></div>
-        <div class="twinkling-stars">
-            <div class="twinkle"></div>
-            <div class="twinkle"></div>
-            <div class="twinkle"></div>
-            <div class="twinkle"></div>
-            <div class="twinkle"></div>
-            <div class="twinkle"></div>
-            <div class="twinkle"></div>
-            <div class="twinkle"></div>
-        </div>
-        <div class="galaxies-layer">
-            <div class="galaxy"></div>
-            <div class="galaxy"></div>
-            <div class="galaxy"></div>
-        </div>
-        <div class="shooting-stars">
-            <div class="shooting-star"></div>
-            <div class="shooting-star"></div>
-            <div class="shooting-star"></div>
-        </div>
-        <div class="constellation">
-            <div class="constellation-line"></div>
-            <div class="constellation-line"></div>
-        </div>
-    </div>
     <div id="app-container">
         <header class="header">
             <div class="header-content">
                 <a href="index.html" class="logo">
                     <div class="logo-icon">
-                        <img src="/frontend/assets/logo.PNG" alt="Writon" class="logo-image">
+                        <img src="assets/logo.PNG" alt="Writon" class="logo-image">
                     </div>
                     <span class="logo-text">Writon</span>
                 </a>
@@ -236,7 +240,7 @@
                 <div class="mobile-nav-header">
                     <div class="logo">
                         <div class="logo-icon">
-                            <img src="/frontend/assets/logo.PNG" alt="Writon" class="logo-image">
+                            <img src="assets/logo.PNG" alt="Writon" class="logo-image">
                         </div>
                         <span class="logo-text">Writon</span>
                     </div>
@@ -282,7 +286,7 @@
 
                 <div class="glass-card" style="padding: var(--space-6); margin-top: var(--space-12);">
                     <h2 class="editor-title">Base URL</h2>
-                    <pre><code>https://your-deployed-api-url.com</code></pre>
+                    <pre><code>http://localhost:8000</code></pre>
                 </div>
 
                 <div class="glass-card" style="padding: var(--space-6); margin-top: var(--space-6);">
@@ -329,6 +333,69 @@
                 <h2 class="section-title" style="margin-top: var(--space-12);">API Endpoints</h2>
 
                 <div class="glass-card" style="padding: var(--space-6); margin-top: var(--space-6);">
+                    <h3 class="editor-title"><span class="http-method">GET</span> /</h3>
+                    <p class="feature-description">Root endpoint providing basic API information.</p>
+                    <h4>Example Response</h4>
+                    <pre><code>{
+  "message": "\u2728 Writon API - AI-powered text processing",
+  "version": "0.1.0",
+  "docs": "/docs",
+  "health": "/health"
+}</code></pre>
+                </div>
+
+                <div class="glass-card" style="padding: var(--space-6); margin-top: var(--space-6);">
+                    <h3 class="editor-title"><span class="http-method">GET</span> /health</h3>
+                    <p class="feature-description">Health check endpoint to verify server status.</p>
+                    <h4>Example Response</h4>
+                    <pre><code>{
+  "status": "healthy",
+  "version": "0.1.0",
+  "provider": "groq",
+  "timestamp": "2025-09-09T12:00:00.000000"
+}</code></pre>
+                </div>
+
+                <div class="glass-card" style="padding: var(--space-6); margin-top: var(--space-6);">
+                    <h3 class="editor-title"><span class="http-method">GET</span> /providers</h3>
+                    <p class="feature-description">Returns a list of available providers and supported configurations.</p>
+                    <h4>Example Response</h4>
+                    <pre><code>{
+  "available_providers": [
+    "openai",
+    "google",
+    "anthropic",
+    "groq"
+  ],
+  "current_provider": "groq",
+  "supported_modes": [
+    "grammar",
+    "translate",
+    "summarize"
+  ],
+  "supported_cases": [
+    "lower",
+    "sentence",
+    "title",
+    "upper"
+  ]
+}</code></pre>
+                </div>
+
+                <div class="glass-card" style="padding: var(--space-6); margin-top: var(--space-6);">
+                    <h3 class="editor-title"><span class="http-method">POST</span> /upload</h3>
+                    <p class="feature-description">Uploads a text file (.txt, .md, .rtf) and returns its content.</p>
+                    <h4>Request Body</h4>
+                    <pre><code>{
+  "file": "file"
+}</code></pre>
+                    <h4>Example Request (cURL)</h4>
+                    <pre><code>curl -X POST "http://localhost:8000/upload" \
+  -H "Content-Type: multipart/form-data" \
+  -F "file=@/path/to/your/file.txt"</code></pre>
+                </div>
+
+                <div class="glass-card" style="padding: var(--space-6); margin-top: var(--space-6);">
                     <h3 class="editor-title"><span class="http-method">POST</span> /grammar</h3>
                     <p class="feature-description">Corrects grammar, spelling, and punctuation errors in a given text.
                     </p>
@@ -338,7 +405,7 @@
   "case_style": "string (one of: lower, sentence, title, upper)"
 }</code></pre>
                     <h4>Example Request (cURL)</h4>
-                    <pre><code>curl -X POST "https://your-deployed-api-url.com/grammar" \
+                    <pre><code>curl -X POST "http://localhost:8000/grammar" \
   -H "Content-Type: application/json" \
   -H "X-Provider: groq" \
   -H "X-Groq-Key: your_groq_api_key_here" \
@@ -358,7 +425,7 @@
   "case_style": "string (one of: lower, sentence, title, upper)"
 }</code></pre>
                     <h4>Example Request (cURL)</h4>
-                    <pre><code>curl -X POST "https://your-deployed-api-url.com/translate" \
+                    <pre><code>curl -X POST "http://localhost:8000/translate" \
   -H "Content-Type: application/json" \
   -H "X-Provider: google" \
   -H "X-Google-Key: your_google_api_key_here" \
@@ -378,7 +445,7 @@
   "case_style": "string (one of: lower, sentence, title, upper)"
 }</code></pre>
                     <h4>Example Request (cURL)</h4>
-                    <pre><code>curl -X POST "https://your-deployed-api-url.com/summarize" \
+                    <pre><code>curl -X POST "http://localhost:8000/summarize" \
   -H "Content-Type: application/json" \
   -H "X-Provider: openai" \
   -H "X-OpenAI-Key: your_openai_api_key_here" \
@@ -400,7 +467,7 @@
   "target_language": "string (Required for 'translate' mode)"
 }</code></pre>
                     <h4>Example Request (cURL)</h4>
-                    <pre><code>curl -X POST "https://your-deployed-api-url.com/process" \
+                    <pre><code>curl -X POST "http://localhost:8000/process" \
   -H "Content-Type: application/json" \
   -H "X-Provider: anthropic" \
   -H "X-Anthropic-Key: your_anthropic_api_key_here" \
@@ -417,7 +484,7 @@
             <div class="container">
                 <div class="footer-content">
                     <div class="footer-left">
-                        <p>Built with care 🧡 Writon 2025. Free & Open-source.</p>
+                        <p>Built with care ❤️ Writon 2025. Free & Open-source.</p>
                     </div>
                     <div class="footer-right">
                         <div class="footer-stats">
@@ -430,27 +497,7 @@
             </div>
         </footer>
     </div>
-    <div class="mobile-fab hidden" id="mobileFab">
-        <button class="fab-main" id="fabMain">
-            <i class="fas fa-magic"></i>
-        </button>
-
-        <div class="fab-menu hidden" id="fabMenu">
-            <button class="fab-action" data-action="scroll-to-top">
-                <i class="fas fa-arrow-up"></i>
-                <span>Top</span>
-            </button>
-            <button class="fab-action" data-action="scroll-to-processor">
-                <i class="fas fa-wand-magic-sparkles"></i>
-                <span>Process</span>
-            </button>
-            <button class="fab-action" data-action="clear-all">
-                <i class="fas fa-trash"></i>
-                <span>Clear</span>
-            </button>
-        </div>
-    </div>
-    <script src="script.js"></script>
+    
 </body>
 
 </html>

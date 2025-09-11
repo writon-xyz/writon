@@ -1,0 +1,54 @@
+[project]
+name = "writon"
+version = "0.1.0"
+description = "AI-powered text processor with CLI and API interfaces for grammar correction, translation, and summarization."
+readme = "README.md"
+requires-python = ">=3.7"
+license = { file = "LICENSE" }
+keywords = ["AI", "text processing", "grammar", "translation", "summarization", "CLI", "API"]
+authors = [
+  { name = "Edward Tshepo Sibeko", email = "hello.writon@gmail.com" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Topic :: Text Processing",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "python-dotenv",
+    "requests",
+    "pydantic",
+    "python-multipart",
+    "slowapi",
+    "pytest", # Add pytest as a dependency for testing
+    "pytest-mock",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/writon-xyz/writon"
+"Bug Tracker" = "https://github.com/writon-xyz/writon/issues"
+"Documentation" = "https://github.com/writon-xyz/writon#readme"
+
+[project.scripts]
+writon = "main:main"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["api", "main"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["core*", "formatter*", "prompts*"]
+
+[tool.setuptools.package-data]
+"*" = ["modes/*.json", "frontend/*"]
