@@ -1,7 +1,7 @@
 # Writon - AI Text Processor Requirements
 # Core dependencies
 requests==2.31.0
-python-dotenv==1.0.0
+python-dotenv==1.1.1
 
 # API dependencies
 fastapi==0.104.1
