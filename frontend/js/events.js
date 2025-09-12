@@ -139,7 +139,7 @@ async function processText() {
     try {
         const result = await callAPI();
         console.log('callAPI() returned result:', result);
-        UI.displayResults(result);
+        currentProcessedText = UI.displayResults(result);
         UI.showStatus('Text processed successfully!', 'success');
     } catch (error) {
         console.error('Processing error:', error);

@@ -267,6 +267,9 @@ function displayResults(result) {
     // Add success animation to process button
     processBtn.classList.add('success');
     setTimeout(() => processBtn.classList.remove('success'), 600);
+    
+    // Return the processed text for sharing
+    return result.processed_text;
 }
 
 function updateResultStats(originalText, processedText) {
