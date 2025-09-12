@@ -1,16 +1,16 @@
 # Writon - AI Text Processor Requirements
 # Core dependencies
-requests==2.31.0
-python-dotenv==1.0.0
+requests==2.32.5
+python-dotenv==1.1.1
 
 # API dependencies
-fastapi==0.104.1
+fastapi==0.116.1
 uvicorn[standard]==0.24.0
-pydantic==2.8.0
-python-multipart==0.0.6
+pydantic==2.11.7
+python-multipart==0.0.20
 
 # Development and testing
-pytest==7.4.3
+pytest==7.4.4
 pytest-mock==3.15.0
 httpx==0.25.2
 pytest-asyncio==0.21.1
