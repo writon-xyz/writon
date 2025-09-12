@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8000"; // Assuming backend runs on localhost:8000
+const API_URL = window.location.origin; // Use the current domain (writon.xyz)
 
 import { showLoadingOverlay, hideLoadingOverlay, showStatus, updateApiStatus, updateTextStats, validateApiKey } from './ui.js';
 import { providerSelect, apiKeyInput, modelInput, modeSelect, caseStyleSelect, targetLanguageSelect, customLanguageInput, inputTextArea } from './main.js';
