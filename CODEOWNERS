@@ -1,0 +1,24 @@
+# Global owners
+* @writon-xyz
+
+# Core application files
+/main.py @writon-xyz
+/api.py @writon-xyz
+/core/ @writon-xyz
+/formatter/ @writon-xyz
+/prompts/ @writon-xyz
+
+# Frontend files
+/frontend/ @writon-xyz
+
+# Configuration files
+/requirements.txt @writon-xyz
+/pyproject.toml @writon-xyz
+/render.yaml @writon-xyz
+/.github/ @writon-xyz
+
+# Documentation
+/README.md @writon-xyz
+/CONTRIBUTING.md @writon-xyz
+/CHANGELOG.md @writon-xyz
+/SECURITY.md @writon-xyz
