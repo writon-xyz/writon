@@ -453,6 +453,7 @@ async def serve_css():
 
 # Serve the main frontend HTML file for root path
 @app.get("/", include_in_schema=False)
+@app.head("/", include_in_schema=False)
 async def serve_frontend():
     """Serve the main frontend HTML file."""
     from fastapi.responses import HTMLResponse
