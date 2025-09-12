@@ -356,6 +356,7 @@ writon/
 ├── render.yaml             # Render deployment configuration
 ├── .github/
 │   └── dependabot.yml      # Automated dependency updates
+├── CODEOWNERS              # Automatic reviewer assignment
 ├── requirements.txt        # All dependencies
 ├── pyproject.toml          # Project configuration and build metadata
 ├── README.md               # This documentation

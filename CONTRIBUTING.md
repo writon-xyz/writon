@@ -119,6 +119,7 @@ writon/
 ├── render.yaml             # Render deployment configuration
 ├── .github/
 │   └── dependabot.yml      # Automated dependency updates
+├── CODEOWNERS              # Automatic reviewer assignment
 ├── requirements.txt        # All dependencies
 ├── pyproject.toml          # Project configuration and build metadata
 ├── README.md               # This documentation
@@ -158,6 +159,16 @@ writon/
 ├── output/                 # Auto-generated output files (CLI)
 └── __pycache__/            # Python cache files (auto-generated)
 ```
+
+## 🔒 Branch Protection & Code Review
+
+Writon uses branch protection rules to ensure code quality:
+
+- **Main branch protection**: All changes must go through pull requests
+- **Required approvals**: At least 1 approval required before merging
+- **Code owners**: Automatic reviewer assignment via CODEOWNERS file
+- **Conversation resolution**: All discussions must be resolved before merging
+- **No bypassing**: Protection rules apply to everyone including administrators
 
 ## 🤝 Community Guidelines
 
