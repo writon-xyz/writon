@@ -126,6 +126,8 @@ async function pasteFromClipboard() {
 }
 
 function updateKeyLinks() {
+    if (!providerSelect) return;
+    
     const provider = providerSelect.value;
     Object.values(keyLinks).forEach(link => {
         link.classList.add('hidden');

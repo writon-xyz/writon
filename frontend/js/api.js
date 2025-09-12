@@ -76,6 +76,8 @@ async function callAPI() {
 }
 
 async function checkApiKeyStatus() {
+    if (!providerSelect || !apiKeyInput) return;
+    
     const provider = providerSelect.value;
     const apiKey = apiKeyInput.value.trim();
 
