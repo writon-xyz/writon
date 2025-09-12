@@ -31,11 +31,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Translation** - Translate text to any language with context awareness
 - **Summarization** - Condense long texts while preserving key information
 - **Case Conversion** - Apply consistent formatting across all text
-- **File Upload** - Support for .txt, .md, and .rtf files
+- **File Upload** - Support for .txt, .md, and .rtf files (CLI only)
 - **Real-time Processing** - Fast, efficient text processing
 - **Error Handling** - Detailed error messages and graceful failures
-- **Share Functionality** - Share processed text with others
-- **Copy & Download** - Easy text export options
+- **Share Functionality** - Share processed text with others (Web only)
+- **Copy & Download** - Easy text export options (Web only)
 
 ### Technical
 - **FastAPI Backend** - Modern, fast web framework
@@ -43,8 +43,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Responsive CSS** - Mobile-first design approach
 - **Token Management** - Optimized for long text processing (4000+ tokens)
 - **Environment Configuration** - Flexible deployment options
-- **Docker Ready** - Container deployment support
-- **CI/CD Pipeline** - Automated testing and deployment
+- **Render Deployment** - Production deployment on Render.com
+- **GitHub Actions** - Automated dependency updates via Dependabot
 
 ### Security
 - **Rate Limiting** - Prevent abuse and ensure fair usage

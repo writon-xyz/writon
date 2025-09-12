@@ -5,7 +5,7 @@ Thank you for your interest in contributing to Writon! 🎉
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Python 3.8 or higher
+- Python 3.7 or higher
 - Git
 - An API key from one of the supported providers (OpenAI, Google, Anthropic, or Groq)
 
@@ -119,12 +119,20 @@ writon/
 │   └── case_converter.py # Case formatting utilities
 ├── prompts/
 │   └── prompt_generator.py # AI prompt generation
+├── modes/               # Processing mode configurations
+│   ├── grammar.json
+│   ├── translate.json
+│   └── summarize.json
 ├── frontend/            # Web interface
 │   ├── index.html
+│   ├── api-docs.html
 │   ├── style.css
+│   ├── assets/
 │   └── js/
 ├── tests/               # Test suite
+├── output/              # CLI output files
 ├── requirements.txt     # Python dependencies
+├── pyproject.toml       # Python project configuration
 └── README.md           # Project documentation
 ```
 

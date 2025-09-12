@@ -6,7 +6,7 @@ We actively support the following versions of Writon with security updates:
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 0.1.x   | :white_check_mark: |
+| 0.1.0   | :white_check_mark: |
 | < 0.1   | :x:                |
 
 ## Reporting a Vulnerability
@@ -17,7 +17,7 @@ We take security seriously. If you discover a security vulnerability, please rep
 
 **Please do NOT report security vulnerabilities through public GitHub issues.**
 
-Instead, please email us directly at: **security@writon.xyz**
+Instead, please email us directly at: **hello.writon@gmail.com**
 
 ### What to Include
 
@@ -40,7 +40,7 @@ In your report, please include:
 
 We follow responsible disclosure practices:
 
-1. **Report privately** to security@writon.xyz
+1. **Report privately** to hello.writon@gmail.com
 2. **Allow reasonable time** for us to fix the issue
 3. **Coordinate public disclosure** after the fix is deployed
 4. **Credit researchers** who report valid vulnerabilities
@@ -98,7 +98,7 @@ We follow responsible disclosure practices:
 
 ## Security Contact
 
-- **Email**: security@writon.xyz
+- **Email**: hello.writon@gmail.com
 - **Response Time**: Within 48 hours
 - **PGP Key**: Available upon request
 
@@ -111,7 +111,7 @@ We will announce security updates through:
 
 ## Bug Bounty
 
-We appreciate security researchers and may offer recognition for responsible vulnerability reports. Please contact us at security@writon.xyz for more information.
+We appreciate security researchers and may offer recognition for responsible vulnerability reports. Please contact us at hello.writon@gmail.com for more information.
 
 ---
 
