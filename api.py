@@ -511,6 +511,23 @@ async def serve_frontend():
             "note": "Frontend file not found, serving API info instead"
         }
 
+# Serve the API docs HTML file
+@app.get("/api-docs.html", include_in_schema=False)
+async def serve_api_docs():
+    """Serve the API documentation HTML file."""
+    from fastapi.responses import HTMLResponse
+    import os
+    
+    docs_file_path = os.path.join("frontend", "api-docs.html")
+    try:
+        with open(docs_file_path, "r", encoding="utf-8") as f:
+            html_content = f.read()
+        return HTMLResponse(content=html_content)
+    except FileNotFoundError:
+        # Fallback to redirect to FastAPI docs
+        from fastapi.responses import RedirectResponse
+        return RedirectResponse(url="/docs")
+
 
 # --- Server Execution ---
 
