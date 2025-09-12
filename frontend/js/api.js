@@ -70,7 +70,7 @@ async function callAPI() {
 
     if (!response.ok) {
         const errorData = await response.json().catch(() => ({}));
-        throw new Error(errorData.detail || `HTTP ${response.status}`);
+        throw new Error(errorData.message || errorData.detail || `HTTP ${response.status}`);
     }
     return await response.json();
 }
