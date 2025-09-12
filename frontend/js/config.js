@@ -65,6 +65,8 @@ function loadSavedText() {
 }
 
 function addCustomLanguageOption() {
+    if (!targetLanguageSelect) return;
+    
     if (!Array.from(targetLanguageSelect.options).some(opt => opt.value === 'Custom')) {
         const option = document.createElement('option');
         option.value = 'Custom';
