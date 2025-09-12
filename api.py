@@ -237,9 +237,9 @@ def create_error_response(error_type: str, message: str) -> ErrorResponse:
 # --- API Routes ---
 
 
-@app.get("/", response_model=dict, summary="API Information")
-async def root():
-    """Root endpoint providing basic API information."""
+@app.get("/api", response_model=dict, summary="API Information")
+async def api_info():
+    """API information endpoint."""
     return {
         "message": "📝 Writon API - AI-powered text processing",
         "version": "0.1.0",
@@ -432,8 +432,15 @@ async def general_exception_handler(request: Request, exc: Exception):
 
 
 # --- Static Files Mount ---
-# This is placed after all API routes are defined to ensure they have priority.
-app.mount("/", StaticFiles(directory="frontend", html=True), name="static")
+# Mount static files for frontend, but exclude API routes
+app.mount("/static", StaticFiles(directory="frontend/assets"), name="assets")
+
+# Serve the main frontend HTML file for root path
+@app.get("/", include_in_schema=False)
+async def serve_frontend():
+    """Serve the main frontend HTML file."""
+    from fastapi.responses import FileResponse
+    return FileResponse("frontend/index.html")
 
 
 # --- Server Execution ---
