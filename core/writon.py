@@ -119,7 +119,7 @@ class WritonCore:
     """
     DEFAULT_MODELS = {
         "openai": "gpt-4o",
-        "groq": "llama-3.1-70b-versatile",
+        "groq": "llama-3.1-8b-instant",
         "google": "gemini-1.5-flash",
         "anthropic": "claude-3-haiku-20240307",
     }
