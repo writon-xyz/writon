@@ -1,8 +1,22 @@
-# Writon
+# 📝 Writon
 
-AI-powered text processor with CLI and API interfaces for grammar correction, translation, and summarization.
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-writon.xyz-blue?style=for-the-badge&logo=internet-explorer)](https://www.writon.xyz)
+[![API Documentation](https://img.shields.io/badge/API%20Docs-Swagger-green?style=for-the-badge&logo=swagger)](https://www.writon.xyz/docs)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg?style=for-the-badge&logo=python)](https://www.python.org/downloads/)
 
-Writon transforms your text with AI while maintaining your intent and applying consistent case formatting. Clean, fast, and reliable - available as both a command-line tool and a web API.
+> **AI-powered text processor** with CLI and API interfaces for grammar correction, translation, and summarization.
+
+**Writon** transforms your text with AI while maintaining your intent and applying consistent case formatting. Clean, fast, and reliable - available as both a command-line tool and a web API.
+
+## 🌟 Live Demo
+
+**Try Writon right now!** → [**www.writon.xyz**](https://www.writon.xyz)
+
+- ✨ **Grammar Correction** - Fix grammar and improve writing
+- 🌍 **Translation** - Translate to 100+ languages  
+- 📝 **Summarization** - Condense long texts intelligently
+- 🔑 **BYOK Model** - Use your own API keys for privacy
 
 ## 🚀 Two Ways to Use Writon
 
@@ -18,6 +32,34 @@ RESTful API for integration with applications, websites, and services.
 - 🌍 **Multi-Language Translation**: Built-in presets + custom language support
 - 📝 **Case Formatting**: lowercase, Sentence case, Title Case, UPPERCASE
 - 🔄 **Multi-Provider AI**: Supports OpenAI, Google Gemini, Anthropic Claude, and Groq
+- 🔑 **BYOK (Bring Your Own Key)**: Use your own API keys for complete privacy
+- ⚡ **Lightning Fast**: Optimized for speed and reliability
+- 🎨 **Beautiful UI**: Modern, responsive web interface
+- 📱 **Mobile Friendly**: Works perfectly on all devices
+- 🔒 **Privacy First**: Your data stays with you
+- 🚀 **Production Ready**: Deployed and running at writon.xyz
+
+## 🛠️ Tech Stack
+
+**Backend:**
+- ![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python)
+- ![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-green?logo=fastapi)
+- ![Uvicorn](https://img.shields.io/badge/Uvicorn-ASGI-red)
+
+**Frontend:**
+- ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5)
+- ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3)
+- ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript)
+
+**AI Providers:**
+- ![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4-black?logo=openai)
+- ![Google](https://img.shields.io/badge/Google-Gemini-blue?logo=google)
+- ![Anthropic](https://img.shields.io/badge/Anthropic-Claude-orange)
+- ![Groq](https://img.shields.io/badge/Groq-Llama--3--70B-purple)
+
+**Deployment:**
+- ![Render](https://img.shields.io/badge/Render-Deployed-46E3B7?logo=render)
+- ![GitHub](https://img.shields.io/badge/GitHub-CI%2FCD-black?logo=github)
 - ✨ **Backend Zero-Config**: Backend works out-of-the-box with Groq's free tier when `API_PROVIDER` is set in `.env`. Frontend requires API key input.
 - 🔑 **BYOK Support**: Bring Your Own Key - users can use their own API keys
 - 💾 **Auto File Saving**: Organized output with timestamp naming (CLI)
