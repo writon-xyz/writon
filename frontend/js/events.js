@@ -33,66 +33,91 @@ function setupEventListeners() {
         });
     }
 
-    providerSelect.addEventListener('change', function () {
-        UI.updateKeyLinks();
-        saveConfig();
-        UI.updateModelPlaceholder();
-    });
+    // Only add event listeners if elements exist (for main page)
+    if (providerSelect) {
+        providerSelect.addEventListener('change', function () {
+            UI.updateKeyLinks();
+            saveConfig();
+            UI.updateModelPlaceholder();
+        });
+    }
 
-    apiKeyInput.addEventListener('input', function () {
-        saveConfig();
-                UI.validateApiKeyFormat();
-    });
+    if (apiKeyInput) {
+        apiKeyInput.addEventListener('input', function () {
+            saveConfig();
+            UI.validateApiKeyFormat();
+        });
+    }
 
-    modelInput.addEventListener('input', saveConfig);
+    if (modelInput) {
+        modelInput.addEventListener('input', saveConfig);
+    }
 
-    inputTextArea.addEventListener('input', function () {
-        UI.updateTextStats();
-        debouncedSave();
-    });
+    if (inputTextArea) {
+        inputTextArea.addEventListener('input', function () {
+            UI.updateTextStats();
+            debouncedSave();
+        });
+    }
 
-    modeSelect.addEventListener('change', function () {
-        UI.toggleLanguageOptions();
-        saveConfig();
-    });
+    if (modeSelect) {
+        modeSelect.addEventListener('change', function () {
+            UI.toggleLanguageOptions();
+            saveConfig();
+        });
+    }
 
-    caseStyleSelect.addEventListener('change', saveConfig);
+    if (caseStyleSelect) {
+        caseStyleSelect.addEventListener('change', saveConfig);
+    }
 
-    targetLanguageSelect.addEventListener('change', function () {
-        UI.toggleCustomLanguage();
-        saveConfig();
-    });
+    if (targetLanguageSelect) {
+        targetLanguageSelect.addEventListener('change', function () {
+            UI.toggleCustomLanguage();
+            saveConfig();
+        });
+    }
 
-    customLanguageInput.addEventListener('input', saveConfig);
+    if (customLanguageInput) {
+        customLanguageInput.addEventListener('input', saveConfig);
+    }
 
-    processBtn.addEventListener('click', processText);
+    if (processBtn) {
+        processBtn.addEventListener('click', processText);
+    }
 
-    inputTextArea.addEventListener('keydown', function (e) {
-        if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
-            e.preventDefault();
-            processText();
-        }
-    });
+    if (inputTextArea) {
+        inputTextArea.addEventListener('keydown', function (e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+                e.preventDefault();
+                processText();
+            }
+        });
+    }
 
     toggleApiKeyBtn?.addEventListener('click', UI.toggleApiKeyVisibility);
     clearTextBtn?.addEventListener('click', UI.clearText);
     pasteTextBtn?.addEventListener('click', UI.pasteFromClipboard);
     fileUploadInput?.addEventListener('change', handleFileUpload);
 
-    copyBtn.addEventListener('click', UI.copyResult);
-    downloadBtn.addEventListener('click', UI.downloadResult);
-    shareBtn?.addEventListener('click', () => UI.shareResult(currentProcessedText));
-    processAgainBtn?.addEventListener('click', UI.processAgain);
+    if (copyBtn) copyBtn.addEventListener('click', UI.copyResult);
+    if (downloadBtn) downloadBtn.addEventListener('click', UI.downloadResult);
+    if (shareBtn) shareBtn.addEventListener('click', () => UI.shareResult(currentProcessedText));
+    if (processAgainBtn) processAgainBtn.addEventListener('click', UI.processAgain);
 
-    fabSettingsToggle.addEventListener('click', () => {
-        settingsPanel.classList.toggle('visible');
-    });
+    if (fabSettingsToggle) {
+        fabSettingsToggle.addEventListener('click', () => {
+            if (settingsPanel) settingsPanel.classList.toggle('visible');
+        });
+    }
 
-    settingsPanel.addEventListener('click', (e) => {
-        if (e.target === settingsPanel) {
-            settingsPanel.classList.remove('visible');
-        }
-    });
+    if (settingsPanel) {
+        settingsPanel.addEventListener('click', (e) => {
+            if (e.target === settingsPanel) {
+                settingsPanel.classList.remove('visible');
+            }
+        });
+    }
 
 
     document.querySelectorAll('.feature-card').forEach(card => {

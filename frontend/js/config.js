@@ -20,13 +20,14 @@ function loadStoredConfig() {
     if (stored) {
         try {
             const config = JSON.parse(stored);
-            providerSelect.value = config.provider || 'groq';
-            apiKeyInput.value = config.apiKey || '';
-            modelInput.value = config.model || '';
-            modeSelect.value = config.mode || 'grammar';
-            caseStyleSelect.value = config.caseStyle || 'sentence';
-            targetLanguageSelect.value = config.targetLanguage || 'Spanish';
-            customLanguageInput.value = config.customLanguage || '';
+            // Only set values if elements exist (for main page)
+            if (providerSelect) providerSelect.value = config.provider || 'groq';
+            if (apiKeyInput) apiKeyInput.value = config.apiKey || '';
+            if (modelInput) modelInput.value = config.model || '';
+            if (modeSelect) modeSelect.value = config.mode || 'grammar';
+            if (caseStyleSelect) caseStyleSelect.value = config.caseStyle || 'sentence';
+            if (targetLanguageSelect) targetLanguageSelect.value = config.targetLanguage || 'Spanish';
+            if (customLanguageInput) customLanguageInput.value = config.customLanguage || '';
 
             document.querySelectorAll('.custom-select-wrapper').forEach(wrapper => {
                 const select = wrapper.querySelector('select');
@@ -36,10 +37,11 @@ function loadStoredConfig() {
                 }
             });
 
-            toggleLanguageOptions();
-            toggleCustomLanguage();
-            updateModelPlaceholder();
-            checkApiKeyStatus();
+            // Only call functions if we're on the main page
+            if (typeof toggleLanguageOptions === 'function') toggleLanguageOptions();
+            if (typeof toggleCustomLanguage === 'function') toggleCustomLanguage();
+            if (typeof updateModelPlaceholder === 'function') updateModelPlaceholder();
+            if (typeof checkApiKeyStatus === 'function') checkApiKeyStatus();
         } catch (e) {
             console.warn('Error loading stored config:', e);
         }
