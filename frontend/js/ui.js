@@ -64,6 +64,8 @@ function closeAllSelects(exceptThisOne) {
 }
 
 function updateTextStats() {
+    if (!inputTextArea || !charCountSpan) return;
+    
     const text = inputTextArea.value;
     const charCount = text.length;
     const wordCount = text.trim() ? text.trim().split(/\s+/).length : 0;
@@ -137,36 +139,44 @@ function updateKeyLinks() {
 }
 
 function updateModelPlaceholder() {
-    const provider = providerSelect.value;
-    const placeholders = {
-        'groq': 'llama-3.1-70b-versatile',
-        'openai': 'gpt-4o',
-        'google': 'gemini-1.5-flash',
-        'anthropic': 'claude-3-haiku-20240307'
-    };
+    if (providerSelect && modelInput) {
+        const provider = providerSelect.value;
+        const placeholders = {
+            'groq': 'llama-3.1-70b-versatile',
+            'openai': 'gpt-4o',
+            'google': 'gemini-1.5-flash',
+            'anthropic': 'claude-3-haiku-20240307'
+        };
 
-    modelInput.placeholder = placeholders[provider] || 'Default model';
+        modelInput.placeholder = placeholders[provider] || 'Default model';
+    }
 }
 
 function toggleLanguageOptions() {
-    if (modeSelect.value === 'translate') {
-        languageGroup.classList.remove('hidden');
-    } else {
-        languageGroup.classList.add('hidden');
+    if (modeSelect && languageGroup) {
+        if (modeSelect.value === 'translate') {
+            languageGroup.classList.remove('hidden');
+        } else {
+            languageGroup.classList.add('hidden');
+        }
     }
 }
 
 function toggleCustomLanguage() {
-    if (targetLanguageSelect.value === 'Custom') {
-        customLanguageInput.classList.remove('hidden');
-        customLanguageInput.required = true;
-    } else {
-        customLanguageInput.classList.add('hidden');
-        customLanguageInput.required = false;
+    if (targetLanguageSelect && customLanguageInput) {
+        if (targetLanguageSelect.value === 'Custom') {
+            customLanguageInput.classList.remove('hidden');
+            customLanguageInput.required = true;
+        } else {
+            customLanguageInput.classList.add('hidden');
+            customLanguageInput.required = false;
+        }
     }
 }
 
 function updateApiStatus(status, message = '') {
+    if (!statusIndicator || !statusText) return;
+    
     statusIndicator.className = 'status-indicator';
     statusText.className = 'status-text';
 
