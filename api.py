@@ -451,6 +451,42 @@ async def serve_css():
     except FileNotFoundError:
         return Response(content="/* CSS file not found */", media_type="text/css")
 
+# Serve favicon
+@app.get("/favicon.ico", include_in_schema=False)
+async def serve_favicon():
+    """Serve the favicon."""
+    from fastapi.responses import FileResponse
+    import os
+    
+    favicon_path = os.path.join("frontend", "assets", "favicon.ico")
+    if os.path.exists(favicon_path):
+        return FileResponse(favicon_path, media_type="image/x-icon")
+    else:
+        return Response(status_code=404)
+
+# Serve assets with proper paths
+@app.get("/assets/{filename}", include_in_schema=False)
+async def serve_asset(filename: str):
+    """Serve assets from the frontend/assets directory."""
+    from fastapi.responses import FileResponse
+    import os
+    
+    asset_path = os.path.join("frontend", "assets", filename)
+    if os.path.exists(asset_path):
+        # Determine media type based on file extension
+        if filename.endswith('.png'):
+            media_type = "image/png"
+        elif filename.endswith('.jpg') or filename.endswith('.jpeg'):
+            media_type = "image/jpeg"
+        elif filename.endswith('.ico'):
+            media_type = "image/x-icon"
+        else:
+            media_type = "application/octet-stream"
+        
+        return FileResponse(asset_path, media_type=media_type)
+    else:
+        return Response(status_code=404)
+
 # Serve the main frontend HTML file for root path
 @app.get("/", include_in_schema=False)
 @app.head("/", include_in_schema=False)
