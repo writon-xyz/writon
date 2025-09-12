@@ -55,6 +55,8 @@ const debouncedSave = debounce(() => {
 }, 1000);
 
 function loadSavedText() {
+    if (!inputTextArea) return;
+    
     const savedText = localStorage.getItem('writon-current-text');
     if (savedText && !inputTextArea.value) {
         inputTextArea.value = savedText;
