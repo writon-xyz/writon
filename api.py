@@ -528,6 +528,23 @@ async def serve_api_docs():
         from fastapi.responses import RedirectResponse
         return RedirectResponse(url="/docs")
 
+# Serve the index.html file (for navigation from api-docs)
+@app.get("/index.html", include_in_schema=False)
+async def serve_index():
+    """Serve the index.html file."""
+    from fastapi.responses import HTMLResponse
+    import os
+    
+    index_file_path = os.path.join("frontend", "index.html")
+    try:
+        with open(index_file_path, "r", encoding="utf-8") as f:
+            html_content = f.read()
+        return HTMLResponse(content=html_content)
+    except FileNotFoundError:
+        # Fallback to redirect to root
+        from fastapi.responses import RedirectResponse
+        return RedirectResponse(url="/")
+
 
 # --- Server Execution ---
 
