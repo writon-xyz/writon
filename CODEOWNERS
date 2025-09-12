@@ -1,24 +1,24 @@
 # Global owners
-* @writon-xyz
+* @writon-xyz @cygo-3x
 
 # Core application files
-/main.py @writon-xyz
-/api.py @writon-xyz
-/core/ @writon-xyz
-/formatter/ @writon-xyz
-/prompts/ @writon-xyz
+/main.py @writon-xyz @cygo-3x
+/api.py @writon-xyz @cygo-3x
+/core/ @writon-xyz @cygo-3x
+/formatter/ @writon-xyz @cygo-3x
+/prompts/ @writon-xyz @cygo-3x
 
 # Frontend files
-/frontend/ @writon-xyz
+/frontend/ @writon-xyz @cygo-3x
 
 # Configuration files
-/requirements.txt @writon-xyz
-/pyproject.toml @writon-xyz
-/render.yaml @writon-xyz
-/.github/ @writon-xyz
+/requirements.txt @writon-xyz @cygo-3x
+/pyproject.toml @writon-xyz @cygo-3x
+/render.yaml @writon-xyz @cygo-3x
+/.github/ @writon-xyz @cygo-3x
 
 # Documentation
-/README.md @writon-xyz
-/CONTRIBUTING.md @writon-xyz
-/CHANGELOG.md @writon-xyz
-/SECURITY.md @writon-xyz
+/README.md @writon-xyz @cygo-3x
+/CONTRIBUTING.md @writon-xyz @cygo-3x
+/CHANGELOG.md @writon-xyz @cygo-3x
+/SECURITY.md @writon-xyz @cygo-3x
