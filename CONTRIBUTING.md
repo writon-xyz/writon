@@ -111,29 +111,52 @@ Have an idea for a new feature? We'd love to hear it!
 
 ```
 writon/
-├── main.py              # CLI interface
-├── api.py               # FastAPI web server
+├── main.py                 # CLI interface and user interaction
+├── api.py                  # FastAPI web server
+├── LICENSE
+├── .gitignore              # Git ignore rules
+├── .env.example            # Environment configuration template
+├── render.yaml             # Render deployment configuration
+├── .github/
+│   └── dependabot.yml      # Automated dependency updates
+├── requirements.txt        # All dependencies
+├── pyproject.toml          # Project configuration and build metadata
+├── README.md               # This documentation
+├── CONTRIBUTING.md         # Contribution guidelines
+├── CHANGELOG.md            # Version history
+├── SECURITY.md             # Security policy
 ├── core/
-│   └── writon.py        # Core business logic
+│   ├── __init__.py
+│   └── writon.py           # Core business logic and AI integration
 ├── formatter/
-│   └── case_converter.py # Case formatting utilities
-├── prompts/
-│   └── prompt_generator.py # AI prompt generation
-├── modes/               # Processing mode configurations
-│   ├── grammar.json
-│   ├── translate.json
-│   └── summarize.json
-├── frontend/            # Web interface
-│   ├── index.html
-│   ├── api-docs.html
-│   ├── style.css
+│   └── case_converter.py   # Deterministic case transformations
+├── frontend/
 │   ├── assets/
-│   └── js/
-├── tests/               # Test suite
-├── output/              # CLI output files
-├── requirements.txt     # Python dependencies
-├── pyproject.toml       # Python project configuration
-└── README.md           # Project documentation
+│   │   ├── favicon.ico     # Browser icon
+│   │   ├── logo.PNG        # Application logo
+│   │   ├── horizontal.jpg  # Horizontal banner image
+│   │   └── portrait.jpg    # Portrait banner image
+│   ├── js/
+│   │   ├── main.js         # Main web application logic
+│   │   ├── api.js          # API communication
+│   │   ├── config.js       # Configuration management
+│   │   ├── events.js       # Event handling
+│   │   └── ui.js           # UI interactions
+│   ├── api-docs.html       # API documentation website
+│   ├── index.html          # Main web application
+│   └── style.css           # Frontend styling
+├── modes/
+│   ├── grammar.json        # Grammar correction configuration
+│   ├── translate.json      # Translation configuration
+│   └── summarize.json      # Summarization configuration
+├── prompts/
+│   └── prompt_generator.py # Template engine for AI prompts
+├── tests/
+│   ├── test_api_pytest.py  # API testing script
+│   ├── test_core.py        # Core logic testing script
+│   └── check_env.py        # Environment configuration tester
+├── output/                 # Auto-generated output files (CLI)
+└── __pycache__/            # Python cache files (auto-generated)
 ```
 
 ## 🤝 Community Guidelines

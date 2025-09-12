@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - 🎉 **Initial Release** - First public release of Writon
 - 🧠 **AI-Powered Text Processing** - Grammar correction, translation, and summarization
-- 🌍 **Multi-Language Translation** - Support for 100+ languages with custom language option
+- 🌍 **Multi-Language Translation** - Support for multiple languages with custom language option
 - 📝 **Case Formatting** - lowercase, Sentence case, Title Case, UPPERCASE
 - 🔄 **Multi-Provider AI Support** - OpenAI GPT-4, Google Gemini, Anthropic Claude, Groq Llama
 - 🔑 **BYOK Model** - Bring Your Own Key for complete privacy
@@ -52,27 +52,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Security Headers** - Protection against common vulnerabilities
 - **Input Validation** - Robust data validation and sanitization
 - **Privacy First** - No data storage, user keys remain private
-
----
-
-## Future Releases
-
-### Planned Features
-- 🔄 **Batch Processing** - Process multiple texts at once
-- 📊 **Analytics Dashboard** - Usage statistics and insights
-- 🔌 **API Integrations** - Webhooks and third-party integrations
-- 🌐 **Multi-language UI** - Interface in multiple languages
-- 📱 **Mobile App** - Native mobile applications
-- 🤖 **AI Model Fine-tuning** - Custom model training
-- 📈 **Advanced Analytics** - Detailed processing metrics
-
-### Under Consideration
-- 🎯 **Content Templates** - Pre-defined text processing templates
-- 🔍 **Text Analysis** - Sentiment, readability, and style analysis
-- 📝 **Writing Assistant** - Advanced writing suggestions
-- 🌍 **Regional Variants** - Language-specific improvements
-- 🎨 **Custom Themes** - Personalized interface options
-- 📚 **Learning Mode** - Educational features for language learning
 
 ---
 

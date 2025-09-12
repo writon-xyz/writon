@@ -14,7 +14,7 @@
 **Try Writon right now!** → [**www.writon.xyz**](https://www.writon.xyz)
 
 - ✨ **Grammar Correction** - Fix grammar and improve writing
-- 🌍 **Translation** - Translate to 100+ languages  
+- 🌍 **Translation** - Translate to multiple languages with custom language support  
 - 📝 **Summarization** - Condense long texts intelligently
 - 🔑 **BYOK Model** - Use your own API keys for privacy
 
@@ -347,7 +347,7 @@ Writon includes comprehensive security measures:
 ## 📁 Architecture
 
 ```
-writon-core/
+writon/
 ├── main.py                 # CLI interface and user interaction
 ├── api.py                  # FastAPI web server
 ├── LICENSE
@@ -359,13 +359,12 @@ writon-core/
 ├── requirements.txt        # All dependencies
 ├── pyproject.toml          # Project configuration and build metadata
 ├── README.md               # This documentation
+├── CONTRIBUTING.md         # Contribution guidelines
+├── CHANGELOG.md            # Version history
+├── SECURITY.md             # Security policy
 ├── core/
 │   ├── __init__.py
 │   └── writon.py           # Core business logic and AI integration
-├── tests/
-│   ├── test_api_pytest.py  # API testing script
-│   ├── test_core.py        # Core logic testing script
-│   └── check_env.py        # Environment configuration tester
 ├── formatter/
 │   └── case_converter.py   # Deterministic case transformations
 ├── frontend/
@@ -389,8 +388,11 @@ writon-core/
 │   └── summarize.json      # Summarization configuration
 ├── prompts/
 │   └── prompt_generator.py # Template engine for AI prompts
+├── tests/
+│   ├── test_api_pytest.py  # API testing script
+│   ├── test_core.py        # Core logic testing script
+│   └── check_env.py        # Environment configuration tester
 ├── output/                 # Auto-generated output files (CLI)
-├── writon.egg-info/        # Package metadata (auto-generated)
 └── __pycache__/            # Python cache files (auto-generated)
 ```
 
@@ -460,8 +462,14 @@ uvicorn api:app --reload
 
 ## 🤝 Contributing
 
-The modular architecture makes it easy to:
+We welcome contributions to Writon! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details on how to:
 
+- Report bugs and request features
+- Set up your development environment
+- Submit pull requests
+- Follow our code style and testing standards
+
+The modular architecture makes it easy to:
 - Add new AI providers
 - Create additional processing modes
 - Extend case formatting options
