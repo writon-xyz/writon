@@ -439,8 +439,24 @@ app.mount("/static", StaticFiles(directory="frontend/assets"), name="assets")
 @app.get("/", include_in_schema=False)
 async def serve_frontend():
     """Serve the main frontend HTML file."""
-    from fastapi.responses import FileResponse
-    return FileResponse("frontend/index.html")
+    from fastapi.responses import HTMLResponse
+    import os
+    
+    # Read the HTML file content
+    html_file_path = os.path.join("frontend", "index.html")
+    try:
+        with open(html_file_path, "r", encoding="utf-8") as f:
+            html_content = f.read()
+        return HTMLResponse(content=html_content)
+    except FileNotFoundError:
+        # Fallback to API info if frontend file not found
+        return {
+            "message": "📝 Writon API - AI-powered text processing",
+            "version": "0.1.0",
+            "docs": "/docs",
+            "health": "/health",
+            "note": "Frontend file not found, serving API info instead"
+        }
 
 
 # --- Server Execution ---
