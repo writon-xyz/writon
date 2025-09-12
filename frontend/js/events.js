@@ -19,9 +19,17 @@ function setupEventListeners() {
         });
 
         mobileNavOverlay.addEventListener('click', (e) => {
-            if (e.target === mobileNavOverlay || e.target.closest('.mobile-nav-link')) {
+            if (e.target === mobileNavOverlay) {
                 mobileNavOverlay.classList.add('hidden');
             }
+        });
+        
+        // Handle mobile nav link clicks separately
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNavOverlay.classList.add('hidden');
+            });
         });
     }
 
