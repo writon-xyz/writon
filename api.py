@@ -432,8 +432,24 @@ async def general_exception_handler(request: Request, exc: Exception):
 
 
 # --- Static Files Mount ---
-# Mount static files for frontend, but exclude API routes
-app.mount("/static", StaticFiles(directory="frontend/assets"), name="assets")
+# Mount static files for frontend
+app.mount("/assets", StaticFiles(directory="frontend/assets"), name="assets")
+app.mount("/js", StaticFiles(directory="frontend/js"), name="js")
+
+# Serve CSS file directly
+@app.get("/style.css", include_in_schema=False)
+async def serve_css():
+    """Serve the CSS file."""
+    from fastapi.responses import Response
+    import os
+    
+    css_file_path = os.path.join("frontend", "style.css")
+    try:
+        with open(css_file_path, "r", encoding="utf-8") as f:
+            css_content = f.read()
+        return Response(content=css_content, media_type="text/css")
+    except FileNotFoundError:
+        return Response(content="/* CSS file not found */", media_type="text/css")
 
 # Serve the main frontend HTML file for root path
 @app.get("/", include_in_schema=False)
