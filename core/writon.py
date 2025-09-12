@@ -39,7 +39,12 @@ class AIProvider(ABC):
 class OpenAIProvider(AIProvider):
     def call_ai(self, prompt: str) -> str:
         headers = {"Content-Type": "application/json", "Authorization": f"Bearer {self.api_key}"}
-        data = {"model": self.model, "messages": [{"role": "user", "content": prompt}]}
+        data = {
+            "model": self.model, 
+            "messages": [{"role": "user", "content": prompt}],
+            "max_tokens": 4000,
+            "temperature": 0.7
+        }
         try:
             response = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, json=data, timeout=60)
             response.raise_for_status()
@@ -58,7 +63,7 @@ class GroqProvider(AIProvider):
                 {"role": "user", "content": prompt},
             ],
             "temperature": 0.7,
-            "max_tokens": 300,
+            "max_tokens": 4000,
         }
         try:
             response = requests.post("https://api.groq.com/openai/v1/chat/completions", headers=headers, json=data, timeout=60)
@@ -73,7 +78,7 @@ class GoogleProvider(AIProvider):
         headers = {"Content-Type": "application/json"}
         data = {
             "contents": [{"parts": [{"text": prompt}]}],
-            "generationConfig": {"temperature": 0.7, "maxOutputTokens": 1024},
+            "generationConfig": {"temperature": 0.7, "maxOutputTokens": 4000},
         }
         try:
             response = requests.post(
@@ -100,7 +105,7 @@ class AnthropicProvider(AIProvider):
         }
         data = {
             "model": self.model,
-            "max_tokens": 1024,
+            "max_tokens": 4000,
             "messages": [{"role": "user", "content": prompt}],
         }
         try:
