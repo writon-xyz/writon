@@ -12,7 +12,7 @@ python-multipart==0.0.20
 # Development and testing
 pytest==7.4.4
 pytest-mock==3.15.0
-httpx==0.25.2
+httpx==0.28.1
 pytest-asyncio==0.21.1
 
 # Security
