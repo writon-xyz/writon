@@ -1,24 +1,24 @@
 # Global owners
-* @writon-xyz @cygo-3x
+* @writon-xyz @etsibeko-dev
 
 # Core application files
-/main.py @writon-xyz @cygo-3x
-/api.py @writon-xyz @cygo-3x
-/core/ @writon-xyz @cygo-3x
-/formatter/ @writon-xyz @cygo-3x
-/prompts/ @writon-xyz @cygo-3x
+/main.py @writon-xyz @etsibeko-dev
+/api.py @writon-xyz @etsibeko-dev
+/core/ @writon-xyz @etsibeko-dev
+/formatter/ @writon-xyz @etsibeko-dev
+/prompts/ @writon-xyz @etsibeko-dev
 
 # Frontend files
-/frontend/ @writon-xyz @cygo-3x
+/frontend/ @writon-xyz @etsibeko-dev
 
 # Configuration files
-/requirements.txt @writon-xyz @cygo-3x
-/pyproject.toml @writon-xyz @cygo-3x
-/render.yaml @writon-xyz @cygo-3x
-/.github/ @writon-xyz @cygo-3x
+/requirements.txt @writon-xyz @etsibeko-dev
+/pyproject.toml @writon-xyz @etsibeko-dev
+/render.yaml @writon-xyz @etsibeko-dev
+/.github/ @writon-xyz @etsibeko-dev
 
 # Documentation
-/README.md @writon-xyz @cygo-3x
-/CONTRIBUTING.md @writon-xyz @cygo-3x
-/CHANGELOG.md @writon-xyz @cygo-3x
-/SECURITY.md @writon-xyz @cygo-3x
+/README.md @writon-xyz @etsibeko-dev
+/CONTRIBUTING.md @writon-xyz @etsibeko-dev
+/CHANGELOG.md @writon-xyz @etsibeko-dev
+/SECURITY.md @writon-xyz @etsibeko-dev
