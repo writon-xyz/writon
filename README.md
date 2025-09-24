@@ -13,7 +13,7 @@
 
 **Try Writon right now!** → [**www.writon.xyz**](https://www.writon.xyz)
 
-![Writon Homepage](https://raw.githubusercontent.com/writon-xyz/writon/main/screenshot.png)
+![Writon Homepage](https://raw.githubusercontent.com/writon-xyz/writon/main/docs/screenshot.png)
 
 *Beautiful, modern interface with space-themed design - grammar correction, translation, and summarization at your fingertips.*
 
