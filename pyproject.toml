@@ -20,15 +20,17 @@ classifiers = [
 ]
 
 dependencies = [
-    "fastapi",
-    "uvicorn",
-    "python-dotenv",
-    "requests",
-    "pydantic",
-    "python-multipart",
-    "slowapi",
-    "pytest", # Add pytest as a dependency for testing
-    "pytest-mock",
+    "fastapi>=0.117.1",
+    "uvicorn[standard]>=0.36.0",
+    "python-dotenv>=1.1.1",
+    "requests>=2.32.5",
+    "pydantic>=2.11.7",
+    "python-multipart>=0.0.20",
+    "slowapi>=0.1.9",
+    "pytest>=8.2.0",
+    "pytest-mock>=3.15.0",
+    "httpx>=0.28.1",
+    "pytest-asyncio>=0.26.0",
 ]
 
 [project.urls]

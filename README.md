@@ -43,7 +43,7 @@ RESTful API for integration with applications, websites, and services.
 
 **Backend:**
 - ![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python)
-- ![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-green?logo=fastapi)
+- ![FastAPI](https://img.shields.io/badge/FastAPI-0.117+-green?logo=fastapi)
 - ![Uvicorn](https://img.shields.io/badge/Uvicorn-ASGI-red)
 
 **Frontend:**
