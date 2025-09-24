@@ -38,10 +38,14 @@ RESTful API for integration with applications, websites, and services.
 - 🔄 **Multi-Provider AI**: Supports OpenAI, Google Gemini, Anthropic Claude, and Groq
 - 🔑 **BYOK (Bring Your Own Key)**: Use your own API keys for complete privacy
 - ⚡ **Lightning Fast**: Optimized for speed and reliability
-- 🎨 **Beautiful UI**: Modern, responsive web interface
+- 🎨 **Beautiful UI**: Modern, responsive web interface with space-themed design
 - 📱 **Mobile Friendly**: Works perfectly on all devices
 - 🔒 **Privacy First**: Your data stays with you
 - 🚀 **Production Ready**: Deployed and running at writon.xyz
+- 🛡️ **Enhanced Security**: Rate limiting, request validation, and security headers
+- 📚 **Comprehensive Documentation**: Complete development guides and quick reference
+- 🤖 **Automated Updates**: Dependabot integration for dependency management
+- 🔄 **Professional Workflow**: GitHub branch protection and code review process
 
 ## 🛠️ Tech Stack
 
@@ -348,6 +352,32 @@ Writon includes comprehensive security measures:
 - **File Type Validation**: Only allows safe text file types
 - **BYOK Model**: No API keys stored on server
 
+## 📚 Documentation
+
+### **For Users:**
+- **[README.md](README.md)** - This file! Complete user guide and setup instructions
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** - Guidelines for contributing to the project
+- **[SECURITY.md](SECURITY.md)** - Security policy and vulnerability reporting
+
+### **For Developers:**
+- **[DEVELOPMENT_GUIDE.md](DEVELOPMENT_GUIDE.md)** - Complete development workflow blueprint
+- **[QUICK_REFERENCE.md](QUICK_REFERENCE.md)** - Copy-paste commands for daily development
+- **[CHANGELOG.md](CHANGELOG.md)** - Version history and release notes
+
+## 🔄 Development Workflow
+
+### **Automated Features:**
+- **🤖 Dependabot** - Automatic dependency updates via GitHub PRs
+- **🛡️ Branch Protection** - Main branch protected with required pull requests
+- **👥 Code Owners** - Automatic reviewer assignment for quality assurance
+- **🧪 Testing** - Comprehensive test suite with 13 passing tests
+
+### **Professional Standards:**
+- **📋 Commit Standards** - Conventional commit messages and templates
+- **🔍 Code Review** - Mandatory peer review for all changes
+- **🚀 CI/CD** - Automated deployment to production
+- **📊 Documentation** - Comprehensive guides for all skill levels
+
 ## 📁 Architecture
 
 ```
@@ -361,12 +391,16 @@ writon/
 ├── .github/
 │   └── dependabot.yml      # Automated dependency updates
 ├── CODEOWNERS              # Automatic reviewer assignment
-├── requirements.txt        # All dependencies
+├── requirements.txt        # All dependencies (latest versions)
 ├── pyproject.toml          # Project configuration and build metadata
 ├── README.md               # This documentation
 ├── CONTRIBUTING.md         # Contribution guidelines
+├── DEVELOPMENT_GUIDE.md    # Complete development workflow
+├── QUICK_REFERENCE.md      # Daily development commands
 ├── CHANGELOG.md            # Version history
 ├── SECURITY.md             # Security policy
+├── docs/
+│   └── screenshot.png      # Project screenshots and assets
 ├── core/
 │   ├── __init__.py
 │   └── writon.py           # Core business logic and AI integration
@@ -415,11 +449,14 @@ writon/
 
 ### Core Dependencies
 
-- `requests` - HTTP client for AI APIs
-- `python-dotenv` - Environment configuration
-- `fastapi` - Web API framework
-- `uvicorn` - ASGI web server
-- `pydantic` - Data validation
+- `requests>=2.32.5` - HTTP client for AI APIs (latest with security patches)
+- `python-dotenv>=1.1.1` - Environment configuration
+- `fastapi>=0.117.1` - Web API framework (latest version)
+- `uvicorn[standard]>=0.36.0` - ASGI web server (latest with performance improvements)
+- `pydantic>=2.11.7` - Data validation (latest version)
+- `httpx>=0.28.1` - Modern HTTP client for testing
+- `pytest>=8.2.0` - Testing framework (latest version)
+- `slowapi>=0.1.9` - Rate limiting middleware
 
 ## Supported AI Providers
 
@@ -427,6 +464,20 @@ writon/
 - **Google**: Gemini Pro, Gemini Flash, and Gemini models
 - **Anthropic**: Claude 3 family models
 - **Groq**: Fast inference with Llama and open source models
+
+## 🤖 Automation & Workflow
+
+### **Dependabot Integration:**
+- **Automatic Updates** - Dependencies updated via GitHub PRs
+- **Security Patches** - Critical security updates prioritized
+- **Version Tracking** - Always running latest stable versions
+- **Quality Assurance** - All updates tested before merging
+
+### **GitHub Workflow:**
+- **Branch Protection** - Main branch requires pull requests
+- **Code Owners** - Automatic reviewer assignment (@writon-xyz, @etsibeko-dev)
+- **Quality Gates** - All tests must pass before merging
+- **Professional Standards** - Conventional commits and code review process
 
 ## Testing
 
