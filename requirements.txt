@@ -4,13 +4,13 @@ requests==2.32.5
 python-dotenv==1.1.1
 
 # API dependencies
-fastapi==0.117.1
-uvicorn[standard]==0.36.0
-pydantic==2.11.7
+fastapi==0.118.0
+uvicorn[standard]==0.37.0
+pydantic==2.11.9
 python-multipart==0.0.20
 
 # Development and testing
-pytest==8.2.0
+pytest==8.4.2
 pytest-mock==3.15.0
 httpx==0.28.1
 pytest-asyncio==0.26.0
