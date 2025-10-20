@@ -1,9 +1,21 @@
-# 📝 Writon
+<p align="center">
+  <img src="frontend/assets/logo.PNG" alt="Writon Logo" width="120"/>
+</p>
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-writon.xyz-blue?style=for-the-badge&logo=internet-explorer)](https://www.writon.xyz)
-[![API Documentation](https://img.shields.io/badge/API%20Docs-Swagger-green?style=for-the-badge&logo=swagger)](https://www.writon.xyz/docs)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
-[![Python 3.7+](https://img.shields.io/badge/python-3.7+-blue.svg?style=for-the-badge&logo=python)](https://www.python.org/downloads/)
+<p align="center">
+  <a href="https://www.writon.xyz">
+    <img src="https://img.shields.io/badge/Live%20Demo-writon.xyz-blue?style=for-the-badge&logo=internet-explorer" alt="Live Demo"/>
+  </a>
+  <a href="https://www.writon.xyz/docs">
+    <img src="https://img.shields.io/badge/API%20Docs-Swagger-green?style=for-the-badge&logo=swagger" alt="API Documentation"/>
+  </a>
+  <a href="https://opensource.org/licenses/MIT">
+    <img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge" alt="License: MIT"/>
+  </a>
+  <a href="https://www.python.org/downloads/">
+    <img src="https://img.shields.io/badge/python-3.7+-blue.svg?style=for-the-badge&logo=python" alt="Python 3.7+"/>
+  </a>
+</p>
 
 > **AI-powered text processor** with CLI and API interfaces for grammar correction, translation, and summarization.
 
