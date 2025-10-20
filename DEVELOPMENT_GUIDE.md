@@ -42,12 +42,15 @@ cp .env.example .env
 ```bash
 # Run the API server locally
 uvicorn api:app --host 0.0.0.0 --port 8000 --reload
+# Or: python -m uvicorn api:app --host 0.0.0.0 --port 8000 --reload
 
 # Run tests
 python -m pytest tests/ -v
+# Or: python3 -m pytest tests/ -v
 
 # Run CLI
 python main.py
+# Or: python3 main.py
 
 # Check code quality
 python -m flake8 . --max-line-length=88
@@ -431,9 +434,11 @@ git branch -d branch-name
 ```bash
 # Start development server
 uvicorn api:app --reload
+# Or: python -m uvicorn api:app --reload
 
 # Run CLI
 python main.py
+# Or: python3 main.py
 
 # Test API endpoints
 curl -X POST "http://localhost:8000/grammar" \

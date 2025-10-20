@@ -110,6 +110,8 @@ cp .env.example .env
 
 ```bash
 python main.py
+# Or if python command doesn't work:
+python3 main.py
 ```
 
 ### API Usage
@@ -117,6 +119,8 @@ python main.py
 ```bash
 # Start the API server in one terminal
 uvicorn api:app --host 0.0.0.0 --port 8000 --reload
+# Or if uvicorn command doesn't work:
+python -m uvicorn api:app --host 0.0.0.0 --port 8000 --reload
 
 
 
@@ -405,6 +409,7 @@ writon/
 ├── CHANGELOG.md            # Version history
 ├── SECURITY.md             # Security policy
 ├── docs/
+│   ├── BADGE_STYLE_GUIDE.md # Badge styling standards for documentation
 │   └── screenshot.png      # Project screenshots and assets
 ├── core/
 │   ├── __init__.py
@@ -489,12 +494,14 @@ writon/
 ### Test CLI
 ```bash
 python main.py
+# Or: python3 main.py
 ```
 
 ### Test API
 ```bash
 # Start API in one terminal
 uvicorn api:app --reload
+# Or: python -m uvicorn api:app --reload
 
 # Run tests in another terminal using pytest
 .venv/bin/pytest tests/
