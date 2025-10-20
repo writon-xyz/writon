@@ -17,12 +17,15 @@ cp .env.example .env
 ```bash
 # Start server
 uvicorn api:app --reload
+# Or: python -m uvicorn api:app --reload
 
 # Run tests
 python -m pytest tests/ -v
+# Or: python3 -m pytest tests/ -v
 
 # Run CLI
 python main.py
+# Or: python3 main.py
 ```
 
 ## 🔄 Git Workflow
