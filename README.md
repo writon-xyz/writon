@@ -4,16 +4,16 @@
 
 <p align="center">
   <a href="https://www.writon.xyz">
-    <img src="https://img.shields.io/badge/Live%20Demo-writon.xyz-blue?style=for-the-badge&logo=internet-explorer" alt="Live Demo"/>
+    <img src="https://img.shields.io/badge/Live_Demo-0B84FE?style=flat-square&logo=googlechrome&logoColor=white" alt="Live Demo"/>
   </a>
   <a href="https://www.writon.xyz/docs">
-    <img src="https://img.shields.io/badge/API%20Docs-Swagger-green?style=for-the-badge&logo=swagger" alt="API Documentation"/>
+    <img src="https://img.shields.io/badge/API_Docs-0B84FE?style=flat-square&logo=swagger&logoColor=white" alt="API Documentation"/>
   </a>
   <a href="https://opensource.org/licenses/MIT">
-    <img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge" alt="License: MIT"/>
+    <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License: MIT"/>
   </a>
   <a href="https://www.python.org/downloads/">
-    <img src="https://img.shields.io/badge/python-3.7+-blue.svg?style=for-the-badge&logo=python" alt="Python 3.7+"/>
+    <img src="https://img.shields.io/badge/Python-3.7+-blue?style=flat-square&logo=python&logoColor=white" alt="Python 3.7+"/>
   </a>
 </p>
 
@@ -62,24 +62,24 @@ RESTful API for integration with applications, websites, and services.
 ## 🛠️ Tech Stack
 
 **Backend:**
-- ![Python](https://img.shields.io/badge/Python-3.7+-blue?logo=python)
-- ![FastAPI](https://img.shields.io/badge/FastAPI-0.119+-green?logo=fastapi)
-- ![Uvicorn](https://img.shields.io/badge/Uvicorn-ASGI-red)
+- ![Python](https://img.shields.io/badge/Python-3.7+-3776AB?style=flat-square&logo=python&logoColor=white)
+- ![FastAPI](https://img.shields.io/badge/FastAPI-0.119+-009688?style=flat-square&logo=fastapi&logoColor=white)
+- ![Uvicorn](https://img.shields.io/badge/Uvicorn-ASGI-499848?style=flat-square&logo=gunicorn&logoColor=white)
 
 **Frontend:**
-- ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5)
-- ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3)
-- ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript)
+- ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+- ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+- ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 
 **AI Providers:**
-- ![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4-black?logo=openai)
-- ![Google](https://img.shields.io/badge/Google-Gemini-blue?logo=google)
-- ![Anthropic](https://img.shields.io/badge/Anthropic-Claude-orange)
-- ![Groq](https://img.shields.io/badge/Groq-Llama--3--70B-purple)
+- ![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4-412991?style=flat-square&logo=openai&logoColor=white)
+- ![Google](https://img.shields.io/badge/Google-Gemini-4285F4?style=flat-square&logo=google&logoColor=white)
+- ![Anthropic](https://img.shields.io/badge/Anthropic-Claude-191919?style=flat-square&logo=anthropic&logoColor=white)
+- ![Groq](https://img.shields.io/badge/Groq-Llama--3-F55036?style=flat-square&logo=lightning&logoColor=white)
 
 **Deployment:**
-- ![Render](https://img.shields.io/badge/Render-Deployed-46E3B7?logo=render)
-- ![GitHub](https://img.shields.io/badge/GitHub-CI%2FCD-black?logo=github)
+- ![Render](https://img.shields.io/badge/Render-Deployed-46E3B7?style=flat-square&logo=render&logoColor=white)
+- ![GitHub](https://img.shields.io/badge/GitHub-CI%2FCD-181717?style=flat-square&logo=github&logoColor=white)
 - ✨ **Backend Zero-Config**: Backend works out-of-the-box with Groq's free tier when `API_PROVIDER` is set in `.env`. Frontend requires API key input.
 - 🔑 **BYOK Support**: Bring Your Own Key - users can use their own API keys
 - 💾 **Auto File Saving**: Organized output with timestamp naming (CLI)
