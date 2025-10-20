@@ -3,16 +3,16 @@
 </p>
 
 <p align="center">
-  <a href="https://www.writon.xyz">
+  <a href="https://www.writon.xyz" style="text-decoration: none;">
     <img src="https://img.shields.io/badge/Live_Demo-0B84FE?style=flat-square&logo=googlechrome&logoColor=white" alt="Live Demo"/>
   </a>
-  <a href="https://www.writon.xyz/docs">
+  <a href="https://www.writon.xyz/docs" style="text-decoration: none;">
     <img src="https://img.shields.io/badge/API_Docs-0B84FE?style=flat-square&logo=swagger&logoColor=white" alt="API Documentation"/>
   </a>
-  <a href="https://opensource.org/licenses/MIT">
+  <a href="https://opensource.org/licenses/MIT" style="text-decoration: none;">
     <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License: MIT"/>
   </a>
-  <a href="https://www.python.org/downloads/">
+  <a href="https://www.python.org/downloads/" style="text-decoration: none;">
     <img src="https://img.shields.io/badge/Python-3.7+-blue?style=flat-square&logo=python&logoColor=white" alt="Python 3.7+"/>
   </a>
 </p>
