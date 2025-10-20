@@ -54,7 +54,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Copy & Download** - Easy text export options (Web only)
 
 ### Technical
-- **FastAPI Backend** - Modern, fast web framework (v0.117.1)
+- **FastAPI Backend** - Modern, fast web framework (v0.119.0)
 - **ES6 JavaScript Frontend** - Modern web technologies
 - **Responsive CSS** - Mobile-first design approach
 - **Token Management** - Optimized for long text processing (4000+ tokens)
@@ -63,8 +63,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **GitHub Actions** - Automated dependency updates via Dependabot
 - **Latest Dependencies** - All packages updated to latest stable versions
 - **Security Patches** - Requests 2.32.5, Python-dotenv 1.1.1
-- **Performance Improvements** - Uvicorn 0.36.0, HTTPx 0.28.1
-- **Testing Framework** - Pytest 8.2.0 with async support
+- **Performance Improvements** - Uvicorn 0.38.0, HTTPx 0.28.1
+- **Testing Framework** - Pytest 8.4.2 with async support
 
 ### Security
 - **Rate Limiting** - Prevent abuse and ensure fair usage

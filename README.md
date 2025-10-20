@@ -51,7 +51,7 @@ RESTful API for integration with applications, websites, and services.
 
 **Backend:**
 - ![Python](https://img.shields.io/badge/Python-3.7+-blue?logo=python)
-- ![FastAPI](https://img.shields.io/badge/FastAPI-0.117+-green?logo=fastapi)
+- ![FastAPI](https://img.shields.io/badge/FastAPI-0.119+-green?logo=fastapi)
 - ![Uvicorn](https://img.shields.io/badge/Uvicorn-ASGI-red)
 
 **Frontend:**
@@ -451,9 +451,9 @@ writon/
 
 - `requests>=2.32.5` - HTTP client for AI APIs (latest with security patches)
 - `python-dotenv>=1.1.1` - Environment configuration
-- `fastapi>=0.117.1` - Web API framework (latest version)
-- `uvicorn[standard]>=0.36.0` - ASGI web server (latest with performance improvements)
-- `pydantic>=2.11.7` - Data validation (latest version)
+- `fastapi>=0.119.0` - Web API framework (latest version)
+- `uvicorn[standard]>=0.38.0` - ASGI web server (latest with performance improvements)
+- `pydantic>=2.12.3` - Data validation (latest version)
 - `httpx>=0.28.1` - Modern HTTP client for testing
 - `pytest>=8.2.0` - Testing framework (latest version)
 - `slowapi>=0.1.9` - Rate limiting middleware
