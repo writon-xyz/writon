@@ -5,8 +5,8 @@
 <div align="center">
 
 [![Live Demo](https://img.shields.io/badge/Live_Demo-0B84FE?style=flat-square&logo=googlechrome&logoColor=white)](https://www.writon.xyz)
-[![API Docs](https://img.shields.io/badge/API_Docs-0B84FE?style=flat-square&logo=swagger&logoColor=white)](https://www.writon.xyz/docs)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](https://opensource.org/licenses/MIT)
+[![API Docs](https://img.shields.io/badge/API_Docs-00D9FF?style=flat-square&logo=swagger&logoColor=white)](https://www.writon.xyz/docs)
+[![License: MIT](https://img.shields.io/badge/License-MIT-00C853?style=flat-square)](https://opensource.org/licenses/MIT)
 
 </div>
 
@@ -62,7 +62,7 @@ RESTful API for integration with applications, websites, and services.
 **Frontend:**
 - ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
 - ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
-- ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+- ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=flat-square&logo=javascript&logoColor=white)
 
 **AI Providers:**
 - ![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4-412991?style=flat-square&logo=openai&logoColor=white)
