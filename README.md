@@ -11,9 +11,7 @@
 
 </div>
 
-> **AI-powered text processor** with CLI and API interfaces for grammar correction, translation, and summarization.
-
-**Writon** transforms your text with AI while maintaining your intent and applying consistent case formatting. Clean, fast, and reliable - available as both a command-line tool and a web API.
+> **Writon** is an AI-powered text processor that transforms your text while maintaining your intent and applying consistent case formatting. Clean, fast, and reliable - available as both a command-line tool and a web API for grammar correction, translation, and summarization.
 
 ## 🌟 Live Demo
 
