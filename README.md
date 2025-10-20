@@ -7,7 +7,6 @@
 [![Live Demo](https://img.shields.io/badge/Live_Demo-0B84FE?style=flat-square&logo=googlechrome&logoColor=white)](https://www.writon.xyz)
 [![API Docs](https://img.shields.io/badge/API_Docs-0B84FE?style=flat-square&logo=swagger&logoColor=white)](https://www.writon.xyz/docs)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](https://opensource.org/licenses/MIT)
-[![Python 3.7+](https://img.shields.io/badge/Python-3.7+-blue?style=flat-square&logo=python&logoColor=white)](https://www.python.org/downloads/)
 
 </div>
 
