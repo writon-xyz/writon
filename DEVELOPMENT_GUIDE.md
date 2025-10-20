@@ -106,7 +106,7 @@ Fixes #456"
 ```bash
 git commit -m "docs: Update README with latest dependency versions
 
-- Updated FastAPI version badge to 0.117+
+- Updated FastAPI version badge to 0.119+
 - Added new feature descriptions
 - Fixed broken links"
 ```
@@ -115,9 +115,9 @@ git commit -m "docs: Update README with latest dependency versions
 ```bash
 git commit -m "chore: Update dependencies to latest versions
 
-- Updated FastAPI from 0.116.1 to 0.117.1
-- Updated pytest from 7.4.4 to 8.2.0
-- Updated httpx from 0.25.2 to 0.28.1
+- Updated FastAPI from 0.118.0 to 0.119.0
+- Updated Uvicorn from 0.37.0 to 0.38.0
+- Updated Pydantic from 2.11.10 to 2.12.3
 - All tests pass with updated dependencies
 - Consolidates multiple Dependabot PRs"
 ```
@@ -194,9 +194,9 @@ git push origin docs/update-api-documentation
 # For individual dependency updates
 git checkout -b chore/update-fastapi
 git add requirements.txt
-git commit -m "chore: Update FastAPI to 0.117.1
+git commit -m "chore: Update FastAPI to 0.119.0
 
-- Updated FastAPI from 0.116.1 to 0.117.1
+- Updated FastAPI from 0.118.0 to 0.119.0
 - All tests pass with new version
 - No breaking changes detected"
 
@@ -208,10 +208,9 @@ git checkout main
 git add requirements.txt
 git commit -m "chore: Update dependencies to latest versions
 
-- Updated httpx from 0.25.2 to 0.28.1
-- Updated pytest-asyncio from 0.21.1 to 0.26.0  
-- Updated uvicorn from 0.24.0 to 0.36.0
-- Updated pytest from 7.4.4 to 8.2.0 (required for pytest-asyncio 0.26.0)
+- Updated FastAPI from 0.118.0 to 0.119.0
+- Updated Uvicorn from 0.37.0 to 0.38.0
+- Updated Pydantic from 2.11.10 to 2.12.3
 - All tests pass with updated dependencies
 - Consolidates multiple Dependabot PRs"
 

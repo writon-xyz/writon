@@ -76,8 +76,9 @@ git commit -m "docs: Update README with latest changes
 ```bash
 git commit -m "chore: Update dependencies to latest versions
 
-- Updated FastAPI from 0.116.1 to 0.117.1
-- Updated pytest from 7.4.4 to 8.2.0
+- Updated FastAPI from 0.118.0 to 0.119.0
+- Updated Uvicorn from 0.37.0 to 0.38.0
+- Updated Pydantic from 2.11.10 to 2.12.3
 - All tests pass with updated dependencies"
 ```
 
