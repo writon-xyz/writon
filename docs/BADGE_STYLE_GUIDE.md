@@ -47,10 +47,12 @@ Centered below logo, use Writon brand color for primary badges:
 
 **Frontend:**
 ```markdown
-- ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-- ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+- ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&labelColor=grey&logo=html5&logoColor=white)
+- ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square)
 - ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=flat-square&logo=javascript&logoColor=white)
 ```
+
+**Note:** CSS3 doesn't include a logo because the CSS3 shield icon is not available in Simple Icons.
 
 **AI Providers:**
 ```markdown
@@ -75,8 +77,8 @@ Centered below logo, use Writon brand color for primary badges:
 | Python | `#3776AB` | python |
 | FastAPI | `#009688` | fastapi |
 | Uvicorn | `#499848` | gunicorn |
-| HTML5 | `#E34F26` | html5 |
-| CSS3 | `#1572B6` | css3 |
+| HTML5 | `#E34F26` (grey label) | html5 |
+| CSS3 | `#1572B6` | none (icon not available) |
 | JavaScript | `#F7DF1E` | javascript (white logo) |
 | OpenAI | `#412991` | openai |
 | Google | `#4285F4` | google |
