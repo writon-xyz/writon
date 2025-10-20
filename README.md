@@ -61,7 +61,7 @@ RESTful API for integration with applications, websites, and services.
 
 **Frontend:**
 - ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&labelColor=grey&logo=html5&logoColor=white)
-- ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&labelColor=grey&logo=css3&logoColor=white)
+- ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&labelColor=grey&logo=css3-alt&logoColor=white)
 - ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=flat-square&logo=javascript&logoColor=white)
 
 **AI Providers:**
