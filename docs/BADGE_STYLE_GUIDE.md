@@ -25,21 +25,17 @@ This document defines the standard badge styling for Writon documentation to ens
 Centered below logo, use Writon brand color for primary badges:
 
 ```markdown
-<p align="center">
-  <a href="https://www.writon.xyz">
-    <img src="https://img.shields.io/badge/Live_Demo-0B84FE?style=flat-square&logo=googlechrome&logoColor=white" alt="Live Demo"/>
-  </a>
-  <a href="https://www.writon.xyz/docs">
-    <img src="https://img.shields.io/badge/API_Docs-0B84FE?style=flat-square&logo=swagger&logoColor=white" alt="API Documentation"/>
-  </a>
-  <a href="https://opensource.org/licenses/MIT">
-    <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License: MIT"/>
-  </a>
-  <a href="https://www.python.org/downloads/">
-    <img src="https://img.shields.io/badge/Python-3.7+-blue?style=flat-square&logo=python&logoColor=white" alt="Python 3.7+"/>
-  </a>
-</p>
+<div align="center">
+
+[![Live Demo](https://img.shields.io/badge/Live_Demo-0B84FE?style=flat-square&logo=googlechrome&logoColor=white)](https://www.writon.xyz)
+[![API Docs](https://img.shields.io/badge/API_Docs-0B84FE?style=flat-square&logo=swagger&logoColor=white)](https://www.writon.xyz/docs)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](https://opensource.org/licenses/MIT)
+[![Python 3.7+](https://img.shields.io/badge/Python-3.7+-blue?style=flat-square&logo=python&logoColor=white)](https://www.python.org/downloads/)
+
+</div>
 ```
+
+**Note:** Use Markdown link syntax `[![badge](url)](link)` instead of HTML `<a>` tags to prevent underlines on GitHub.
 
 ### Tech Stack Badges
 
@@ -117,9 +113,25 @@ Centered below logo, use Writon brand color for primary badges:
 3. ✅ **Use Writon brand color (`#0B84FE`) for primary badges**
 4. ✅ **Use official brand colors for technology badges**
 5. ✅ **Maintain white logo color** (except JavaScript)
-6. ❌ **Never use emojis in badges**
-7. ❌ **Never use `for-the-badge` style** (outdated)
-8. ❌ **Don't add badges to every document** (only README.md)
+6. ✅ **Use Markdown link syntax for clickable badges** - Prevents underlines
+7. ❌ **Never use emojis in badges**
+8. ❌ **Never use `for-the-badge` style** (outdated)
+9. ❌ **Never use HTML `<a>` tags for badges** (causes underlines)
+10. ❌ **Don't add badges to every document** (only README.md)
+
+## Format Guidelines
+
+### For Clickable Badges (Header Section)
+Use Markdown link syntax to prevent underlines:
+```markdown
+[![Badge Text](badge-url)](link-url)
+```
+
+### For Non-Clickable Badges (Tech Stack Section)
+Use standard Markdown image syntax:
+```markdown
+![Badge Text](badge-url)
+```
 
 ## Updating Badges
 
