@@ -8,7 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Changed
-- Updated `pydantic` from `2.11.9` to `2.11.10`.
+- Updated `fastapi` from `0.118.0` to `0.119.0` - Adds support for mixed Pydantic v1 and v2 models.
+- Updated `uvicorn[standard]` from `0.37.0` to `0.38.0` - Adds Python 3.14 support.
+- Updated `pydantic` from `2.11.10` to `2.12.3` - New features and bug fixes.
+
+### Fixed
+- Fixed Pydantic V2 deprecation warnings by replacing `.dict()` with `.model_dump()` in error handlers.
 
 ## [0.1.0] - 2025-09-12
 

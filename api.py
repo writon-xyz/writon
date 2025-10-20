@@ -414,7 +414,7 @@ async def http_exception_handler(request: Request, exc: HTTPException):
     """Handles HTTPExceptions gracefully, returning a structured JSON error."""
     return JSONResponse(
         status_code=exc.status_code,
-        content=create_error_response("http_error", exc.detail).dict(),
+        content=create_error_response("http_error", exc.detail).model_dump(),
     )
 
 
@@ -427,7 +427,7 @@ async def general_exception_handler(request: Request, exc: Exception):
         status_code=500,
         content=create_error_response(
             "internal_server_error", "An unexpected error occurred on the server."
-        ).dict(),
+        ).model_dump(),
     )
 
 
