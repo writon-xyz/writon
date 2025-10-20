@@ -2,20 +2,14 @@
   <img src="frontend/assets/logo.PNG" alt="Writon Logo" width="120"/>
 </p>
 
-<p align="center">
-  <a href="https://www.writon.xyz" style="text-decoration: none;">
-    <img src="https://img.shields.io/badge/Live_Demo-0B84FE?style=flat-square&logo=googlechrome&logoColor=white" alt="Live Demo"/>
-  </a>
-  <a href="https://www.writon.xyz/docs" style="text-decoration: none;">
-    <img src="https://img.shields.io/badge/API_Docs-0B84FE?style=flat-square&logo=swagger&logoColor=white" alt="API Documentation"/>
-  </a>
-  <a href="https://opensource.org/licenses/MIT" style="text-decoration: none;">
-    <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License: MIT"/>
-  </a>
-  <a href="https://www.python.org/downloads/" style="text-decoration: none;">
-    <img src="https://img.shields.io/badge/Python-3.7+-blue?style=flat-square&logo=python&logoColor=white" alt="Python 3.7+"/>
-  </a>
-</p>
+<div align="center">
+
+[![Live Demo](https://img.shields.io/badge/Live_Demo-0B84FE?style=flat-square&logo=googlechrome&logoColor=white)](https://www.writon.xyz)
+[![API Docs](https://img.shields.io/badge/API_Docs-0B84FE?style=flat-square&logo=swagger&logoColor=white)](https://www.writon.xyz/docs)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](https://opensource.org/licenses/MIT)
+[![Python 3.7+](https://img.shields.io/badge/Python-3.7+-blue?style=flat-square&logo=python&logoColor=white)](https://www.python.org/downloads/)
+
+</div>
 
 > **AI-powered text processor** with CLI and API interfaces for grammar correction, translation, and summarization.
 
