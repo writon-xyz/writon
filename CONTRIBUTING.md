@@ -20,6 +20,7 @@ Thank you for your interest in contributing to Writon! 🎉
 2. **Create a virtual environment**
    ```bash
    python -m venv .venv
+   # Or: python3 -m venv .venv
    source .venv/bin/activate  # On Windows: .venv\Scripts\activate
    ```
 
@@ -124,8 +125,13 @@ writon/
 ├── pyproject.toml          # Project configuration and build metadata
 ├── README.md               # This documentation
 ├── CONTRIBUTING.md         # Contribution guidelines
+├── DEVELOPMENT_GUIDE.md    # Complete development workflow
+├── QUICK_REFERENCE.md      # Daily development commands
 ├── CHANGELOG.md            # Version history
 ├── SECURITY.md             # Security policy
+├── docs/
+│   ├── BADGE_STYLE_GUIDE.md # Badge styling standards for documentation
+│   └── screenshot.png      # Project screenshots and assets
 ├── core/
 │   ├── __init__.py
 │   └── writon.py           # Core business logic and AI integration
