@@ -4,7 +4,7 @@ requests==2.32.5
 python-dotenv==1.1.1
 
 # API dependencies
-fastapi==0.119.0
+fastapi==0.120.0
 uvicorn[standard]==0.38.0
 pydantic==2.12.3
 python-multipart==0.0.20
