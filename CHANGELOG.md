@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Changed
+- Updated `fastapi` from `0.119.0` to `0.120.0` - Internal documentation improvements, adds annotated-doc dependency.
+- Updated `python-dotenv` from `1.1.1` to `1.2.1` - Adds Python 3.14 support and PYTHON_DOTENV_DISABLED env var option.
 - Updated `fastapi` from `0.118.0` to `0.119.0` - Adds support for mixed Pydantic v1 and v2 models.
 - Updated `uvicorn[standard]` from `0.37.0` to `0.38.0` - Adds Python 3.14 support.
 - Updated `pydantic` from `2.11.10` to `2.12.3` - New features and bug fixes.
@@ -54,7 +56,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Copy & Download** - Easy text export options (Web only)
 
 ### Technical
-- **FastAPI Backend** - Modern, fast web framework (v0.119.0)
+- **FastAPI Backend** - Modern, fast web framework (v0.120.0)
 - **ES6 JavaScript Frontend** - Modern web technologies
 - **Responsive CSS** - Mobile-first design approach
 - **Token Management** - Optimized for long text processing (4000+ tokens)
@@ -62,7 +64,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Render Deployment** - Production deployment on Render.com
 - **GitHub Actions** - Automated dependency updates via Dependabot
 - **Latest Dependencies** - All packages updated to latest stable versions
-- **Security Patches** - Requests 2.32.5, Python-dotenv 1.1.1
+- **Security Patches** - Requests 2.32.5, Python-dotenv 1.2.1
 - **Performance Improvements** - Uvicorn 0.38.0, HTTPx 0.28.1
 - **Testing Framework** - Pytest 8.4.2 with async support
 
