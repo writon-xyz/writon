@@ -460,8 +460,8 @@ writon/
 ### Core Dependencies
 
 - `requests>=2.32.5` - HTTP client for AI APIs (latest with security patches)
-- `python-dotenv>=1.1.1` - Environment configuration
-- `fastapi>=0.119.0` - Web API framework (latest version)
+- `python-dotenv>=1.2.1` - Environment configuration
+- `fastapi>=0.120.0` - Web API framework (latest version)
 - `uvicorn[standard]>=0.38.0` - ASGI web server (latest with performance improvements)
 - `pydantic>=2.12.3` - Data validation (latest version)
 - `httpx>=0.28.1` - Modern HTTP client for testing
