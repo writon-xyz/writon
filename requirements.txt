@@ -5,7 +5,7 @@ python-dotenv==1.2.1
 
 # API dependencies
 fastapi==0.120.0
-uvicorn[standard]==0.38.0
+uvicorn[standard]==0.39.0
 pydantic==2.12.3
 python-multipart==0.0.20
 
