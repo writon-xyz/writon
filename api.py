@@ -236,6 +236,29 @@ def create_error_response(error_type: str, message: str) -> ErrorResponse:
 
 # --- API Routes ---
 
+from fastapi.responses import PlainTextResponse, Response
+
+@app.get("/robots.txt", include_in_schema=False)
+async def robots_txt():
+    return PlainTextResponse(
+        "User-agent: *\n"
+        "Allow: /\n\n"
+        "Sitemap: https://www.writon.xyz/sitemap.xml\n"
+    )
+
+
+@app.get("/sitemap.xml", include_in_schema=False)
+async def sitemap_xml():
+    sitemap = """<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://www.writon.xyz/</loc>
+    </url>
+    <url>
+        <loc>https://www.writon.xyz/api-docs.html</loc>
+    </url>
+</urlset>"""
+    return Response(content=sitemap, media_type="application/xml")
 
 @app.get("/api", response_model=dict, summary="API Information")
 async def api_info():
@@ -246,7 +269,6 @@ async def api_info():
         "docs": "/docs",
         "health": "/health",
     }
-
 
 @app.get("/health", response_model=HealthResponse, summary="Health Check")
 async def health_check():
