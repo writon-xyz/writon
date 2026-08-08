@@ -18,7 +18,7 @@
 
 **Try Writon right now!** → [**www.writon.xyz**](https://www.writon.xyz)
 
-![Writon Homepage](https://raw.githubusercontent.com/writon-xyz/writon/main/docs/screenshot.png)
+![Writon Homepage](https://raw.githubusercontent.com/sbklabs/writon/main/docs/screenshot.png)
 
 *Beautiful, modern interface with space-themed design - grammar correction, translation, and summarization at your fingertips.*
 
@@ -88,7 +88,7 @@ RESTful API for integration with applications, websites, and services.
 
 ```bash
 # Clone the repository
-git clone https://github.com/writon-xyz/writon.git
+git clone https://github.com/sbklabs/writon.git
 cd writon
 
 # Create and activate a virtual environment
@@ -485,7 +485,7 @@ writon/
 
 ### **GitHub Workflow:**
 - **Branch Protection** - Main branch requires pull requests
-- **Code Owners** - Automatic reviewer assignment (@writon-xyz, @etsibeko-dev)
+- **Code Owners** - Automatic reviewer assignment (@sbklabs, @etsibeko-dev)
 - **Quality Gates** - All tests must pass before merging
 - **Professional Standards** - Conventional commits and code review process
 

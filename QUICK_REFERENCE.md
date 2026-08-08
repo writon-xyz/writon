@@ -5,7 +5,7 @@
 ## 🔧 Setup Commands
 ```bash
 # Clone and setup
-git clone https://github.com/writon-xyz/writon.git
+git clone https://github.com/sbklabs/writon.git
 cd writon
 python3 -m venv .venv
 source .venv/bin/activate
@@ -100,8 +100,8 @@ git commit -m "fix: Security update for critical vulnerability
 git config user.name
 git config user.email
 
-# Switch to organization (@writon-xyz)
-git config user.name "writon-xyz"
+# Switch to organization (@sbklabs)
+git config user.name "sbklabs"
 git config user.email "hello.writon@gmail.com"
 
 # Switch to personal (@etsibeko-dev)
@@ -145,16 +145,16 @@ git push origin hotfix/critical-fix
 ```
 
 ## 📞 Quick Info
-- **Repo**: `https://github.com/writon-xyz/writon`
+- **Repo**: `https://github.com/sbklabs/writon`
 - **Live**: `https://www.writon.xyz`
 - **API Docs**: `https://www.writon.xyz/docs`
 - **Email**: `hello.writon@gmail.com`
-- **Accounts**: `@writon-xyz` (org), `@etsibeko-dev` (personal)
+- **Accounts**: `@sbklabs` (org), `@etsibeko-dev` (personal)
 
 ## 🎯 Branch Protection Rules
 - ✅ Main branch protected
-- ✅ Must use PRs (except admin bypass for @writon-xyz)
-- ✅ Auto-reviewers: @writon-xyz, @etsibeko-dev
+- ✅ Must use PRs (except admin bypass for @sbklabs)
+- ✅ Auto-reviewers: @sbklabs, @etsibeko-dev
 - ✅ All tests must pass
 
 **Remember**: Always test locally before pushing!

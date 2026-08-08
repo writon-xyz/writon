@@ -83,9 +83,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **Documentation**: [API Docs](https://www.writon.xyz/api-docs.html)
 - **Live Demo**: [writon.xyz](https://www.writon.xyz)
-- **Issues**: [GitHub Issues](https://github.com/writon-xyz/writon/issues)
+- **Issues**: [GitHub Issues](https://github.com/sbklabs/writon/issues)
 - **Email**: hello.writon@gmail.com
 
 ---
 
-*For the complete list of changes, see the [Git commit history](https://github.com/writon-xyz/writon/commits/main).*
+*For the complete list of changes, see the [Git commit history](https://github.com/sbklabs/writon/commits/main).*
