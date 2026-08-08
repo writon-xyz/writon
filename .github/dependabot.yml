@@ -10,9 +10,9 @@ updates:
       timezone: "UTC"
     open-pull-requests-limit: 5
     reviewers:
-      - "writon-xyz"  # Writon organization account
+      - "sbk-labs"  # SBK Labs organization account
     assignees:
-      - "writon-xyz"  # Writon organization account
+      - "sbk-labs"  # SBK Labs organization account
     commit-message:
       prefix: "chore"
       prefix-development: "chore"
@@ -35,9 +35,9 @@ updates:
       timezone: "UTC"
     open-pull-requests-limit: 3
     reviewers:
-      - "writon-xyz"  # Writon organization account
+      - "sbk-labs"  # SBK Labs organization account
     assignees:
-      - "writon-xyz"  # Writon organization account
+      - "sbk-labs"  # SBK Labs organization account
     commit-message:
       prefix: "chore"
       prefix-development: "chore"

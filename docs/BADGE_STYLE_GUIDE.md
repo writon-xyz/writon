@@ -149,4 +149,4 @@ When updating version numbers or adding new technologies:
 ---
 
 **Last Updated**: 2025-10-20
-**Maintainer**: @writon-xyz, @etsibeko-dev
+**Maintainer**: @sbklabs, @etsibeko-dev

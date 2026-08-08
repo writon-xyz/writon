@@ -1,24 +1,24 @@
 # Global owners
-* @writon-xyz @etsibeko-dev
+* @sbk-labs @etsibeko-dev
 
 # Core application files
-/main.py @writon-xyz @etsibeko-dev
-/api.py @writon-xyz @etsibeko-dev
-/core/ @writon-xyz @etsibeko-dev
-/formatter/ @writon-xyz @etsibeko-dev
-/prompts/ @writon-xyz @etsibeko-dev
+/main.py @sbk-labs @etsibeko-dev
+/api.py @sbk-labs @etsibeko-dev
+/core/ @sbk-labs @etsibeko-dev
+/formatter/ @sbk-labs @etsibeko-dev
+/prompts/ @sbk-labs @etsibeko-dev
 
 # Frontend files
-/frontend/ @writon-xyz @etsibeko-dev
+/frontend/ @sbk-labs @etsibeko-dev
 
 # Configuration files
-/requirements.txt @writon-xyz @etsibeko-dev
-/pyproject.toml @writon-xyz @etsibeko-dev
-/render.yaml @writon-xyz @etsibeko-dev
-/.github/ @writon-xyz @etsibeko-dev
+/requirements.txt @sbk-labs @etsibeko-dev
+/pyproject.toml @sbk-labs @etsibeko-dev
+/render.yaml @sbk-labs @etsibeko-dev
+/.github/ @sbk-labs @etsibeko-dev
 
 # Documentation
-/README.md @writon-xyz @etsibeko-dev
-/CONTRIBUTING.md @writon-xyz @etsibeko-dev
-/CHANGELOG.md @writon-xyz @etsibeko-dev
-/SECURITY.md @writon-xyz @etsibeko-dev
+/README.md @sbk-labs @etsibeko-dev
+/CONTRIBUTING.md @sbk-labs @etsibeko-dev
+/CHANGELOG.md @sbk-labs @etsibeko-dev
+/SECURITY.md @sbk-labs @etsibeko-dev
