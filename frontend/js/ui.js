@@ -144,10 +144,8 @@ function updateModelPlaceholder() {
     if (providerSelect && modelInput) {
         const provider = providerSelect.value;
         const placeholders = {
-            'groq': 'llama-3.1-70b-versatile',
-            'openai': 'gpt-4o',
-            'google': 'gemini-1.5-flash',
-            'anthropic': 'claude-3-haiku-20240307'
+            'groq': 'llama-3.1-8b-instant',
+            'google': 'gemini-3.5-flash'
         };
 
         modelInput.placeholder = placeholders[provider] || 'Default model';
@@ -417,10 +415,8 @@ function processAgain() {
 
 function validateApiKey(provider, key) {
     const patterns = {
-        'openai': /^sk-[a-zA-Z0-9_-]{32,}$/,
         'groq': /^gsk_[a-zA-Z0-9_-]{32,}$/,
-        'google': /^AI[a-zA-Z0-9_-]{32,}$/,
-        'anthropic': /^sk-ant-[a-zA-Z0-9_-]{32,}$/
+        'google': /^AI[a-zA-Z0-9_-]{32,}$/
     };
     return patterns[provider] ? patterns[provider].test(key) : key.length > 10;
 }

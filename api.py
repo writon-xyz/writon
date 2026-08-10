@@ -205,10 +205,8 @@ def extract_user_keys(request: Request) -> Optional[dict]:
     """
     user_keys = {}
     provider_map = {
-        "openai": "x-openai",
         "groq": "x-groq",
         "google": "x-google",
-        "anthropic": "x-anthropic",
     }
 
     # Extract provider override first
@@ -286,7 +284,7 @@ async def health_check():
 async def get_providers():
     """Returns a list of available providers and supported configurations."""
     return ProvidersResponse(
-        available_providers=["openai", "google", "anthropic", "groq"],
+        available_providers=["groq", "google"],
         current_provider=get_current_provider(),
         supported_modes=["grammar", "translate", "summarize"],
         supported_cases=["lower", "sentence", "title", "upper"],
