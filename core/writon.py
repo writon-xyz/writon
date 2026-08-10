@@ -75,14 +75,14 @@ class GroqProvider(AIProvider):
 
 class GoogleProvider(AIProvider):
     def call_ai(self, prompt: str) -> str:
-        headers = {"Content-Type": "application/json"}
+        headers = {"Content-Type": "application/json", "x-goog-api-key": self.api_key}
         data = {
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {"temperature": 0.7, "maxOutputTokens": 4000},
         }
         try:
             response = requests.post(
-                f"https://generativelanguage.googleapis.com/v1beta/models/{self.model}:generateContent?key={self.api_key}",
+                f"https://generativelanguage.googleapis.com/v1beta/models/{self.model}:generateContent",
                 headers=headers,
                 json=data,
                 timeout=60,
@@ -125,7 +125,7 @@ class WritonCore:
     DEFAULT_MODELS = {
         "openai": "gpt-4o",
         "groq": "llama-3.1-8b-instant",
-        "google": "gemini-1.5-flash",
+        "google": "gemini-3.5-flash",
         "anthropic": "claude-3-haiku-20240307",
     }
 

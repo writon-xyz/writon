@@ -250,7 +250,7 @@ To use your own API keys, include these headers in requests:
 | `X-Anthropic-Key` | Anthropic API key | `sk-ant-...` |
 | `X-OpenAI-Model` | OpenAI model (optional) | `gpt-4o`, `gpt-3.5-turbo` |
 | `X-Groq-Model` | Groq model (optional) | `llama-3.1-70b-versatile` |
-| `X-Google-Model` | Google model (optional) | `gemini-1.5-flash` |
+| `X-Google-Model` | Google model (optional) | `gemini-3.5-flash` |
 | `X-Anthropic-Model` | Anthropic model (optional) | `claude-3-haiku-20240307` |
 
 Example with custom headers:
@@ -298,7 +298,7 @@ GROQ_MODEL=llama-3.1-70b-versatile
 
 # Google Configuration  
 GOOGLE_API_KEY=your_google_api_key_here
-GOOGLE_MODEL=gemini-1.5-flash
+GOOGLE_MODEL=gemini-3.5-flash
 
 # OpenAI Configuration
 OPENAI_API_KEY=your_openai_api_key_here
