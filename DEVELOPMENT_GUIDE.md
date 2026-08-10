@@ -8,7 +8,7 @@
 - **Organization**: `@sbk-labs`
 - **Personal Account**: `@etsibeko-dev`
 - **Repository**: `https://github.com/sbk-labs/writon`
-- **Live Site**: `https://www.writon.xyz`
+- **Live Site**: `https://writon-api.onrender.com`
 
 ### Branch Protection Rules
 - ✅ **Main branch protected** - All changes must go through PRs
@@ -267,7 +267,7 @@ git config user.email "your-personal-email@gmail.com"
 
 ### Automatic Deployment
 - **Render.com** automatically deploys from `main` branch
-- **Custom Domain**: `www.writon.xyz`
+- **Render Service URL**: `writon-api.onrender.com`
 - **Environment Variables**: Set in Render dashboard
 
 ### Manual Deployment Steps
@@ -282,15 +282,15 @@ git push origin main
 
 # 3. Monitor deployment
 # Check Render.com dashboard for build logs
-# Test live site: https://www.writon.xyz
+# Test live site: https://writon-api.onrender.com
 ```
 
 ### Environment Variables (Render)
 ```
 API_PROVIDER=groq
 ENVIRONMENT=production
-ALLOWED_ORIGINS=https://www.writon.xyz
-ALLOWED_HOSTS=www.writon.xyz
+ALLOWED_ORIGINS=https://writon-api.onrender.com
+ALLOWED_HOSTS=writon-api.onrender.com
 MAX_REQUEST_SIZE_MB=1
 MAX_FILE_SIZE_MB=5
 DEBUG_MODE=false
@@ -446,7 +446,7 @@ curl -X POST "http://localhost:8000/grammar" \
   -d '{"text": "test text", "case_style": "sentence"}'
 
 # Check deployment status
-curl https://www.writon.xyz/health
+curl https://writon-api.onrender.com/health
 ```
 
 ---
@@ -495,8 +495,8 @@ git push origin main
 - **Development Issues**: GitHub Issues
 - **Security Issues**: `hello.writon@gmail.com`
 - **General Questions**: GitHub Discussions
-- **Live Site**: https://www.writon.xyz
-- **API Docs**: https://www.writon.xyz/docs
+- **Live Site**: https://writon-api.onrender.com
+- **API Docs**: https://writon-api.onrender.com/docs
 
 ---
 

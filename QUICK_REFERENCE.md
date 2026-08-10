@@ -116,7 +116,7 @@ python -m pytest tests/ -v
 
 # Deploy to production
 git push origin main
-# Check: https://www.writon.xyz
+# Check: https://writon-api.onrender.com
 ```
 
 ## 🧪 Testing Commands
@@ -146,8 +146,8 @@ git push origin hotfix/critical-fix
 
 ## 📞 Quick Info
 - **Repo**: `https://github.com/sbk-labs/writon`
-- **Live**: `https://www.writon.xyz`
-- **API Docs**: `https://www.writon.xyz/docs`
+- **Live**: `https://writon-api.onrender.com`
+- **API Docs**: `https://writon-api.onrender.com/docs`
 - **Email**: `hello.writon@gmail.com`
 - **Accounts**: `@sbk-labs` (org), `@etsibeko-dev` (personal)
 
