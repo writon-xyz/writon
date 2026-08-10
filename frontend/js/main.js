@@ -48,9 +48,7 @@ const settingsPanel = document.querySelector('.settings-panel');
 // Key links
 const keyLinks = {
     'groq': document.getElementById('groq-link'),
-    'openai': document.getElementById('openai-link'),
-    'google': document.getElementById('google-link'),
-    'anthropic': document.getElementById('anthropic-link')
+    'google': document.getElementById('google-link')
 };
 
 export {
