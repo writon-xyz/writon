@@ -2,17 +2,62 @@ import { providerSelect, apiKeyInput, modelInput, modeSelect, caseStyleSelect, t
 import { toggleLanguageOptions, toggleCustomLanguage, updateModelPlaceholder, updateTextStats } from './ui.js';
 import { checkApiKeyStatus } from './api.js';
 
+function getStoredConfig() {
+    const stored = localStorage.getItem('writon-config');
+
+    if (!stored) return {};
+
+    try {
+        return JSON.parse(stored);
+    } catch (e) {
+        console.warn('Error parsing stored config:', e);
+        return {};
+    }
+}
+
 function saveConfig() {
+    const current = getStoredConfig();
+    const provider = providerSelect.value;
+
     const config = {
-        provider: providerSelect.value,
-        apiKey: apiKeyInput.value,
-        model: modelInput.value,
+        ...current,
+        provider,
+        providers: {
+            ...(current.providers || {}),
+            [provider]: {
+                apiKey: apiKeyInput.value,
+                model: modelInput.value
+            }
+        },
         mode: modeSelect.value,
         caseStyle: caseStyleSelect.value,
         targetLanguage: targetLanguageSelect.value,
         customLanguage: customLanguageInput.value
     };
+
+    // Remove the old shared credential fields.
+    delete config.apiKey;
+    delete config.model;
+
     localStorage.setItem('writon-config', JSON.stringify(config));
+}
+
+function loadProviderConfig(provider, config = getStoredConfig()) {
+    const providerConfig = config.providers?.[provider] || {};
+
+    if (apiKeyInput) {
+        apiKeyInput.value = providerConfig.apiKey || '';
+    }
+
+    if (modelInput) {
+        modelInput.value = providerConfig.model || '';
+    }
+
+    updateModelPlaceholder();
+
+    if (typeof checkApiKeyStatus === 'function') {
+        checkApiKeyStatus();
+    }
 }
 
 function loadStoredConfig() {
@@ -22,8 +67,9 @@ function loadStoredConfig() {
             const config = JSON.parse(stored);
             // Only set values if elements exist (for main page)
             if (providerSelect) providerSelect.value = config.provider || 'groq';
-            if (apiKeyInput) apiKeyInput.value = config.apiKey || '';
-            if (modelInput) modelInput.value = config.model || '';
+            if (providerSelect && apiKeyInput && modelInput) {
+                loadProviderConfig(providerSelect.value, config);
+            }
             if (modeSelect) modeSelect.value = config.mode || 'grammar';
             if (caseStyleSelect) caseStyleSelect.value = config.caseStyle || 'sentence';
             if (targetLanguageSelect) targetLanguageSelect.value = config.targetLanguage || 'Spanish';
@@ -83,4 +129,4 @@ function debounce(func, wait) {
     };
 }
 
-export { saveConfig, loadStoredConfig, loadSavedText, addCustomLanguageOption, debouncedSave, debounce };
+export { saveConfig, loadProviderConfig, loadStoredConfig, loadSavedText, addCustomLanguageOption, debouncedSave, debounce };

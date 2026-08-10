@@ -1,7 +1,7 @@
 import { providerSelect, apiKeyInput, modelInput, inputTextArea, modeSelect, caseStyleSelect, targetLanguageSelect, customLanguageInput, processBtn, toggleApiKeyBtn, clearTextBtn, pasteTextBtn, fileUploadInput, copyBtn, downloadBtn, shareBtn, processAgainBtn, fabSettingsToggle, settingsPanel, mobileNavToggle, mobileNavOverlay, mobileNavClose } from './main.js';
 import * as UI from './ui.js';
 import { handleFileUpload, callAPI, checkApiKeyStatus } from './api.js';
-import { saveConfig, debouncedSave, debounce } from './config.js';
+import { saveConfig, loadProviderConfig, debouncedSave, debounce } from './config.js';
 
 let processingStartTime = 0;
 let currentProcessedText = '';
@@ -36,9 +36,11 @@ function setupEventListeners() {
     // Only add event listeners if elements exist (for main page)
     if (providerSelect) {
         providerSelect.addEventListener('change', function () {
+            const provider = providerSelect.value;
+
             UI.updateKeyLinks();
-            saveConfig();
-            UI.updateModelPlaceholder();
+            loadProviderConfig(provider);
+            UI.validateApiKeyFormat();
         });
     }
 
