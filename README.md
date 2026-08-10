@@ -41,7 +41,7 @@ RESTful API for integration with applications, websites, and services.
 - 🧠 **AI-Powered Processing**: Grammar correction, translation, and summarization
 - 🌍 **Multi-Language Translation**: Built-in presets + custom language support
 - 📝 **Case Formatting**: lowercase, Sentence case, Title Case, UPPERCASE
-- 🔄 **Multi-Provider AI**: Supports OpenAI, Google Gemini, Anthropic Claude, and Groq
+- 🔄 **Multi-Provider AI**: Supports Groq and Google Gemini
 - 🔑 **BYOK (Bring Your Own Key)**: Use your own API keys for complete privacy
 - ⚡ **Lightning Fast**: Optimized for speed and reliability
 - 🎨 **Beautiful UI**: Modern, responsive web interface with space-themed design
@@ -66,10 +66,8 @@ RESTful API for integration with applications, websites, and services.
 - ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=flat-square&logo=javascript&logoColor=white)
 
 **AI Providers:**
-- ![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4-412991?style=flat-square&logo=openai&logoColor=white)
-- ![Google](https://img.shields.io/badge/Google-Gemini-4285F4?style=flat-square&logo=google&logoColor=white)
-- ![Anthropic](https://img.shields.io/badge/Anthropic-Claude-191919?style=flat-square&logo=anthropic&logoColor=white)
-- ![Groq](https://img.shields.io/badge/Groq-Llama--3-F55036?style=flat-square&logo=lightning&logoColor=white)
+- Groq
+- Google Gemini
 
 **Deployment:**
 - ![Render](https://img.shields.io/badge/Render-Deployed-46E3B7?style=flat-square&logo=render&logoColor=white)
@@ -180,13 +178,13 @@ curl -X POST "http://localhost:8000/grammar" \
 ```
 
 ### Translation (BYOK Mode)
-This example uses an OpenAI API key via headers.
+This example uses a Google API key via headers.
 
 ```bash
 curl -X POST "http://localhost:8000/translate" \
   -H "Content-Type: application/json" \
-  -H "X-Provider: openai" \
-  -H "X-OpenAI-Key: your_openai_api_key_here" \
+  -H "X-Provider: google" \
+  -H "X-Google-Key: your_google_api_key_here" \
   -d '{
     "text": "Hello, how are you?",
     "target_language": "Spanish",
@@ -243,15 +241,15 @@ To use your own API keys, include these headers in requests:
 
 | Header | Description | Example |
 |--------|-------------|---------|
-| `X-Provider` | AI provider to use | `groq`, `openai`, `google`, `anthropic` |
-| `X-OpenAI-Key` | OpenAI API key | `sk-...` |
+| `X-Provider` | AI provider to use | `groq`, `google` |
+
 | `X-Groq-Key` | Groq API key | `gsk_...` |
 | `X-Google-Key` | Google Gemini API key | `AI...` |
-| `X-Anthropic-Key` | Anthropic API key | `sk-ant-...` |
-| `X-OpenAI-Model` | OpenAI model (optional) | `gpt-4o`, `gpt-3.5-turbo` |
+
+
 | `X-Groq-Model` | Groq model (optional) | `llama-3.1-70b-versatile` |
 | `X-Google-Model` | Google model (optional) | `gemini-3.5-flash` |
-| `X-Anthropic-Model` | Anthropic model (optional) | `claude-3-haiku-20240307` |
+
 
 Example with custom headers:
 
@@ -287,7 +285,7 @@ Writon is configured to work out-of-the-box using Groq. For most users, you only
 Create a `.env` file by copying the `.env.example` (`cp .env.example .env`). Then, add your Groq key.
 
 ```env
-# The default provider is Groq. You can optionally switch to openai, google, or anthropic.
+# The default provider is Groq. You can optionally switch to Google.
 API_PROVIDER=groq
 
 # Groq Configuration (Recommended for easy setup)
@@ -300,13 +298,7 @@ GROQ_MODEL=llama-3.1-70b-versatile
 GOOGLE_API_KEY=your_google_api_key_here
 GOOGLE_MODEL=gemini-3.5-flash
 
-# OpenAI Configuration
-OPENAI_API_KEY=your_openai_api_key_here
-OPENAI_MODEL=gpt-4o
 
-# Anthropic Configuration
-ANTHROPIC_API_KEY=your_anthropic_api_key_here
-ANTHROPIC_MODEL=claude-3-haiku-20240307
 
 # Debug mode (optional)
 DEBUG_MODE=false
@@ -471,10 +463,8 @@ writon/
 
 ## Supported AI Providers
 
-- **OpenAI**: GPT-4, GPT-3.5, and newer models
-- **Google**: Gemini Pro, Gemini Flash, and Gemini models
-- **Anthropic**: Claude 3 family models
-- **Groq**: Fast inference with Llama and open source models
+- **Groq**: Fast inference with Llama and open-source models
+- **Google**: Gemini models
 
 ## 🤖 Automation & Workflow
 
