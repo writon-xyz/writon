@@ -36,23 +36,6 @@ class AIProvider(ABC):
 
 # --- Concrete AI Provider Implementations ---
 
-class OpenAIProvider(AIProvider):
-    def call_ai(self, prompt: str) -> str:
-        headers = {"Content-Type": "application/json", "Authorization": f"Bearer {self.api_key}"}
-        data = {
-            "model": self.model, 
-            "messages": [{"role": "user", "content": prompt}],
-            "max_tokens": 4000,
-            "temperature": 0.7
-        }
-        try:
-            response = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, json=data, timeout=60)
-            response.raise_for_status()
-            result = response.json()
-            return result["choices"][0]["message"]["content"].strip()
-        except Exception as e:
-            raise AIProviderError(f"OpenAI API call failed: {e}")
-
 class GroqProvider(AIProvider):
     def call_ai(self, prompt: str) -> str:
         headers = {"Content-Type": "application/json", "Authorization": f"Bearer {self.api_key}"}
@@ -96,26 +79,6 @@ class GoogleProvider(AIProvider):
         except Exception as e:
             raise AIProviderError(f"Google API call failed: {e}")
 
-class AnthropicProvider(AIProvider):
-    def call_ai(self, prompt: str) -> str:
-        headers = {
-            "x-api-key": self.api_key,
-            "anthropic-version": "2023-06-01",
-            "Content-Type": "application/json",
-        }
-        data = {
-            "model": self.model,
-            "max_tokens": 4000,
-            "messages": [{"role": "user", "content": prompt}],
-        }
-        try:
-            response = requests.post("https://api.anthropic.com/v1/messages", headers=headers, json=data, timeout=60)
-            response.raise_for_status()
-            result = response.json()
-            return result["content"][0]["text"].strip()
-        except Exception as e:
-            raise AIProviderError(f"Anthropic API call failed: {e}")
-
 # --- Core Logic ---
 
 class WritonCore:
@@ -123,18 +86,14 @@ class WritonCore:
     Handles the core text processing logic by orchestrating AI providers.
     """
     DEFAULT_MODELS = {
-        "openai": "gpt-4o",
-        "groq": "llama-3.1-8b-instant",
+            "groq": "llama-3.1-8b-instant",
         "google": "gemini-3.5-flash",
-        "anthropic": "claude-3-haiku-20240307",
-    }
+        }
 
     PROVIDER_CLASSES = {
-        "openai": OpenAIProvider,
-        "groq": GroqProvider,
-        "google": GoogleProvider,
-        "anthropic": AnthropicProvider,
-    }
+    "groq": GroqProvider,
+    "google": GoogleProvider,
+}
 
     def _get_provider(self, user_keys: dict = None) -> AIProvider:
         """

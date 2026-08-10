@@ -29,29 +29,10 @@ elif provider == "google":
         ),
     )
     print("GOOGLE_MODEL:", os.getenv("GOOGLE_MODEL", "Not set"))
-elif provider == "openai":
-    print(
-        "OPENAI_API_KEY:",
-        (
-            os.getenv("OPENAI_API_KEY", "Not set")[:10] + "..."
-            if os.getenv("OPENAI_API_KEY")
-            else "Not set"
-        ),
-    )
-    print("OPENAI_MODEL:", os.getenv("OPENAI_MODEL", "Not set"))
-elif provider == "anthropic":
-    print(
-        "ANTHROPIC_API_KEY:",
-        (
-            os.getenv("ANTHROPIC_API_KEY", "Not set")[:10] + "..."
-            if os.getenv("ANTHROPIC_API_KEY")
-            else "Not set"
-        ),
-    )
-    print("ANTHROPIC_MODEL:", os.getenv("ANTHROPIC_MODEL", "Not set"))
+
 else:
     print(
-        "Invalid or missing API_PROVIDER. Valid options: openai, google, anthropic, groq"
+        "Invalid or missing API_PROVIDER. Valid options: groq, google"
     )
 
 print()
