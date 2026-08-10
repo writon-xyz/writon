@@ -53,11 +53,9 @@ function loadProviderConfig(provider, config = getStoredConfig()) {
         modelInput.value = providerConfig.model || '';
     }
 
-    // Update the provider-specific model placeholder immediately.
     updateModelPlaceholder();
 
-    // Re-check the newly selected provider/key immediately.
-    if (typeof checkApiKeyStatus === 'function') {
+if (typeof checkApiKeyStatus === 'function') {
         checkApiKeyStatus();
     }
 }
