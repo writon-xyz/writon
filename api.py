@@ -101,7 +101,7 @@ if os.getenv("ENVIRONMENT") == "production":
 
 # 4. Trusted host (production only)
 if os.getenv("ENVIRONMENT") == "production":
-    allowed_hosts = os.getenv("ALLOWED_HOSTS", "writon.xyz,*.writon.xyz").split(",")
+    allowed_hosts = os.getenv("ALLOWED_HOSTS", "writon-api.onrender.com,*.writon-api.onrender.com").split(",")
     app.add_middleware(TrustedHostMiddleware, allowed_hosts=allowed_hosts)
 
 # 5. CORS (last)
@@ -243,7 +243,7 @@ async def robots_txt():
     return PlainTextResponse(
         "User-agent: *\n"
         "Allow: /\n\n"
-        "Sitemap: https://www.writon.xyz/sitemap.xml\n"
+        "Sitemap: https://www.writon-api.onrender.com/sitemap.xml\n"
     )
 
 
@@ -252,10 +252,10 @@ async def sitemap_xml():
     sitemap = """<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://www.writon.xyz/</loc>
+        <loc>https://www.writon-api.onrender.com/</loc>
     </url>
     <url>
-        <loc>https://www.writon.xyz/api-docs.html</loc>
+        <loc>https://www.writon-api.onrender.com/api-docs.html</loc>
     </url>
 </urlset>"""
     return Response(content=sitemap, media_type="application/xml")

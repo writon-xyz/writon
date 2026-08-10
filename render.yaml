@@ -13,9 +13,9 @@ services:
       - key: ENVIRONMENT
         value: production
       - key: ALLOWED_ORIGINS
-        value: https://writon.xyz,https://www.writon.xyz
+        value: https://writon-api.onrender.com
       - key: ALLOWED_HOSTS
-        value: writon.xyz,*.writon.xyz
+        value: writon-api.onrender.com
       - key: MAX_REQUEST_SIZE_MB
         value: "1"
       - key: MAX_FILE_SIZE_MB
