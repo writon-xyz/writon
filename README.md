@@ -87,7 +87,7 @@ RESTful API for integration with applications, websites, and services.
 
 ```bash
 # Clone the repository
-git clone https://github.com/sbklabs/writon.git
+git clone https://github.com/sbk-labs/writon.git
 cd writon
 
 # Create and activate a virtual environment
@@ -476,7 +476,7 @@ writon/
 
 ### **GitHub Workflow:**
 - **Branch Protection** - Main branch requires pull requests
-- **Code Owners** - Automatic reviewer assignment (@sbklabs, @etsibeko-dev)
+- **Code Owners** - Automatic reviewer assignment (@sbk-labs, @etsibeko-dev)
 - **Quality Gates** - All tests must pass before merging
 - **Professional Standards** - Conventional commits and code review process
 

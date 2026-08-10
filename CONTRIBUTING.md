@@ -13,7 +13,7 @@ Thank you for your interest in contributing to Writon! 🎉
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/sbklabs/writon.git
+   git clone https://github.com/sbk-labs/writon.git
    cd writon
    ```
 

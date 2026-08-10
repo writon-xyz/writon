@@ -146,4 +146,4 @@ When updating version numbers or adding new technologies:
 ---
 
 **Last Updated**: 2025-10-20
-**Maintainer**: @sbklabs, @etsibeko-dev
+**Maintainer**: @sbk-labs, @etsibeko-dev

@@ -34,9 +34,9 @@ dependencies = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/sbklabs/writon"
-"Bug Tracker" = "https://github.com/sbklabs/writon/issues"
-"Documentation" = "https://github.com/sbklabs/writon#readme"
+"Homepage" = "https://github.com/sbk-labs/writon"
+"Bug Tracker" = "https://github.com/sbk-labs/writon/issues"
+"Documentation" = "https://github.com/sbk-labs/writon#readme"
 
 [project.scripts]
 writon = "main:main"
