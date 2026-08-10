@@ -416,7 +416,7 @@ function processAgain() {
 function validateApiKey(provider, key) {
     const patterns = {
         'groq': /^gsk_[a-zA-Z0-9_-]{32,}$/,
-        'google': /^AI[a-zA-Z0-9_-]{32,}$/
+        'google': /^[A-Za-z0-9._-]{20,}$/
     };
     return patterns[provider] ? patterns[provider].test(key) : key.length > 10;
 }
