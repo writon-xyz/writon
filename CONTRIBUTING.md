@@ -7,7 +7,7 @@ Thank you for your interest in contributing to Writon! 🎉
 ### Prerequisites
 - Python 3.7 or higher
 - Git
-- An API key from one of the supported providers (OpenAI, Google, Anthropic, or Groq)
+- An API key from one of the supported providers (Groq or Google Gemini)
 
 ### Setup Development Environment
 
