@@ -27,8 +27,8 @@ Centered below logo, use Writon brand color for primary badges:
 ```markdown
 <div align="center">
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-0B84FE?style=flat-square&logo=googlechrome&logoColor=white)](https://www.writon.xyz)
-[![API Docs](https://img.shields.io/badge/API_Docs-00D9FF?style=flat-square&logo=swagger&logoColor=white)](https://www.writon.xyz/docs)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-0B84FE?style=flat-square&logo=googlechrome&logoColor=white)](https://writon-api.onrender.com)
+[![API Docs](https://img.shields.io/badge/API_Docs-00D9FF?style=flat-square&logo=swagger&logoColor=white)](https://writon-api.onrender.com/docs)
 [![License: MIT](https://img.shields.io/badge/License-MIT-00C853?style=flat-square)](https://opensource.org/licenses/MIT)
 
 </div>

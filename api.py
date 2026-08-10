@@ -241,7 +241,7 @@ async def robots_txt():
     return PlainTextResponse(
         "User-agent: *\n"
         "Allow: /\n\n"
-        "Sitemap: https://www.writon-api.onrender.com/sitemap.xml\n"
+        "Sitemap: https://writon-api.onrender.com/sitemap.xml\n"
     )
 
 
@@ -250,10 +250,10 @@ async def sitemap_xml():
     sitemap = """<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://www.writon-api.onrender.com/</loc>
+        <loc>https://writon-api.onrender.com/</loc>
     </url>
     <url>
-        <loc>https://www.writon-api.onrender.com/api-docs.html</loc>
+        <loc>https://writon-api.onrender.com/api-docs.html</loc>
     </url>
 </urlset>"""
     return Response(content=sitemap, media_type="application/xml")
