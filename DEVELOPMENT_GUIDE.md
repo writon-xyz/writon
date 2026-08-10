@@ -5,15 +5,15 @@
 ## 📋 Quick Reference
 
 ### Repository Information
-- **Organization**: `@sbklabs`
+- **Organization**: `@sbk-labs`
 - **Personal Account**: `@etsibeko-dev`
-- **Repository**: `https://github.com/sbklabs/writon`
+- **Repository**: `https://github.com/sbk-labs/writon`
 - **Live Site**: `https://www.writon.xyz`
 
 ### Branch Protection Rules
 - ✅ **Main branch protected** - All changes must go through PRs
-- ✅ **Admin bypass enabled** - `@sbklabs` can push directly
-- ✅ **Code owners** - `@sbklabs` and `@etsibeko-dev` auto-assigned as reviewers
+- ✅ **Admin bypass enabled** - `@sbk-labs` can push directly
+- ✅ **Code owners** - `@sbk-labs` and `@etsibeko-dev` auto-assigned as reviewers
 
 ---
 
@@ -22,7 +22,7 @@
 ### 1. Clone and Setup
 ```bash
 # Clone the repository
-git clone https://github.com/sbklabs/writon.git
+git clone https://github.com/sbk-labs/writon.git
 cd writon
 
 # Create and activate virtual environment
@@ -224,10 +224,10 @@ git push origin main
 
 ## 👥 Multi-Account Workflow
 
-### Working as @sbklabs (Organization)
+### Working as @sbk-labs (Organization)
 ```bash
 # Set up Git credentials for organization
-git config user.name "sbklabs"
+git config user.name "sbk-labs"
 git config user.email "hello.writon@gmail.com"
 
 # You can push directly to main (admin bypass)
@@ -253,7 +253,7 @@ git config user.name
 git config user.email
 
 # Switch to organization account
-git config user.name "sbklabs"
+git config user.name "sbk-labs"
 git config user.email "hello.writon@gmail.com"
 
 # Switch to personal account
@@ -388,7 +388,7 @@ git commit -m "fix: Security update for critical vulnerability
 - [ ] Branch is up to date with main
 
 ### Review Process
-1. **Auto-assignment**: `@sbklabs` and `@etsibeko-dev` are auto-assigned
+1. **Auto-assignment**: `@sbk-labs` and `@etsibeko-dev` are auto-assigned
 2. **Review**: At least one approval required
 3. **Merge**: Squash and merge recommended for clean history
 4. **Cleanup**: Delete feature branch after merge
