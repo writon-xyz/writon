@@ -308,8 +308,7 @@
                                 <tbody>
                                     <tr>
                                         <td><code>X-Provider</code></td>
-                                        <td><code>groq</code> | <code>openai</code> | <code>google</code> |
-                                            <code>anthropic</code>
+                                        <td><code>groq</code> | <code>google</code>
                                         </td>
                                         <td>The AI provider to use for processing.</td>
                                     </tr>
@@ -362,10 +361,8 @@
                     <h4>Example Response</h4>
                     <pre><code>{
   "available_providers": [
-    "openai",
-    "google",
-    "anthropic",
-    "groq"
+    "groq",
+    "google"
   ],
   "current_provider": "groq",
   "supported_modes": [
@@ -447,8 +444,8 @@
                     <h4>Example Request (cURL)</h4>
                     <pre><code>curl -X POST "http://localhost:8000/summarize" \
   -H "Content-Type: application/json" \
-  -H "X-Provider: openai" \
-  -H "X-OpenAI-Key: your_openai_api_key_here" \
+  -H "X-Provider: groq" \
+  -H "X-Groq-Key: your_groq_api_key_here" \
   -d '{
     "text": "Your long text here...",
     "case_style": "title"
@@ -469,8 +466,8 @@
                     <h4>Example Request (cURL)</h4>
                     <pre><code>curl -X POST "http://localhost:8000/process" \
   -H "Content-Type: application/json" \
-  -H "X-Provider: anthropic" \
-  -H "X-Anthropic-Key: your_anthropic_api_key_here" \
+  -H "X-Provider: google" \
+  -H "X-Google-Key: your_google_api_key_here" \
   -d '{
     "text": "this text needs grammar fixing",
     "mode": "grammar",

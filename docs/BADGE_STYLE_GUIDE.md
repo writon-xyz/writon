@@ -55,10 +55,9 @@ Centered below logo, use Writon brand color for primary badges:
 **Note:** CSS3 doesn't include a logo because the CSS3 shield icon is not available in Simple Icons.
 
 **AI Providers:**
+
 ```markdown
-- ![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4-412991?style=flat-square&logo=openai&logoColor=white)
 - ![Google](https://img.shields.io/badge/Google-Gemini-4285F4?style=flat-square&logo=google&logoColor=white)
-- ![Anthropic](https://img.shields.io/badge/Anthropic-Claude-191919?style=flat-square&logo=anthropic&logoColor=white)
 - ![Groq](https://img.shields.io/badge/Groq-Llama--3-F55036?style=flat-square&logo=lightning&logoColor=white)
 ```
 
@@ -80,9 +79,7 @@ Centered below logo, use Writon brand color for primary badges:
 | HTML5 | `#E34F26` (grey label) | html5 |
 | CSS3 | `#1572B6` | none (icon not available) |
 | JavaScript | `#F7DF1E` | javascript (white logo) |
-| OpenAI | `#412991` | openai |
 | Google | `#4285F4` | google |
-| Anthropic | `#191919` | anthropic |
 | Groq | `#F55036` | lightning |
 | Render | `#46E3B7` | render |
 | GitHub | `#181717` | github |
