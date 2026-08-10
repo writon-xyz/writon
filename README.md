@@ -4,8 +4,8 @@
 
 <div align="center">
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-0B84FE?style=flat-square&logo=googlechrome&logoColor=white)](https://www.writon.xyz)
-[![API Docs](https://img.shields.io/badge/API_Docs-00D9FF?style=flat-square&logo=swagger&logoColor=white)](https://www.writon.xyz/docs)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-0B84FE?style=flat-square&logo=googlechrome&logoColor=white)](https://writon-api.onrender.com)
+[![API Docs](https://img.shields.io/badge/API_Docs-00D9FF?style=flat-square&logo=swagger&logoColor=white)](https://writon-api.onrender.com/docs)
 [![License: MIT](https://img.shields.io/badge/License-MIT-00C853?style=flat-square)](https://opensource.org/licenses/MIT)
 
 </div>
@@ -16,11 +16,12 @@
 
 ## 🌟 Live Demo
 
-**Try Writon right now!** → [**www.writon.xyz**](https://www.writon.xyz)
+**Try Writon right now!** → [**https://writon-api.onrender.com**](https://writon-api.onrender.com)
 
-![Writon Homepage](https://raw.githubusercontent.com/sbklabs/writon/main/docs/screenshot.png)
+![Writon Screenshot](https://raw.githubusercontent.com/sbk-labs/writon/main/docs/screenshot.png)
 
 *Beautiful, modern interface with space-themed design - grammar correction, translation, and summarization at your fingertips.*
+
 
 - ✨ **Grammar Correction** - Fix grammar and improve writing
 - 🌍 **Translation** - Translate to multiple languages with custom language support  
@@ -46,7 +47,7 @@ RESTful API for integration with applications, websites, and services.
 - 🎨 **Beautiful UI**: Modern, responsive web interface with space-themed design
 - 📱 **Mobile Friendly**: Works perfectly on all devices
 - 🔒 **Privacy First**: Your data stays with you
-- 🚀 **Production Ready**: Deployed and running at writon.xyz
+- 🚀 **Production Ready**: Deployed and running at https://writon-api.onrender.com
 - 🛡️ **Enhanced Security**: Rate limiting, request validation, and security headers
 - 📚 **Comprehensive Documentation**: Complete development guides and quick reference
 - 🤖 **Automated Updates**: Dependabot integration for dependency management
@@ -323,7 +324,7 @@ MAX_REQUEST_SIZE_MB=1
 MAX_FILE_SIZE_MB=5
 
 # Trusted hosts for production (comma-separated)
-ALLOWED_HOSTS=writon.xyz,*.writon.xyz
+ALLOWED_HOSTS=https://writon-api.onrender.com
 ```
 
 > **Note:** For advanced use, you can switch the `API_PROVIDER` and provide the corresponding API key. In API mode, keys can also be provided directly via headers (see BYOK mode).
