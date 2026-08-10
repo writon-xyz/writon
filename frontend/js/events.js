@@ -38,10 +38,17 @@ function setupEventListeners() {
         providerSelect.addEventListener('change', function () {
             const provider = providerSelect.value;
 
-            UI.updateKeyLinks();
-            loadProviderConfig(provider);
-            UI.validateApiKeyFormat();
-        });
+        // Load this provider's saved credentials/model immediately.
+        loadProviderConfig(provider);
+
+        // Update provider-dependent UI immediately.
+        UI.updateKeyLinks();
+        UI.updateModelPlaceholder();
+        UI.validateApiKeyFormat();
+
+        // Persist the newly selected provider.
+        saveConfig();
+    });
     }
 
     if (apiKeyInput) {

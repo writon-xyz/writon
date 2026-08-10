@@ -55,7 +55,7 @@ function loadProviderConfig(provider, config = getStoredConfig()) {
 
     updateModelPlaceholder();
 
-    if (typeof checkApiKeyStatus === 'function') {
+if (typeof checkApiKeyStatus === 'function') {
         checkApiKeyStatus();
     }
 }
