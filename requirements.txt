@@ -16,4 +16,4 @@ httpx==0.28.1
 pytest-asyncio==0.26.0
 
 # Security
-slowapi==0.1.9
+slowapi==0.1.10
